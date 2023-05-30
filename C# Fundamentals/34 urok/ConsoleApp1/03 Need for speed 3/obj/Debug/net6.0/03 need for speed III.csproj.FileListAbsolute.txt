@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\03 Need for speed 3\bin\Debug\net6.0\03 need for speed III.exe
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\03 Need for speed 3\bin\Debug\net6.0\03 need for speed III.deps.json
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\03 Need for speed 3\bin\Debug\net6.0\03 need for speed III.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\03 Need for speed 3\bin\Debug\net6.0\03 need for speed III.dll
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\03 Need for speed 3\bin\Debug\net6.0\03 need for speed III.pdb
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\03 Need for speed 3\obj\Debug\net6.0\03 need for speed III.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\03 Need for speed 3\obj\Debug\net6.0\03 need for speed III.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\03 Need for speed 3\obj\Debug\net6.0\03 need for speed III.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\03 Need for speed 3\obj\Debug\net6.0\03 need for speed III.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\03 Need for speed 3\obj\Debug\net6.0\03 need for speed III.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\03 Need for speed 3\obj\Debug\net6.0\03 need for speed III.dll
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\03 Need for speed 3\obj\Debug\net6.0\refint\03 need for speed III.dll
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\03 Need for speed 3\obj\Debug\net6.0\03 need for speed III.pdb
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\03 Need for speed 3\obj\Debug\net6.0\03 need for speed III.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\03 Need for speed 3\obj\Debug\net6.0\ref\03 need for speed III.dll

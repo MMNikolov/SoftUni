@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\fundamentals\14 urok\ConsoleApp3\ConsoleApp12\bin\Debug\net6.0\ConsoleApp12.exe
+C:\Users\Martin\Desktop\C#\fundamentals\14 urok\ConsoleApp3\ConsoleApp12\bin\Debug\net6.0\ConsoleApp12.deps.json
+C:\Users\Martin\Desktop\C#\fundamentals\14 urok\ConsoleApp3\ConsoleApp12\bin\Debug\net6.0\ConsoleApp12.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\fundamentals\14 urok\ConsoleApp3\ConsoleApp12\bin\Debug\net6.0\ConsoleApp12.dll
+C:\Users\Martin\Desktop\C#\fundamentals\14 urok\ConsoleApp3\ConsoleApp12\bin\Debug\net6.0\ConsoleApp12.pdb
+C:\Users\Martin\Desktop\C#\fundamentals\14 urok\ConsoleApp3\ConsoleApp12\obj\Debug\net6.0\ConsoleApp12.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\fundamentals\14 urok\ConsoleApp3\ConsoleApp12\obj\Debug\net6.0\ConsoleApp12.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\fundamentals\14 urok\ConsoleApp3\ConsoleApp12\obj\Debug\net6.0\ConsoleApp12.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\fundamentals\14 urok\ConsoleApp3\ConsoleApp12\obj\Debug\net6.0\ConsoleApp12.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\fundamentals\14 urok\ConsoleApp3\ConsoleApp12\obj\Debug\net6.0\ConsoleApp12.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\fundamentals\14 urok\ConsoleApp3\ConsoleApp12\obj\Debug\net6.0\ConsoleApp12.dll
+C:\Users\Martin\Desktop\C#\fundamentals\14 urok\ConsoleApp3\ConsoleApp12\obj\Debug\net6.0\refint\ConsoleApp12.dll
+C:\Users\Martin\Desktop\C#\fundamentals\14 urok\ConsoleApp3\ConsoleApp12\obj\Debug\net6.0\ConsoleApp12.pdb
+C:\Users\Martin\Desktop\C#\fundamentals\14 urok\ConsoleApp3\ConsoleApp12\obj\Debug\net6.0\ConsoleApp12.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\fundamentals\14 urok\ConsoleApp3\ConsoleApp12\obj\Debug\net6.0\ref\ConsoleApp12.dll

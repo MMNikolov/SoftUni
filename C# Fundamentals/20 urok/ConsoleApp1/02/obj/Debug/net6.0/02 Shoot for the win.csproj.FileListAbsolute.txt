@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\fundamentals\20 urok\ConsoleApp1\02\bin\Debug\net6.0\02 Shoot for the win.exe
+C:\Users\Martin\Desktop\C#\fundamentals\20 urok\ConsoleApp1\02\bin\Debug\net6.0\02 Shoot for the win.deps.json
+C:\Users\Martin\Desktop\C#\fundamentals\20 urok\ConsoleApp1\02\bin\Debug\net6.0\02 Shoot for the win.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\fundamentals\20 urok\ConsoleApp1\02\bin\Debug\net6.0\02 Shoot for the win.dll
+C:\Users\Martin\Desktop\C#\fundamentals\20 urok\ConsoleApp1\02\bin\Debug\net6.0\02 Shoot for the win.pdb
+C:\Users\Martin\Desktop\C#\fundamentals\20 urok\ConsoleApp1\02\obj\Debug\net6.0\02 Shoot for the win.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\fundamentals\20 urok\ConsoleApp1\02\obj\Debug\net6.0\02 Shoot for the win.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\fundamentals\20 urok\ConsoleApp1\02\obj\Debug\net6.0\02 Shoot for the win.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\fundamentals\20 urok\ConsoleApp1\02\obj\Debug\net6.0\02 Shoot for the win.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\fundamentals\20 urok\ConsoleApp1\02\obj\Debug\net6.0\02 Shoot for the win.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\fundamentals\20 urok\ConsoleApp1\02\obj\Debug\net6.0\02 Shoot for the win.dll
+C:\Users\Martin\Desktop\C#\fundamentals\20 urok\ConsoleApp1\02\obj\Debug\net6.0\refint\02 Shoot for the win.dll
+C:\Users\Martin\Desktop\C#\fundamentals\20 urok\ConsoleApp1\02\obj\Debug\net6.0\02 Shoot for the win.pdb
+C:\Users\Martin\Desktop\C#\fundamentals\20 urok\ConsoleApp1\02\obj\Debug\net6.0\02 Shoot for the win.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\fundamentals\20 urok\ConsoleApp1\02\obj\Debug\net6.0\ref\02 Shoot for the win.dll

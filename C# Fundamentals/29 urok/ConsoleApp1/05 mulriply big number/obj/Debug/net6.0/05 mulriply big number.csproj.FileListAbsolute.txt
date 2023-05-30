@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\05 mulriply big number\bin\Debug\net6.0\05 mulriply big number.exe
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\05 mulriply big number\bin\Debug\net6.0\05 mulriply big number.deps.json
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\05 mulriply big number\bin\Debug\net6.0\05 mulriply big number.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\05 mulriply big number\bin\Debug\net6.0\05 mulriply big number.dll
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\05 mulriply big number\bin\Debug\net6.0\05 mulriply big number.pdb
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\05 mulriply big number\obj\Debug\net6.0\05 mulriply big number.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\05 mulriply big number\obj\Debug\net6.0\05 mulriply big number.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\05 mulriply big number\obj\Debug\net6.0\05 mulriply big number.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\05 mulriply big number\obj\Debug\net6.0\05 mulriply big number.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\05 mulriply big number\obj\Debug\net6.0\05 mulriply big number.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\05 mulriply big number\obj\Debug\net6.0\05 mulriply big number.dll
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\05 mulriply big number\obj\Debug\net6.0\refint\05 mulriply big number.dll
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\05 mulriply big number\obj\Debug\net6.0\05 mulriply big number.pdb
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\05 mulriply big number\obj\Debug\net6.0\05 mulriply big number.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\05 mulriply big number\obj\Debug\net6.0\ref\05 mulriply big number.dll

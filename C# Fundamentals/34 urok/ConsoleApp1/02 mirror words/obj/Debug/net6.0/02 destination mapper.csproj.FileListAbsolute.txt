@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\02 mirror words\bin\Debug\net6.0\02 destination mapper.exe
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\02 mirror words\bin\Debug\net6.0\02 destination mapper.deps.json
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\02 mirror words\bin\Debug\net6.0\02 destination mapper.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\02 mirror words\bin\Debug\net6.0\02 destination mapper.dll
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\02 mirror words\bin\Debug\net6.0\02 destination mapper.pdb
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\02 mirror words\obj\Debug\net6.0\02 destination mapper.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\02 mirror words\obj\Debug\net6.0\02 destination mapper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\02 mirror words\obj\Debug\net6.0\02 destination mapper.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\02 mirror words\obj\Debug\net6.0\02 destination mapper.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\02 mirror words\obj\Debug\net6.0\02 destination mapper.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\02 mirror words\obj\Debug\net6.0\02 destination mapper.dll
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\02 mirror words\obj\Debug\net6.0\refint\02 destination mapper.dll
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\02 mirror words\obj\Debug\net6.0\02 destination mapper.pdb
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\02 mirror words\obj\Debug\net6.0\02 destination mapper.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\fundamentals\34 urok\ConsoleApp1\02 mirror words\obj\Debug\net6.0\ref\02 destination mapper.dll

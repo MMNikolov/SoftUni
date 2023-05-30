@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\fundamentals\15 urok\ConsoleApp2\ConsoleApp2\bin\Debug\net6.0\01 smallest of 3 numbers.exe
+C:\Users\Martin\Desktop\C#\fundamentals\15 urok\ConsoleApp2\ConsoleApp2\bin\Debug\net6.0\01 smallest of 3 numbers.deps.json
+C:\Users\Martin\Desktop\C#\fundamentals\15 urok\ConsoleApp2\ConsoleApp2\bin\Debug\net6.0\01 smallest of 3 numbers.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\fundamentals\15 urok\ConsoleApp2\ConsoleApp2\bin\Debug\net6.0\01 smallest of 3 numbers.dll
+C:\Users\Martin\Desktop\C#\fundamentals\15 urok\ConsoleApp2\ConsoleApp2\bin\Debug\net6.0\01 smallest of 3 numbers.pdb
+C:\Users\Martin\Desktop\C#\fundamentals\15 urok\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\01 smallest of 3 numbers.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\fundamentals\15 urok\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\01 smallest of 3 numbers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\fundamentals\15 urok\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\01 smallest of 3 numbers.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\fundamentals\15 urok\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\01 smallest of 3 numbers.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\fundamentals\15 urok\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\01 smallest of 3 numbers.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\fundamentals\15 urok\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\01 smallest of 3 numbers.dll
+C:\Users\Martin\Desktop\C#\fundamentals\15 urok\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\refint\01 smallest of 3 numbers.dll
+C:\Users\Martin\Desktop\C#\fundamentals\15 urok\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\01 smallest of 3 numbers.pdb
+C:\Users\Martin\Desktop\C#\fundamentals\15 urok\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\01 smallest of 3 numbers.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\fundamentals\15 urok\ConsoleApp2\ConsoleApp2\obj\Debug\net6.0\ref\01 smallest of 3 numbers.dll

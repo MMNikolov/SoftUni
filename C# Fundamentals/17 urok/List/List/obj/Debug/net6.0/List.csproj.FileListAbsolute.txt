@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\fundamentals\17 urok\List\List\bin\Debug\net6.0\List.exe
+C:\Users\Martin\Desktop\C#\fundamentals\17 urok\List\List\bin\Debug\net6.0\List.deps.json
+C:\Users\Martin\Desktop\C#\fundamentals\17 urok\List\List\bin\Debug\net6.0\List.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\fundamentals\17 urok\List\List\bin\Debug\net6.0\List.dll
+C:\Users\Martin\Desktop\C#\fundamentals\17 urok\List\List\bin\Debug\net6.0\List.pdb
+C:\Users\Martin\Desktop\C#\fundamentals\17 urok\List\List\obj\Debug\net6.0\List.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\fundamentals\17 urok\List\List\obj\Debug\net6.0\List.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\fundamentals\17 urok\List\List\obj\Debug\net6.0\List.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\fundamentals\17 urok\List\List\obj\Debug\net6.0\List.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\fundamentals\17 urok\List\List\obj\Debug\net6.0\List.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\fundamentals\17 urok\List\List\obj\Debug\net6.0\List.dll
+C:\Users\Martin\Desktop\C#\fundamentals\17 urok\List\List\obj\Debug\net6.0\refint\List.dll
+C:\Users\Martin\Desktop\C#\fundamentals\17 urok\List\List\obj\Debug\net6.0\List.pdb
+C:\Users\Martin\Desktop\C#\fundamentals\17 urok\List\List\obj\Debug\net6.0\List.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\fundamentals\17 urok\List\List\obj\Debug\net6.0\ref\List.dll

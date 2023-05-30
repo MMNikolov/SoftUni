@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\03 extract file\bin\Debug\net6.0\03 extract file.exe
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\03 extract file\bin\Debug\net6.0\03 extract file.deps.json
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\03 extract file\bin\Debug\net6.0\03 extract file.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\03 extract file\bin\Debug\net6.0\03 extract file.dll
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\03 extract file\bin\Debug\net6.0\03 extract file.pdb
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\03 extract file\obj\Debug\net6.0\03 extract file.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\03 extract file\obj\Debug\net6.0\03 extract file.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\03 extract file\obj\Debug\net6.0\03 extract file.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\03 extract file\obj\Debug\net6.0\03 extract file.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\03 extract file\obj\Debug\net6.0\03 extract file.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\03 extract file\obj\Debug\net6.0\03 extract file.dll
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\03 extract file\obj\Debug\net6.0\refint\03 extract file.dll
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\03 extract file\obj\Debug\net6.0\03 extract file.pdb
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\03 extract file\obj\Debug\net6.0\03 extract file.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\fundamentals\29 urok\ConsoleApp1\03 extract file\obj\Debug\net6.0\ref\03 extract file.dll

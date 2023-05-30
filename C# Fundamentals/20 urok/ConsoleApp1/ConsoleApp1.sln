@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01 black flag", "ConsoleApp1\01 black flag.csproj", "{AE1C2BB5-5CCB-4AFA-B326-4EE751945618}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02 Shoot for the win", "02\02 Shoot for the win.csproj", "{D1AD7C9C-691F-47A8-89D0-9F5F692E060E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03", "03\03.csproj", "{D3E09C51-75F9-4B1B-BE01-31CEF03B6BE4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE1C2BB5-5CCB-4AFA-B326-4EE751945618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE1C2BB5-5CCB-4AFA-B326-4EE751945618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE1C2BB5-5CCB-4AFA-B326-4EE751945618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE1C2BB5-5CCB-4AFA-B326-4EE751945618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1AD7C9C-691F-47A8-89D0-9F5F692E060E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1AD7C9C-691F-47A8-89D0-9F5F692E060E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1AD7C9C-691F-47A8-89D0-9F5F692E060E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1AD7C9C-691F-47A8-89D0-9F5F692E060E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3E09C51-75F9-4B1B-BE01-31CEF03B6BE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3E09C51-75F9-4B1B-BE01-31CEF03B6BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3E09C51-75F9-4B1B-BE01-31CEF03B6BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3E09C51-75F9-4B1B-BE01-31CEF03B6BE4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B5C4444-9614-4FDC-871E-2C625AC06272}
+	EndGlobalSection
+EndGlobal
