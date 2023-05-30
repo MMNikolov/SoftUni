@@ -1,0 +1,5 @@
+C:\Users\Martin\Desktop\C#\17-ти урок\exam\ConsoleApp2\obj\Debug\net6.0\ConsoleApp2.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\17-ти урок\exam\ConsoleApp2\obj\Debug\net6.0\ConsoleApp2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\17-ти урок\exam\ConsoleApp2\obj\Debug\net6.0\ConsoleApp2.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\17-ти урок\exam\ConsoleApp2\obj\Debug\net6.0\ConsoleApp2.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\17-ти урок\exam\ConsoleApp2\obj\Debug\net6.0\ConsoleApp2.csproj.CoreCompileInputs.cache

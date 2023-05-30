@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "по-сложни проверки/1.0.0": {
+        "runtime": {
+          "по-сложни проверки.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "по-сложни проверки/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

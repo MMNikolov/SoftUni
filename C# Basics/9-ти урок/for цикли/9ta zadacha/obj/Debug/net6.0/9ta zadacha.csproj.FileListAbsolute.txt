@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\9ta zadacha\bin\Debug\net6.0\9ta zadacha.exe
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\9ta zadacha\bin\Debug\net6.0\9ta zadacha.deps.json
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\9ta zadacha\bin\Debug\net6.0\9ta zadacha.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\9ta zadacha\bin\Debug\net6.0\9ta zadacha.dll
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\9ta zadacha\bin\Debug\net6.0\9ta zadacha.pdb
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\9ta zadacha\obj\Debug\net6.0\9ta zadacha.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\9ta zadacha\obj\Debug\net6.0\9ta zadacha.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\9ta zadacha\obj\Debug\net6.0\9ta zadacha.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\9ta zadacha\obj\Debug\net6.0\9ta zadacha.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\9ta zadacha\obj\Debug\net6.0\9ta zadacha.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\9ta zadacha\obj\Debug\net6.0\9ta zadacha.dll
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\9ta zadacha\obj\Debug\net6.0\refint\9ta zadacha.dll
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\9ta zadacha\obj\Debug\net6.0\9ta zadacha.pdb
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\9ta zadacha\obj\Debug\net6.0\9ta zadacha.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\9ta zadacha\obj\Debug\net6.0\ref\9ta zadacha.dll

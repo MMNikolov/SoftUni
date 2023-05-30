@@ -1,0 +1,5 @@
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\10ta zadacha\obj\Debug\net6.0\10ta zadacha.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\10ta zadacha\obj\Debug\net6.0\10ta zadacha.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\10ta zadacha\obj\Debug\net6.0\10ta zadacha.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\10ta zadacha\obj\Debug\net6.0\10ta zadacha.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\10ta zadacha\obj\Debug\net6.0\10ta zadacha.csproj.CoreCompileInputs.cache

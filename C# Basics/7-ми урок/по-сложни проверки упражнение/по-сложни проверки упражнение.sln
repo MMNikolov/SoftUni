@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3ta zadacha", "по-сложни проверки упражнение\3ta zadacha.csproj", "{FECC5D37-6266-4F94-A2FD-6B3F7D2B997D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FECC5D37-6266-4F94-A2FD-6B3F7D2B997D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FECC5D37-6266-4F94-A2FD-6B3F7D2B997D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FECC5D37-6266-4F94-A2FD-6B3F7D2B997D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FECC5D37-6266-4F94-A2FD-6B3F7D2B997D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60CB2D7A-1DDE-49A2-80DC-CEAF5DE29E7E}
+	EndGlobalSection
+EndGlobal

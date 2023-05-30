@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\for цикли\bin\Debug\net6.0\for цикли.exe
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\for цикли\bin\Debug\net6.0\for цикли.deps.json
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\for цикли\bin\Debug\net6.0\for цикли.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\for цикли\bin\Debug\net6.0\for цикли.dll
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\for цикли\bin\Debug\net6.0\for цикли.pdb
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\for цикли\obj\Debug\net6.0\for цикли.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\for цикли\obj\Debug\net6.0\for цикли.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\for цикли\obj\Debug\net6.0\for цикли.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\for цикли\obj\Debug\net6.0\for цикли.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\for цикли\obj\Debug\net6.0\for цикли.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\for цикли\obj\Debug\net6.0\for цикли.dll
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\for цикли\obj\Debug\net6.0\refint\for цикли.dll
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\for цикли\obj\Debug\net6.0\for цикли.pdb
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\for цикли\obj\Debug\net6.0\for цикли.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\9-ти урок\for цикли\for цикли\obj\Debug\net6.0\ref\for цикли.dll

@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\по-сложни проверки\bin\Debug\net6.0\по-сложни проверки.exe
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\по-сложни проверки\bin\Debug\net6.0\по-сложни проверки.deps.json
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\по-сложни проверки\bin\Debug\net6.0\по-сложни проверки.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\по-сложни проверки\bin\Debug\net6.0\по-сложни проверки.dll
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\по-сложни проверки\bin\Debug\net6.0\по-сложни проверки.pdb
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\по-сложни проверки\obj\Debug\net6.0\по-сложни проверки.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\по-сложни проверки\obj\Debug\net6.0\по-сложни проверки.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\по-сложни проверки\obj\Debug\net6.0\по-сложни проверки.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\по-сложни проверки\obj\Debug\net6.0\по-сложни проверки.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\по-сложни проверки\obj\Debug\net6.0\по-сложни проверки.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\по-сложни проверки\obj\Debug\net6.0\по-сложни проверки.dll
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\по-сложни проверки\obj\Debug\net6.0\refint\по-сложни проверки.dll
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\по-сложни проверки\obj\Debug\net6.0\по-сложни проверки.pdb
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\по-сложни проверки\obj\Debug\net6.0\по-сложни проверки.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\7-ми урок\по-сложни проверки\по-сложни проверки\obj\Debug\net6.0\ref\по-сложни проверки.dll

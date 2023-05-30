@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\9-ти урок\while-цикъл\while-цикъл\bin\Debug\net6.0\while-цикъл.exe
+C:\Users\Martin\Desktop\C#\9-ти урок\while-цикъл\while-цикъл\bin\Debug\net6.0\while-цикъл.deps.json
+C:\Users\Martin\Desktop\C#\9-ти урок\while-цикъл\while-цикъл\bin\Debug\net6.0\while-цикъл.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\9-ти урок\while-цикъл\while-цикъл\bin\Debug\net6.0\while-цикъл.dll
+C:\Users\Martin\Desktop\C#\9-ти урок\while-цикъл\while-цикъл\bin\Debug\net6.0\while-цикъл.pdb
+C:\Users\Martin\Desktop\C#\9-ти урок\while-цикъл\while-цикъл\obj\Debug\net6.0\while-цикъл.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\9-ти урок\while-цикъл\while-цикъл\obj\Debug\net6.0\while-цикъл.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\9-ти урок\while-цикъл\while-цикъл\obj\Debug\net6.0\while-цикъл.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\9-ти урок\while-цикъл\while-цикъл\obj\Debug\net6.0\while-цикъл.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\9-ти урок\while-цикъл\while-цикъл\obj\Debug\net6.0\while-цикъл.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\9-ти урок\while-цикъл\while-цикъл\obj\Debug\net6.0\while-цикъл.dll
+C:\Users\Martin\Desktop\C#\9-ти урок\while-цикъл\while-цикъл\obj\Debug\net6.0\refint\while-цикъл.dll
+C:\Users\Martin\Desktop\C#\9-ти урок\while-цикъл\while-цикъл\obj\Debug\net6.0\while-цикъл.pdb
+C:\Users\Martin\Desktop\C#\9-ти урок\while-цикъл\while-цикъл\obj\Debug\net6.0\while-цикъл.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\9-ти урок\while-цикъл\while-цикъл\obj\Debug\net6.0\ref\while-цикъл.dll
