@@ -1,0 +1,5 @@
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\sets and dictionaries advanced\obj\Release\net6.0\01. CountSameValuesInArray.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\sets and dictionaries advanced\obj\Release\net6.0\01. CountSameValuesInArray.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\sets and dictionaries advanced\obj\Release\net6.0\01. CountSameValuesInArray.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\sets and dictionaries advanced\obj\Release\net6.0\01. CountSameValuesInArray.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\sets and dictionaries advanced\obj\Release\net6.0\01. CountSameValuesInArray.csproj.CoreCompileInputs.cache

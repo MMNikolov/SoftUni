@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\02. stack sum\bin\Debug\net6.0\02. stack sum.exe
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\02. stack sum\bin\Debug\net6.0\02. stack sum.deps.json
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\02. stack sum\bin\Debug\net6.0\02. stack sum.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\02. stack sum\bin\Debug\net6.0\02. stack sum.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\02. stack sum\bin\Debug\net6.0\02. stack sum.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\02. stack sum\obj\Debug\net6.0\02. stack sum.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\02. stack sum\obj\Debug\net6.0\02. stack sum.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\02. stack sum\obj\Debug\net6.0\02. stack sum.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\02. stack sum\obj\Debug\net6.0\02. stack sum.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\02. stack sum\obj\Debug\net6.0\02. stack sum.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\02. stack sum\obj\Debug\net6.0\02. stack sum.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\02. stack sum\obj\Debug\net6.0\refint\02. stack sum.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\02. stack sum\obj\Debug\net6.0\02. stack sum.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\02. stack sum\obj\Debug\net6.0\02. stack sum.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\02. stack sum\obj\Debug\net6.0\ref\02. stack sum.dll

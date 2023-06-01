@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\C# Advanced\SetsAndDictionaries EX\02. SetsOfElements\bin\Debug\net6.0\02. SetsOfElements.exe
+C:\Users\Martin\Desktop\C#\C# Advanced\SetsAndDictionaries EX\02. SetsOfElements\bin\Debug\net6.0\02. SetsOfElements.deps.json
+C:\Users\Martin\Desktop\C#\C# Advanced\SetsAndDictionaries EX\02. SetsOfElements\bin\Debug\net6.0\02. SetsOfElements.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\C# Advanced\SetsAndDictionaries EX\02. SetsOfElements\bin\Debug\net6.0\02. SetsOfElements.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\SetsAndDictionaries EX\02. SetsOfElements\bin\Debug\net6.0\02. SetsOfElements.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\SetsAndDictionaries EX\02. SetsOfElements\obj\Debug\net6.0\02. SetsOfElements.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\SetsAndDictionaries EX\02. SetsOfElements\obj\Debug\net6.0\02. SetsOfElements.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\C# Advanced\SetsAndDictionaries EX\02. SetsOfElements\obj\Debug\net6.0\02. SetsOfElements.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\SetsAndDictionaries EX\02. SetsOfElements\obj\Debug\net6.0\02. SetsOfElements.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\C# Advanced\SetsAndDictionaries EX\02. SetsOfElements\obj\Debug\net6.0\02. SetsOfElements.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\SetsAndDictionaries EX\02. SetsOfElements\obj\Debug\net6.0\02. SetsOfElements.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\SetsAndDictionaries EX\02. SetsOfElements\obj\Debug\net6.0\refint\02. SetsOfElements.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\SetsAndDictionaries EX\02. SetsOfElements\obj\Debug\net6.0\02. SetsOfElements.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\SetsAndDictionaries EX\02. SetsOfElements\obj\Debug\net6.0\02. SetsOfElements.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\SetsAndDictionaries EX\02. SetsOfElements\obj\Debug\net6.0\ref\02. SetsOfElements.dll

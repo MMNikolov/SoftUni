@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\C# Advanced\Stack and Queues EX\Stack and Queues EX\bin\Debug\net6.0\01. basic stack operations.exe
+C:\Users\Martin\Desktop\C#\C# Advanced\Stack and Queues EX\Stack and Queues EX\bin\Debug\net6.0\01. basic stack operations.deps.json
+C:\Users\Martin\Desktop\C#\C# Advanced\Stack and Queues EX\Stack and Queues EX\bin\Debug\net6.0\01. basic stack operations.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\C# Advanced\Stack and Queues EX\Stack and Queues EX\bin\Debug\net6.0\01. basic stack operations.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Stack and Queues EX\Stack and Queues EX\bin\Debug\net6.0\01. basic stack operations.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\Stack and Queues EX\Stack and Queues EX\obj\Debug\net6.0\01. basic stack operations.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Stack and Queues EX\Stack and Queues EX\obj\Debug\net6.0\01. basic stack operations.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\C# Advanced\Stack and Queues EX\Stack and Queues EX\obj\Debug\net6.0\01. basic stack operations.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Stack and Queues EX\Stack and Queues EX\obj\Debug\net6.0\01. basic stack operations.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\C# Advanced\Stack and Queues EX\Stack and Queues EX\obj\Debug\net6.0\01. basic stack operations.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Stack and Queues EX\Stack and Queues EX\obj\Debug\net6.0\01. basic stack operations.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Stack and Queues EX\Stack and Queues EX\obj\Debug\net6.0\refint\01. basic stack operations.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Stack and Queues EX\Stack and Queues EX\obj\Debug\net6.0\01. basic stack operations.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\Stack and Queues EX\Stack and Queues EX\obj\Debug\net6.0\01. basic stack operations.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Stack and Queues EX\Stack and Queues EX\obj\Debug\net6.0\ref\01. basic stack operations.dll

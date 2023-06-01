@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional array EX\03. maximal sum\bin\Debug\net6.0\03. maximal sum.exe
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional array EX\03. maximal sum\bin\Debug\net6.0\03. maximal sum.deps.json
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional array EX\03. maximal sum\bin\Debug\net6.0\03. maximal sum.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional array EX\03. maximal sum\bin\Debug\net6.0\03. maximal sum.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional array EX\03. maximal sum\bin\Debug\net6.0\03. maximal sum.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional array EX\03. maximal sum\obj\Debug\net6.0\03. maximal sum.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional array EX\03. maximal sum\obj\Debug\net6.0\03. maximal sum.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional array EX\03. maximal sum\obj\Debug\net6.0\03. maximal sum.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional array EX\03. maximal sum\obj\Debug\net6.0\03. maximal sum.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional array EX\03. maximal sum\obj\Debug\net6.0\03. maximal sum.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional array EX\03. maximal sum\obj\Debug\net6.0\03. maximal sum.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional array EX\03. maximal sum\obj\Debug\net6.0\refint\03. maximal sum.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional array EX\03. maximal sum\obj\Debug\net6.0\03. maximal sum.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional array EX\03. maximal sum\obj\Debug\net6.0\03. maximal sum.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional array EX\03. maximal sum\obj\Debug\net6.0\ref\03. maximal sum.dll

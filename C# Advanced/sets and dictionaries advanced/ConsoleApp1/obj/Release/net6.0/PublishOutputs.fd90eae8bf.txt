@@ -1,0 +1,5 @@
+C:\Users\Martin\Documents\Rockstar Games\ConsoleApp1.exe
+C:\Users\Martin\Documents\Rockstar Games\ConsoleApp1.dll
+C:\Users\Martin\Documents\Rockstar Games\ConsoleApp1.deps.json
+C:\Users\Martin\Documents\Rockstar Games\ConsoleApp1.runtimeconfig.json
+C:\Users\Martin\Documents\Rockstar Games\ConsoleApp1.pdb

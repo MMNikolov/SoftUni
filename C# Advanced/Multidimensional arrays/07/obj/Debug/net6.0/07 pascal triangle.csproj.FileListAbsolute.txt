@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\07\bin\Debug\net6.0\07 pascal triangle.exe
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\07\bin\Debug\net6.0\07 pascal triangle.deps.json
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\07\bin\Debug\net6.0\07 pascal triangle.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\07\bin\Debug\net6.0\07 pascal triangle.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\07\bin\Debug\net6.0\07 pascal triangle.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\07\obj\Debug\net6.0\07 pascal triangle.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\07\obj\Debug\net6.0\07 pascal triangle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\07\obj\Debug\net6.0\07 pascal triangle.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\07\obj\Debug\net6.0\07 pascal triangle.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\07\obj\Debug\net6.0\07 pascal triangle.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\07\obj\Debug\net6.0\07 pascal triangle.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\07\obj\Debug\net6.0\refint\07 pascal triangle.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\07\obj\Debug\net6.0\07 pascal triangle.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\07\obj\Debug\net6.0\07 pascal triangle.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\07\obj\Debug\net6.0\ref\07 pascal triangle.dll

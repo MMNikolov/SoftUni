@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\07. ParkingLot\bin\Debug\net6.0\07. ParkingLot.exe
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\07. ParkingLot\bin\Debug\net6.0\07. ParkingLot.deps.json
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\07. ParkingLot\bin\Debug\net6.0\07. ParkingLot.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\07. ParkingLot\bin\Debug\net6.0\07. ParkingLot.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\07. ParkingLot\bin\Debug\net6.0\07. ParkingLot.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\07. ParkingLot\obj\Debug\net6.0\07. ParkingLot.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\07. ParkingLot\obj\Debug\net6.0\07. ParkingLot.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\07. ParkingLot\obj\Debug\net6.0\07. ParkingLot.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\07. ParkingLot\obj\Debug\net6.0\07. ParkingLot.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\07. ParkingLot\obj\Debug\net6.0\07. ParkingLot.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\07. ParkingLot\obj\Debug\net6.0\07. ParkingLot.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\07. ParkingLot\obj\Debug\net6.0\refint\07. ParkingLot.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\07. ParkingLot\obj\Debug\net6.0\07. ParkingLot.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\07. ParkingLot\obj\Debug\net6.0\07. ParkingLot.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\07. ParkingLot\obj\Debug\net6.0\ref\07. ParkingLot.dll

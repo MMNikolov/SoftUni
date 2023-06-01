@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\02. AverageStudentGrades\bin\Debug\net6.0\02. AverageStudentGrades.exe
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\02. AverageStudentGrades\bin\Debug\net6.0\02. AverageStudentGrades.deps.json
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\02. AverageStudentGrades\bin\Debug\net6.0\02. AverageStudentGrades.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\02. AverageStudentGrades\bin\Debug\net6.0\02. AverageStudentGrades.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\02. AverageStudentGrades\bin\Debug\net6.0\02. AverageStudentGrades.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\02. AverageStudentGrades\obj\Debug\net6.0\02. AverageStudentGrades.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\02. AverageStudentGrades\obj\Debug\net6.0\02. AverageStudentGrades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\02. AverageStudentGrades\obj\Debug\net6.0\02. AverageStudentGrades.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\02. AverageStudentGrades\obj\Debug\net6.0\02. AverageStudentGrades.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\02. AverageStudentGrades\obj\Debug\net6.0\02. AverageStudentGrades.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\02. AverageStudentGrades\obj\Debug\net6.0\02. AverageStudentGrades.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\02. AverageStudentGrades\obj\Debug\net6.0\refint\02. AverageStudentGrades.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\02. AverageStudentGrades\obj\Debug\net6.0\02. AverageStudentGrades.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\02. AverageStudentGrades\obj\Debug\net6.0\02. AverageStudentGrades.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\sets and dictionaries advanced\02. AverageStudentGrades\obj\Debug\net6.0\ref\02. AverageStudentGrades.dll

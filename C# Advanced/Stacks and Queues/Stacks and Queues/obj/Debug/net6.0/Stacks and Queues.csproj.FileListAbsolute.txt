@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\Stacks and Queues\bin\Debug\net6.0\Stacks and Queues.exe
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\Stacks and Queues\bin\Debug\net6.0\Stacks and Queues.deps.json
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\Stacks and Queues\bin\Debug\net6.0\Stacks and Queues.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\Stacks and Queues\bin\Debug\net6.0\Stacks and Queues.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\Stacks and Queues\bin\Debug\net6.0\Stacks and Queues.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\Stacks and Queues\obj\Debug\net6.0\Stacks and Queues.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\Stacks and Queues\obj\Debug\net6.0\Stacks and Queues.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\Stacks and Queues\obj\Debug\net6.0\Stacks and Queues.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\Stacks and Queues\obj\Debug\net6.0\Stacks and Queues.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\Stacks and Queues\obj\Debug\net6.0\Stacks and Queues.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\Stacks and Queues\obj\Debug\net6.0\Stacks and Queues.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\Stacks and Queues\obj\Debug\net6.0\refint\Stacks and Queues.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\Stacks and Queues\obj\Debug\net6.0\Stacks and Queues.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\Stacks and Queues\obj\Debug\net6.0\Stacks and Queues.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Stacks and Queues\Stacks and Queues\obj\Debug\net6.0\ref\Stacks and Queues.dll
