@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\05.SwapMethodInteger\bin\Debug\net6.0\04.SwapMethodInteger.exe
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\05.SwapMethodInteger\bin\Debug\net6.0\04.SwapMethodInteger.deps.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\05.SwapMethodInteger\bin\Debug\net6.0\04.SwapMethodInteger.runtimeconfig.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\05.SwapMethodInteger\bin\Debug\net6.0\04.SwapMethodInteger.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\05.SwapMethodInteger\bin\Debug\net6.0\04.SwapMethodInteger.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\05.SwapMethodInteger\obj\Debug\net6.0\04.SwapMethodInteger.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\05.SwapMethodInteger\obj\Debug\net6.0\04.SwapMethodInteger.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\05.SwapMethodInteger\obj\Debug\net6.0\04.SwapMethodInteger.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\05.SwapMethodInteger\obj\Debug\net6.0\04.SwapMethodInteger.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\05.SwapMethodInteger\obj\Debug\net6.0\04.SwapMethodInteger.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\05.SwapMethodInteger\obj\Debug\net6.0\04.SwapMethodInteger.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\05.SwapMethodInteger\obj\Debug\net6.0\refint\04.SwapMethodInteger.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\05.SwapMethodInteger\obj\Debug\net6.0\04.SwapMethodInteger.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\05.SwapMethodInteger\obj\Debug\net6.0\04.SwapMethodInteger.genruntimeconfig.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\05.SwapMethodInteger\obj\Debug\net6.0\ref\04.SwapMethodInteger.dll

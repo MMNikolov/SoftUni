@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\01.BoxOfString\bin\Debug\net6.0\01.BoxOfString.exe
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\01.BoxOfString\bin\Debug\net6.0\01.BoxOfString.deps.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\01.BoxOfString\bin\Debug\net6.0\01.BoxOfString.runtimeconfig.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\01.BoxOfString\bin\Debug\net6.0\01.BoxOfString.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\01.BoxOfString\bin\Debug\net6.0\01.BoxOfString.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\01.BoxOfString\obj\Debug\net6.0\01.BoxOfString.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\01.BoxOfString\obj\Debug\net6.0\01.BoxOfString.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\01.BoxOfString\obj\Debug\net6.0\01.BoxOfString.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\01.BoxOfString\obj\Debug\net6.0\01.BoxOfString.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\01.BoxOfString\obj\Debug\net6.0\01.BoxOfString.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\01.BoxOfString\obj\Debug\net6.0\01.BoxOfString.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\01.BoxOfString\obj\Debug\net6.0\refint\01.BoxOfString.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\01.BoxOfString\obj\Debug\net6.0\01.BoxOfString.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\01.BoxOfString\obj\Debug\net6.0\01.BoxOfString.genruntimeconfig.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\01.BoxOfString\obj\Debug\net6.0\ref\01.BoxOfString.dll

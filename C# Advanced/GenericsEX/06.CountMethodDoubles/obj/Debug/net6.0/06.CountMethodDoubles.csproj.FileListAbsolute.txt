@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\06.CountMethodDoubles\bin\Debug\net6.0\06.CountMethodDoubles.exe
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\06.CountMethodDoubles\bin\Debug\net6.0\06.CountMethodDoubles.deps.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\06.CountMethodDoubles\bin\Debug\net6.0\06.CountMethodDoubles.runtimeconfig.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\06.CountMethodDoubles\bin\Debug\net6.0\06.CountMethodDoubles.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\06.CountMethodDoubles\bin\Debug\net6.0\06.CountMethodDoubles.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\06.CountMethodDoubles\obj\Debug\net6.0\06.CountMethodDoubles.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\06.CountMethodDoubles\obj\Debug\net6.0\06.CountMethodDoubles.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\06.CountMethodDoubles\obj\Debug\net6.0\06.CountMethodDoubles.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\06.CountMethodDoubles\obj\Debug\net6.0\06.CountMethodDoubles.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\06.CountMethodDoubles\obj\Debug\net6.0\06.CountMethodDoubles.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\06.CountMethodDoubles\obj\Debug\net6.0\06.CountMethodDoubles.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\06.CountMethodDoubles\obj\Debug\net6.0\refint\06.CountMethodDoubles.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\06.CountMethodDoubles\obj\Debug\net6.0\06.CountMethodDoubles.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\06.CountMethodDoubles\obj\Debug\net6.0\06.CountMethodDoubles.genruntimeconfig.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\GenericsEX\06.CountMethodDoubles\obj\Debug\net6.0\ref\06.CountMethodDoubles.dll
