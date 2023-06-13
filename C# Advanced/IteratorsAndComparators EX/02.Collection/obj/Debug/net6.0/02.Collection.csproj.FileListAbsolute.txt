@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\02.Collection\bin\Debug\net6.0\02.Collection.exe
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\02.Collection\bin\Debug\net6.0\02.Collection.deps.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\02.Collection\bin\Debug\net6.0\02.Collection.runtimeconfig.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\02.Collection\bin\Debug\net6.0\02.Collection.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\02.Collection\bin\Debug\net6.0\02.Collection.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\02.Collection\obj\Debug\net6.0\02.Collection.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\02.Collection\obj\Debug\net6.0\02.Collection.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\02.Collection\obj\Debug\net6.0\02.Collection.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\02.Collection\obj\Debug\net6.0\02.Collection.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\02.Collection\obj\Debug\net6.0\02.Collection.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\02.Collection\obj\Debug\net6.0\02.Collection.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\02.Collection\obj\Debug\net6.0\refint\02.Collection.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\02.Collection\obj\Debug\net6.0\02.Collection.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\02.Collection\obj\Debug\net6.0\02.Collection.genruntimeconfig.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\02.Collection\obj\Debug\net6.0\ref\02.Collection.dll

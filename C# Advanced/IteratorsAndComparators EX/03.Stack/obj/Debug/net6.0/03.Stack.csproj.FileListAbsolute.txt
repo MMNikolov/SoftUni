@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\03.Stack\bin\Debug\net6.0\03.Stack.exe
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\03.Stack\bin\Debug\net6.0\03.Stack.deps.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\03.Stack\bin\Debug\net6.0\03.Stack.runtimeconfig.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\03.Stack\bin\Debug\net6.0\03.Stack.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\03.Stack\bin\Debug\net6.0\03.Stack.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\03.Stack\obj\Debug\net6.0\03.Stack.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\03.Stack\obj\Debug\net6.0\03.Stack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\03.Stack\obj\Debug\net6.0\03.Stack.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\03.Stack\obj\Debug\net6.0\03.Stack.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\03.Stack\obj\Debug\net6.0\03.Stack.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\03.Stack\obj\Debug\net6.0\03.Stack.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\03.Stack\obj\Debug\net6.0\refint\03.Stack.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\03.Stack\obj\Debug\net6.0\03.Stack.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\03.Stack\obj\Debug\net6.0\03.Stack.genruntimeconfig.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\03.Stack\obj\Debug\net6.0\ref\03.Stack.dll

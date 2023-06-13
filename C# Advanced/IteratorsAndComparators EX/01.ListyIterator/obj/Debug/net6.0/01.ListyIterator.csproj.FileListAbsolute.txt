@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\01.ListyIterator\bin\Debug\net6.0\01.ListyIterator.exe
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\01.ListyIterator\bin\Debug\net6.0\01.ListyIterator.deps.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\01.ListyIterator\bin\Debug\net6.0\01.ListyIterator.runtimeconfig.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\01.ListyIterator\bin\Debug\net6.0\01.ListyIterator.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\01.ListyIterator\bin\Debug\net6.0\01.ListyIterator.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\01.ListyIterator\obj\Debug\net6.0\01.ListyIterator.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\01.ListyIterator\obj\Debug\net6.0\01.ListyIterator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\01.ListyIterator\obj\Debug\net6.0\01.ListyIterator.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\01.ListyIterator\obj\Debug\net6.0\01.ListyIterator.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\01.ListyIterator\obj\Debug\net6.0\01.ListyIterator.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\01.ListyIterator\obj\Debug\net6.0\01.ListyIterator.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\01.ListyIterator\obj\Debug\net6.0\refint\01.ListyIterator.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\01.ListyIterator\obj\Debug\net6.0\01.ListyIterator.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\01.ListyIterator\obj\Debug\net6.0\01.ListyIterator.genruntimeconfig.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\IteratorsAndComparators EX\01.ListyIterator\obj\Debug\net6.0\ref\01.ListyIterator.dll
