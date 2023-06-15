@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.RubberDuckDebugers", "01.RubberDuckDebugers\01.RubberDuckDebugers.csproj", "{AC4ED757-B1C9-4B49-9FF2-034DAE53675F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. TheSquirrel", "02. TheSquirrel\02. TheSquirrel.csproj", "{81623BC1-FFE5-4B95-836B-9F6FDF1C7A30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC4ED757-B1C9-4B49-9FF2-034DAE53675F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC4ED757-B1C9-4B49-9FF2-034DAE53675F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC4ED757-B1C9-4B49-9FF2-034DAE53675F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC4ED757-B1C9-4B49-9FF2-034DAE53675F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81623BC1-FFE5-4B95-836B-9F6FDF1C7A30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81623BC1-FFE5-4B95-836B-9F6FDF1C7A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81623BC1-FFE5-4B95-836B-9F6FDF1C7A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81623BC1-FFE5-4B95-836B-9F6FDF1C7A30}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5961B80-196C-498F-8095-512EB8CF6B07}
+	EndGlobalSection
+EndGlobal

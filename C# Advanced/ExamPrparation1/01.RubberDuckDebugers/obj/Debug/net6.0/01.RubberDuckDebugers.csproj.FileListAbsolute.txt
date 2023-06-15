@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\01.RubberDuckDebugers\bin\Debug\net6.0\01.RubberDuckDebugers.exe
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\01.RubberDuckDebugers\bin\Debug\net6.0\01.RubberDuckDebugers.deps.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\01.RubberDuckDebugers\bin\Debug\net6.0\01.RubberDuckDebugers.runtimeconfig.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\01.RubberDuckDebugers\bin\Debug\net6.0\01.RubberDuckDebugers.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\01.RubberDuckDebugers\bin\Debug\net6.0\01.RubberDuckDebugers.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\01.RubberDuckDebugers\obj\Debug\net6.0\01.RubberDuckDebugers.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\01.RubberDuckDebugers\obj\Debug\net6.0\01.RubberDuckDebugers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\01.RubberDuckDebugers\obj\Debug\net6.0\01.RubberDuckDebugers.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\01.RubberDuckDebugers\obj\Debug\net6.0\01.RubberDuckDebugers.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\01.RubberDuckDebugers\obj\Debug\net6.0\01.RubberDuckDebugers.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\01.RubberDuckDebugers\obj\Debug\net6.0\01.RubberDuckDebugers.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\01.RubberDuckDebugers\obj\Debug\net6.0\refint\01.RubberDuckDebugers.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\01.RubberDuckDebugers\obj\Debug\net6.0\01.RubberDuckDebugers.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\01.RubberDuckDebugers\obj\Debug\net6.0\01.RubberDuckDebugers.genruntimeconfig.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\01.RubberDuckDebugers\obj\Debug\net6.0\ref\01.RubberDuckDebugers.dll
