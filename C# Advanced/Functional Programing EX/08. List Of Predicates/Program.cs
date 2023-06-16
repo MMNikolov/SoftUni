@@ -1,2 +1,29 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿Func<int, int[], List<int>> checker = (number, dividers) =>
+{
+    List<int> list = new List<int>();
+    for (int i = 1; i <= number; i++)
+    {
+        bool flag = true;
+
+        foreach (var divider in dividers)
+        {
+            if (i % divider != 0)
+            {
+                flag = false;
+            }
+        }
+        if (flag)
+        {
+            list.Add(i);
+        }
+    }
+    return list;
+};
+
+int number = int.Parse(Console.ReadLine());
+int[] dividers = Console.ReadLine()
+    .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+    .Select(int.Parse)
+    .ToArray();
+
+Console.WriteLine(string.Join(" ", checker(number, dividers)));

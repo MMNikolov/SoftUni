@@ -1,2 +1,27 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿int rows = int.Parse(Console.ReadLine());
+int cols = rows;
+
+int[,] matrix = new int[rows, cols];
+
+for (int row = 0; row < rows; row++)
+{
+    int[] input = Console.ReadLine()
+        .Split()
+        .Select(int.Parse)
+        .ToArray();
+
+    for (int col = 0; col < cols; col++)
+    {
+        matrix[row, col] = input[col];
+    }
+}
+
+int sum = 0;
+
+for (int index = 0; index < rows; index++)
+{
+    sum += matrix[index, index];
+}
+
+Console.WriteLine(sum);
+

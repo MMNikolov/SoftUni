@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\03\bin\Debug\net6.0\03 primary diagonal.exe
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\03\bin\Debug\net6.0\03 primary diagonal.deps.json
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\03\bin\Debug\net6.0\03 primary diagonal.runtimeconfig.json
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\03\bin\Debug\net6.0\03 primary diagonal.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\03\bin\Debug\net6.0\03 primary diagonal.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\03\obj\Debug\net6.0\03 primary diagonal.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\03\obj\Debug\net6.0\03 primary diagonal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\03\obj\Debug\net6.0\03 primary diagonal.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\03\obj\Debug\net6.0\03 primary diagonal.AssemblyInfo.cs
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\03\obj\Debug\net6.0\03 primary diagonal.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\03\obj\Debug\net6.0\03 primary diagonal.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\03\obj\Debug\net6.0\refint\03 primary diagonal.dll
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\03\obj\Debug\net6.0\03 primary diagonal.pdb
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\03\obj\Debug\net6.0\03 primary diagonal.genruntimeconfig.cache
+C:\Users\Martin\Desktop\C#\C# Advanced\Multidimensional arrays\03\obj\Debug\net6.0\ref\03 primary diagonal.dll
