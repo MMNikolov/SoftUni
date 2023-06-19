@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\03.ClothesMagazine\bin\Debug\net6.0\ClothesMagazine.exe
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\03.ClothesMagazine\bin\Debug\net6.0\ClothesMagazine.deps.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\03.ClothesMagazine\bin\Debug\net6.0\ClothesMagazine.runtimeconfig.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\03.ClothesMagazine\bin\Debug\net6.0\ClothesMagazine.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\03.ClothesMagazine\bin\Debug\net6.0\ClothesMagazine.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\03.ClothesMagazine\obj\Debug\net6.0\ClothesMagazine.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\03.ClothesMagazine\obj\Debug\net6.0\ClothesMagazine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\03.ClothesMagazine\obj\Debug\net6.0\ClothesMagazine.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\03.ClothesMagazine\obj\Debug\net6.0\ClothesMagazine.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\03.ClothesMagazine\obj\Debug\net6.0\ClothesMagazine.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\03.ClothesMagazine\obj\Debug\net6.0\ClothesMagazine.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\03.ClothesMagazine\obj\Debug\net6.0\refint\ClothesMagazine.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\03.ClothesMagazine\obj\Debug\net6.0\ClothesMagazine.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\03.ClothesMagazine\obj\Debug\net6.0\ClothesMagazine.genruntimeconfig.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPrparation1\03.ClothesMagazine\obj\Debug\net6.0\ref\ClothesMagazine.dll

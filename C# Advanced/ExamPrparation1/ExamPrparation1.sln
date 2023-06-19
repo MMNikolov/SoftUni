@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.RubberDuckDebugers", "01
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. TheSquirrel", "02. TheSquirrel\02. TheSquirrel.csproj", "{81623BC1-FFE5-4B95-836B-9F6FDF1C7A30}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothesMagazine", "03.ClothesMagazine\ClothesMagazine.csproj", "{1CDCA65F-3DCC-44FD-B709-C61E133407FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{81623BC1-FFE5-4B95-836B-9F6FDF1C7A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81623BC1-FFE5-4B95-836B-9F6FDF1C7A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81623BC1-FFE5-4B95-836B-9F6FDF1C7A30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CDCA65F-3DCC-44FD-B709-C61E133407FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CDCA65F-3DCC-44FD-B709-C61E133407FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CDCA65F-3DCC-44FD-B709-C61E133407FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CDCA65F-3DCC-44FD-B709-C61E133407FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPreparation2\03.SoftUniKindergarten\bin\Debug\net6.0\SoftUniKindergarten.exe
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPreparation2\03.SoftUniKindergarten\bin\Debug\net6.0\SoftUniKindergarten.deps.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPreparation2\03.SoftUniKindergarten\bin\Debug\net6.0\SoftUniKindergarten.runtimeconfig.json
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPreparation2\03.SoftUniKindergarten\bin\Debug\net6.0\SoftUniKindergarten.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPreparation2\03.SoftUniKindergarten\bin\Debug\net6.0\SoftUniKindergarten.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPreparation2\03.SoftUniKindergarten\obj\Debug\net6.0\SoftUniKindergarten.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPreparation2\03.SoftUniKindergarten\obj\Debug\net6.0\SoftUniKindergarten.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPreparation2\03.SoftUniKindergarten\obj\Debug\net6.0\SoftUniKindergarten.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPreparation2\03.SoftUniKindergarten\obj\Debug\net6.0\SoftUniKindergarten.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPreparation2\03.SoftUniKindergarten\obj\Debug\net6.0\SoftUniKindergarten.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPreparation2\03.SoftUniKindergarten\obj\Debug\net6.0\SoftUniKindergarten.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPreparation2\03.SoftUniKindergarten\obj\Debug\net6.0\refint\SoftUniKindergarten.dll
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPreparation2\03.SoftUniKindergarten\obj\Debug\net6.0\SoftUniKindergarten.pdb
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPreparation2\03.SoftUniKindergarten\obj\Debug\net6.0\SoftUniKindergarten.genruntimeconfig.cache
+C:\Users\Martin\Desktop\SoftUni\C# Advanced\ExamPreparation2\03.SoftUniKindergarten\obj\Debug\net6.0\ref\SoftUniKindergarten.dll

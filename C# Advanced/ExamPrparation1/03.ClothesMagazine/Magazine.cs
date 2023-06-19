@@ -1,58 +1,71 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace ClothesMagazine
 {
     public class Magazine
     {
+
         public Magazine(string type, int capacity)
         {
             Type = type;
             Capacity = capacity;
-            Clothes = new List<Cloth>();
+
+            this.Clothes = new List<Cloth>();
         }
 
         public string Type { get; set; }
+
         public int Capacity { get; set; }
+
         public List<Cloth> Clothes { get; set; }
 
         public void AddCloth(Cloth cloth)
         {
             if (this.Clothes.Count < this.Capacity)
             {
-                this.Clothes.Add(cloth);
+                Clothes.Add(cloth);
             }
         }
 
         public bool RemoveCloth(string color)
         {
-            Cloth cloth = this.Clothes.FirstOrDefault(c => c.Color == color);
-            if (cloth != null)
-            {
-                this.Clothes.Remove(cloth);
-                return true;
-            }
-            else return false;
+            Cloth cloth = this.Clothes.FirstOrDefault(x => x.Color == color);
+
+            bool isRemoved = this.Clothes.Remove(cloth);
+
+            return isRemoved;
         }
 
-        public Cloth GetSmallestCloth() => this.Clothes.OrderBy(c => c.Size).FirstOrDefault();
+        public Cloth GetSmallestCloth() 
+            => this.Clothes.OrderBy(x => x.Size)
+            .FirstOrDefault();
 
-        public Cloth GetCloth(string color) => this.Clothes.FirstOrDefault(c => c.Color == color);
+        public Cloth GetCloth(string color)
+        {
+            return this.Clothes.FirstOrDefault(x => x.Color == color);
+        }
 
-        public int GetClothCount() => this.Clothes.Count;
+        public int GetClothCount()
+        {
+            return Clothes.Count;
+        }
 
         public string Report()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"{this.Type} magazine contains:");
+            StringBuilder stringBuilder = new StringBuilder();
 
-            foreach (var cloth in this.Clothes.OrderBy(c => c.Size))
+            stringBuilder.AppendLine($"{Type} magazine contains:");
+
+            foreach (var cloth in this.Clothes.OrderBy(x => x.Size))
             {
-                sb.AppendLine(cloth.ToString());
+                stringBuilder.AppendLine(cloth.ToString());
             }
 
-            return sb.ToString().TrimEnd();
+            return stringBuilder.ToString().TrimEnd();
         }
+        
     }
 }
