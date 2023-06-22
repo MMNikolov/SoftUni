@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InheritanceEX\NeedForSpeed\bin\Debug\net6.0\NeedForSpeed.exe
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InheritanceEX\NeedForSpeed\bin\Debug\net6.0\NeedForSpeed.deps.json
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InheritanceEX\NeedForSpeed\bin\Debug\net6.0\NeedForSpeed.runtimeconfig.json
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InheritanceEX\NeedForSpeed\bin\Debug\net6.0\NeedForSpeed.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InheritanceEX\NeedForSpeed\bin\Debug\net6.0\NeedForSpeed.pdb
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InheritanceEX\NeedForSpeed\obj\Debug\net6.0\NeedForSpeed.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InheritanceEX\NeedForSpeed\obj\Debug\net6.0\NeedForSpeed.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InheritanceEX\NeedForSpeed\obj\Debug\net6.0\NeedForSpeed.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InheritanceEX\NeedForSpeed\obj\Debug\net6.0\NeedForSpeed.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InheritanceEX\NeedForSpeed\obj\Debug\net6.0\NeedForSpeed.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InheritanceEX\NeedForSpeed\obj\Debug\net6.0\NeedForSpeed.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InheritanceEX\NeedForSpeed\obj\Debug\net6.0\refint\NeedForSpeed.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InheritanceEX\NeedForSpeed\obj\Debug\net6.0\NeedForSpeed.pdb
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InheritanceEX\NeedForSpeed\obj\Debug\net6.0\NeedForSpeed.genruntimeconfig.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InheritanceEX\NeedForSpeed\obj\Debug\net6.0\ref\NeedForSpeed.dll
