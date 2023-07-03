@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstraction\InterfacesAndAbstraction\bin\Debug\net6.0\InterfacesAndAbstraction.exe
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstraction\InterfacesAndAbstraction\bin\Debug\net6.0\InterfacesAndAbstraction.deps.json
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstraction\InterfacesAndAbstraction\bin\Debug\net6.0\InterfacesAndAbstraction.runtimeconfig.json
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstraction\InterfacesAndAbstraction\bin\Debug\net6.0\InterfacesAndAbstraction.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstraction\InterfacesAndAbstraction\bin\Debug\net6.0\InterfacesAndAbstraction.pdb
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstraction\InterfacesAndAbstraction\obj\Debug\net6.0\InterfacesAndAbstraction.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstraction\InterfacesAndAbstraction\obj\Debug\net6.0\InterfacesAndAbstraction.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstraction\InterfacesAndAbstraction\obj\Debug\net6.0\InterfacesAndAbstraction.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstraction\InterfacesAndAbstraction\obj\Debug\net6.0\InterfacesAndAbstraction.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstraction\InterfacesAndAbstraction\obj\Debug\net6.0\InterfacesAndAbstraction.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstraction\InterfacesAndAbstraction\obj\Debug\net6.0\InterfacesAndAbstraction.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstraction\InterfacesAndAbstraction\obj\Debug\net6.0\refint\InterfacesAndAbstraction.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstraction\InterfacesAndAbstraction\obj\Debug\net6.0\InterfacesAndAbstraction.pdb
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstraction\InterfacesAndAbstraction\obj\Debug\net6.0\InterfacesAndAbstraction.genruntimeconfig.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstraction\InterfacesAndAbstraction\obj\Debug\net6.0\ref\InterfacesAndAbstraction.dll
