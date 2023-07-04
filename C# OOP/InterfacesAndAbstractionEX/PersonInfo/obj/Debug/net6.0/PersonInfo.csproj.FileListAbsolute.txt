@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstractionEX\PersonInfo\bin\Debug\net6.0\PersonInfo.exe
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstractionEX\PersonInfo\bin\Debug\net6.0\PersonInfo.deps.json
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstractionEX\PersonInfo\bin\Debug\net6.0\PersonInfo.runtimeconfig.json
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstractionEX\PersonInfo\bin\Debug\net6.0\PersonInfo.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstractionEX\PersonInfo\bin\Debug\net6.0\PersonInfo.pdb
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstractionEX\PersonInfo\obj\Debug\net6.0\PersonInfo.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstractionEX\PersonInfo\obj\Debug\net6.0\PersonInfo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstractionEX\PersonInfo\obj\Debug\net6.0\PersonInfo.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstractionEX\PersonInfo\obj\Debug\net6.0\PersonInfo.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstractionEX\PersonInfo\obj\Debug\net6.0\PersonInfo.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstractionEX\PersonInfo\obj\Debug\net6.0\PersonInfo.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstractionEX\PersonInfo\obj\Debug\net6.0\refint\PersonInfo.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstractionEX\PersonInfo\obj\Debug\net6.0\PersonInfo.pdb
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstractionEX\PersonInfo\obj\Debug\net6.0\PersonInfo.genruntimeconfig.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\InterfacesAndAbstractionEX\PersonInfo\obj\Debug\net6.0\ref\PersonInfo.dll
