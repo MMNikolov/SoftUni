@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\SoftUni\C# OOP\Polymorphism\Operations\bin\Debug\net6.0\Operations.exe
+C:\Users\Martin\Desktop\SoftUni\C# OOP\Polymorphism\Operations\bin\Debug\net6.0\Operations.deps.json
+C:\Users\Martin\Desktop\SoftUni\C# OOP\Polymorphism\Operations\bin\Debug\net6.0\Operations.runtimeconfig.json
+C:\Users\Martin\Desktop\SoftUni\C# OOP\Polymorphism\Operations\bin\Debug\net6.0\Operations.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\Polymorphism\Operations\bin\Debug\net6.0\Operations.pdb
+C:\Users\Martin\Desktop\SoftUni\C# OOP\Polymorphism\Operations\obj\Debug\net6.0\Operations.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\Polymorphism\Operations\obj\Debug\net6.0\Operations.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\C# OOP\Polymorphism\Operations\obj\Debug\net6.0\Operations.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\Polymorphism\Operations\obj\Debug\net6.0\Operations.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\C# OOP\Polymorphism\Operations\obj\Debug\net6.0\Operations.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\Polymorphism\Operations\obj\Debug\net6.0\Operations.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\Polymorphism\Operations\obj\Debug\net6.0\refint\Operations.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\Polymorphism\Operations\obj\Debug\net6.0\Operations.pdb
+C:\Users\Martin\Desktop\SoftUni\C# OOP\Polymorphism\Operations\obj\Debug\net6.0\Operations.genruntimeconfig.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\Polymorphism\Operations\obj\Debug\net6.0\ref\Operations.dll
