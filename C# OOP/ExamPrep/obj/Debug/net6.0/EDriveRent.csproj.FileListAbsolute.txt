@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\SoftUni\C# OOP\ExamPrep\obj\Debug\net6.0\EDriveRent.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\ExamPrep\obj\Debug\net6.0\EDriveRent.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\C# OOP\ExamPrep\obj\Debug\net6.0\EDriveRent.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\ExamPrep\obj\Debug\net6.0\EDriveRent.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\C# OOP\ExamPrep\obj\Debug\net6.0\EDriveRent.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\ExamPrep\bin\Debug\net6.0\EDriveRent.exe
+C:\Users\Martin\Desktop\SoftUni\C# OOP\ExamPrep\bin\Debug\net6.0\EDriveRent.deps.json
+C:\Users\Martin\Desktop\SoftUni\C# OOP\ExamPrep\bin\Debug\net6.0\EDriveRent.runtimeconfig.json
+C:\Users\Martin\Desktop\SoftUni\C# OOP\ExamPrep\bin\Debug\net6.0\EDriveRent.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\ExamPrep\bin\Debug\net6.0\EDriveRent.pdb
+C:\Users\Martin\Desktop\SoftUni\C# OOP\ExamPrep\obj\Debug\net6.0\EDriveRent.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\ExamPrep\obj\Debug\net6.0\refint\EDriveRent.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\ExamPrep\obj\Debug\net6.0\EDriveRent.pdb
+C:\Users\Martin\Desktop\SoftUni\C# OOP\ExamPrep\obj\Debug\net6.0\EDriveRent.genruntimeconfig.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\ExamPrep\obj\Debug\net6.0\ref\EDriveRent.dll

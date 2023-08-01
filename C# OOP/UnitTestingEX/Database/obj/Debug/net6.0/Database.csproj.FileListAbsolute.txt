@@ -1,0 +1,12 @@
+C:\Users\Martin\Desktop\SoftUni\C# OOP\UnitTestingEX\Database\bin\Debug\net6.0\Database.deps.json
+C:\Users\Martin\Desktop\SoftUni\C# OOP\UnitTestingEX\Database\bin\Debug\net6.0\Database.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\UnitTestingEX\Database\bin\Debug\net6.0\Database.pdb
+C:\Users\Martin\Desktop\SoftUni\C# OOP\UnitTestingEX\Database\obj\Debug\net6.0\Database.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\UnitTestingEX\Database\obj\Debug\net6.0\Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\C# OOP\UnitTestingEX\Database\obj\Debug\net6.0\Database.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\UnitTestingEX\Database\obj\Debug\net6.0\Database.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\C# OOP\UnitTestingEX\Database\obj\Debug\net6.0\Database.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\UnitTestingEX\Database\obj\Debug\net6.0\Database.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\UnitTestingEX\Database\obj\Debug\net6.0\refint\Database.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\UnitTestingEX\Database\obj\Debug\net6.0\Database.pdb
+C:\Users\Martin\Desktop\SoftUni\C# OOP\UnitTestingEX\Database\obj\Debug\net6.0\ref\Database.dll
