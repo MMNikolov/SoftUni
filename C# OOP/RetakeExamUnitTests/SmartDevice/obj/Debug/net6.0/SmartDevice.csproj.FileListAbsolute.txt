@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExamUnitTests\SmartDevice\bin\Debug\net6.0\SmartDevice.exe
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExamUnitTests\SmartDevice\bin\Debug\net6.0\SmartDevice.deps.json
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExamUnitTests\SmartDevice\bin\Debug\net6.0\SmartDevice.runtimeconfig.json
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExamUnitTests\SmartDevice\bin\Debug\net6.0\SmartDevice.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExamUnitTests\SmartDevice\bin\Debug\net6.0\SmartDevice.pdb
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExamUnitTests\SmartDevice\obj\Debug\net6.0\SmartDevice.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExamUnitTests\SmartDevice\obj\Debug\net6.0\SmartDevice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExamUnitTests\SmartDevice\obj\Debug\net6.0\SmartDevice.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExamUnitTests\SmartDevice\obj\Debug\net6.0\SmartDevice.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExamUnitTests\SmartDevice\obj\Debug\net6.0\SmartDevice.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExamUnitTests\SmartDevice\obj\Debug\net6.0\SmartDevice.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExamUnitTests\SmartDevice\obj\Debug\net6.0\refint\SmartDevice.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExamUnitTests\SmartDevice\obj\Debug\net6.0\SmartDevice.pdb
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExamUnitTests\SmartDevice\obj\Debug\net6.0\SmartDevice.genruntimeconfig.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExamUnitTests\SmartDevice\obj\Debug\net6.0\ref\SmartDevice.dll

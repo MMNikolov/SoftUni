@@ -1,0 +1,15 @@
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExam\Handball\bin\Debug\net6.0\Handball.exe
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExam\Handball\bin\Debug\net6.0\Handball.deps.json
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExam\Handball\bin\Debug\net6.0\Handball.runtimeconfig.json
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExam\Handball\bin\Debug\net6.0\Handball.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExam\Handball\bin\Debug\net6.0\Handball.pdb
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExam\Handball\obj\Debug\net6.0\Handball.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExam\Handball\obj\Debug\net6.0\Handball.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExam\Handball\obj\Debug\net6.0\Handball.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExam\Handball\obj\Debug\net6.0\Handball.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExam\Handball\obj\Debug\net6.0\Handball.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExam\Handball\obj\Debug\net6.0\Handball.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExam\Handball\obj\Debug\net6.0\refint\Handball.dll
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExam\Handball\obj\Debug\net6.0\Handball.pdb
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExam\Handball\obj\Debug\net6.0\Handball.genruntimeconfig.cache
+C:\Users\Martin\Desktop\SoftUni\C# OOP\RetakeExam\Handball\obj\Debug\net6.0\ref\Handball.dll
