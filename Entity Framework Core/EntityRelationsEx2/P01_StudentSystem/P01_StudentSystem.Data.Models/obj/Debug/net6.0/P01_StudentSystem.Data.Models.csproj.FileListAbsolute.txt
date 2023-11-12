@@ -1,0 +1,12 @@
+C:\Users\Martin\Desktop\SoftUni\Entity Framework Core\EntityRelationsEx2\P01_StudentSystem\P01_StudentSystem.Data.Models\bin\Debug\net6.0\P01_StudentSystem.Data.Models.deps.json
+C:\Users\Martin\Desktop\SoftUni\Entity Framework Core\EntityRelationsEx2\P01_StudentSystem\P01_StudentSystem.Data.Models\bin\Debug\net6.0\P01_StudentSystem.Data.Models.dll
+C:\Users\Martin\Desktop\SoftUni\Entity Framework Core\EntityRelationsEx2\P01_StudentSystem\P01_StudentSystem.Data.Models\bin\Debug\net6.0\P01_StudentSystem.Data.Models.pdb
+C:\Users\Martin\Desktop\SoftUni\Entity Framework Core\EntityRelationsEx2\P01_StudentSystem\P01_StudentSystem.Data.Models\obj\Debug\net6.0\P01_StudentSystem.Data.Models.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\SoftUni\Entity Framework Core\EntityRelationsEx2\P01_StudentSystem\P01_StudentSystem.Data.Models\obj\Debug\net6.0\P01_StudentSystem.Data.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Desktop\SoftUni\Entity Framework Core\EntityRelationsEx2\P01_StudentSystem\P01_StudentSystem.Data.Models\obj\Debug\net6.0\P01_StudentSystem.Data.Models.AssemblyInfoInputs.cache
+C:\Users\Martin\Desktop\SoftUni\Entity Framework Core\EntityRelationsEx2\P01_StudentSystem\P01_StudentSystem.Data.Models\obj\Debug\net6.0\P01_StudentSystem.Data.Models.AssemblyInfo.cs
+C:\Users\Martin\Desktop\SoftUni\Entity Framework Core\EntityRelationsEx2\P01_StudentSystem\P01_StudentSystem.Data.Models\obj\Debug\net6.0\P01_StudentSystem.Data.Models.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Desktop\SoftUni\Entity Framework Core\EntityRelationsEx2\P01_StudentSystem\P01_StudentSystem.Data.Models\obj\Debug\net6.0\P01_StudentSystem.Data.Models.dll
+C:\Users\Martin\Desktop\SoftUni\Entity Framework Core\EntityRelationsEx2\P01_StudentSystem\P01_StudentSystem.Data.Models\obj\Debug\net6.0\refint\P01_StudentSystem.Data.Models.dll
+C:\Users\Martin\Desktop\SoftUni\Entity Framework Core\EntityRelationsEx2\P01_StudentSystem\P01_StudentSystem.Data.Models\obj\Debug\net6.0\P01_StudentSystem.Data.Models.pdb
+C:\Users\Martin\Desktop\SoftUni\Entity Framework Core\EntityRelationsEx2\P01_StudentSystem\P01_StudentSystem.Data.Models\obj\Debug\net6.0\ref\P01_StudentSystem.Data.Models.dll
