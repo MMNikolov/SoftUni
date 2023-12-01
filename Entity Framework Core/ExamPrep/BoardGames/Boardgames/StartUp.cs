@@ -13,7 +13,7 @@
 
             var projectDir = GetProjectDirectory();
 
-            ImportEntities(context, projectDir + @"Datasets/", projectDir + @"ImportResults/");
+            //ImportEntities(context, projectDir + @"Datasets/", projectDir + @"ImportResults/");
 
             ExportEntities(context, projectDir + @"ExportResults/");
 
@@ -34,7 +34,7 @@
             var sellers =
              DataProcessor.Deserializer.ImportSellers(context,
                  File.ReadAllText(baseDir + "sellers.json"));
-
+            
             PrintAndExportEntityToFile(sellers, exportDir + "Actual Result - ImportSellers.txt");
         }
 
