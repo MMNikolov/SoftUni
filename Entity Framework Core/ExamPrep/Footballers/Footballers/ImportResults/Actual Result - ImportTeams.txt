@@ -1,0 +1,137 @@
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - Brentford F.C. with 0 footballers.
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - Chelsea F.C. with 0 footballers.
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - Liverpool F.C. with 0 footballers.
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - Manchester City F.C. with 0 footballers.
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - Tottenham Hotspur F.C. with 0 footballers.
+Invalid data!
+Successfully imported team - Angers SCO with 0 footballers.
+Invalid data!
+Invalid data!
+Successfully imported team - AS Monaco with 0 footballers.
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - Montpellier Herault SC with 0 footballers.
+Invalid data!
+Invalid data!
+Successfully imported team - Olympique de Marseille with 0 footballers.
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - Olympique Lyonnais with 0 footballers.
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - Paris Saint-Germain F.C. with 0 footballers.
+Invalid data!
+Successfully imported team - RC Lens with 0 footballers.
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - Stade Rennais F.C. with 0 footballers.
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - Bayer 04 Leverkusen with 0 footballers.
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - FC Bayern Munich with 0 footballers.
+Invalid data!
+Successfully imported team - RB Leipzig with 0 footballers.
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - SC Freiburg with 0 footballers.
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - A.C. Milan with 0 footballers.
+Invalid data!
+Invalid data!
+Successfully imported team - A.S. Roma with 0 footballers.
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - Juventus F.C. with 0 footballers.
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - Torino F.C. with 0 footballers.
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - Atletico de Madrid with 0 footballers.
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - Deportivo Alaves with 0 footballers.
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Invalid data!
+Successfully imported team - Real Madrid CF Spain with 0 footballers.

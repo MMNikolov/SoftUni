@@ -8,14 +8,15 @@
 
     public class Serializer
     {
+        private static XmlHelper xmlHelper;
         public static string ExportClientsWithTheirInvoices(InvoicesContext context, DateTime date)
         {
-            XmlHelper xmlHelper = new XmlHelper();
+            xmlHelper = new XmlHelper();
 
             var clients = context.Clients
                 .Where(c => c.Invoices.Any(i => i.IssueDate > date))
                 .ToArray()
-                .Select(c => new ExportClientDTO()
+                .Select(c => new ExportClientDTO
                 {
                     ClientName = c.Name,
                     VatNumber = c.NumberVat,
@@ -23,7 +24,7 @@
                     Invoices = c.Invoices
                         .OrderBy(i => i.IssueDate)
                         .ThenBy(i => i.DueDate)
-                        .Select(i => new ExportInvoiceDTO()
+                        .Select(i => new ExportInvoiceDTO
                         {
                             InvoiceNumber = i.Number,
                             InvoiceAmount = i.Amount,
@@ -36,7 +37,7 @@
                 .ThenBy(c => c.ClientName)
                 .ToArray();
 
-            return xmlHelper.Serialize<ExportClientDTO>(clients, "Clients");
+            return xmlHelper.Serialize<ExportClientDTO[]>(clients, "Clients");
         }
 
         public static string ExportProductsWithMostClients(InvoicesContext context, int nameLength)
