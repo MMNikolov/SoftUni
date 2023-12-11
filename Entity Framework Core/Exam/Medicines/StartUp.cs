@@ -16,7 +16,7 @@
 
             ImportEntities(context, projectDir + @"Datasets/", projectDir + @"ImportResults/");
 
-            //ExportEntities(context, projectDir + @"ExportResults/");
+            ExportEntities(context, projectDir + @"ExportResults/");
 
             using (var transaction = context.Database.BeginTransaction())
             {
@@ -32,11 +32,11 @@
             Console.WriteLine(ExportMedicinesFromDesiredCategoryInNonStopPharmacies);
             File.WriteAllText(exportDir + "Actual Result - ExportMedicinesFromDesiredCategoryInNonStopPharmacies.json", ExportMedicinesFromDesiredCategoryInNonStopPharmacies);
 
-            string date = "2022-01-01";
-            var ExportPatientsWithTheirMedicines = DataProcessor
-                .Serializer.ExportPatientsWithTheirMedicines(context, date);
-            Console.WriteLine(ExportPatientsWithTheirMedicines);
-            File.WriteAllText(exportDir + "Actual Result - ExportPatientsWithTheirMedicines.xml", ExportPatientsWithTheirMedicines);
+            //string date = "2022-01-01";
+            //var ExportPatientsWithTheirMedicines = DataProcessor
+            //    .Serializer.ExportPatientsWithTheirMedicines(context, date);
+            //Console.WriteLine(ExportPatientsWithTheirMedicines);
+            //File.WriteAllText(exportDir + "Actual Result - ExportPatientsWithTheirMedicines.xml", ExportPatientsWithTheirMedicines);
         }
 
         private static void ImportEntities(MedicinesContext context, string baseDir, string exportDir)
@@ -46,10 +46,10 @@
             
             PrintAndExportEntityToFile(pharmacies, exportDir + "Actual Result - ImportPharmacies.txt");
 
-            //var patients = DataProcessor.Deserializer
-            //    .ImportPatients(context, File.ReadAllText(baseDir + "patients.json"));
-            //
-            //PrintAndExportEntityToFile(patients, exportDir + "Actual Result - ImportPatients.txt");
+            var patients = DataProcessor.Deserializer
+                .ImportPatients(context, File.ReadAllText(baseDir + "patients.json"));
+            
+            PrintAndExportEntityToFile(patients, exportDir + "Actual Result - ImportPatients.txt");
         }
 
         private static void PrintAndExportEntityToFile(string entityOutput, string outputPath)

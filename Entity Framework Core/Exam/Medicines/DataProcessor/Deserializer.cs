@@ -7,6 +7,7 @@
     using Medicines.Utilities;
     using Newtonsoft.Json;
     using System.ComponentModel.DataAnnotations;
+    using System.Globalization;
     using System.Text;
 
     public class Deserializer
@@ -74,61 +75,88 @@
 
         public static string ImportPharmacies(MedicinesContext context, string xmlString)
         {
-            XmlHelper xmlHelper = new XmlHelper();
             StringBuilder sb = new StringBuilder();
-            List<Pharmacy> validPharmacies = new List<Pharmacy>();
+            XmlHelper xmlHelper = new XmlHelper();
 
-            var pharmaciesDTO = xmlHelper.Deserialize<ImportPharmacyDTO[]>(xmlString, "Pharmacies");
-            foreach (var pDTO in pharmaciesDTO)
+            ImportPharmacyDTO[] pharmacyDtos = xmlHelper.Deserialize<ImportPharmacyDTO[]>(xmlString, "Pharmacies");
+
+            ICollection<Pharmacy> validPharmacies = new List<Pharmacy>();
+
+            foreach (var phDto in pharmacyDtos)
             {
-                if (!IsValid(pDTO))
+                if (!IsValid(phDto))
                 {
                     sb.AppendLine(ErrorMessage);
                     continue;
                 }
 
-                var pharmacy = new Pharmacy()
+                Pharmacy pharmacy = new Pharmacy()
                 {
-                    Name = pDTO.Name,
-                    IsNonStop = pDTO.IsNonStop,
-                    PhoneNumber = pDTO.PhoneNumber
+                    Name = phDto.Name,
+                    PhoneNumber = phDto.PhoneNumber,
+                    IsNonStop = bool.Parse(phDto.IsNonStop),
                 };
 
-                foreach (var mDTO in pDTO.Medicines)
+                foreach (var medDto in phDto.Medicines)
                 {
-                    if (!IsValid(mDTO))
+                    if (!IsValid(medDto))
                     {
                         sb.AppendLine(ErrorMessage);
                         continue;
                     }
 
-                    if (mDTO.Producer == null)
+                    DateTime medicineProductionDate;
+                    bool isProductionDateValid = DateTime
+                        .TryParseExact(medDto.ProductionDate, "yyyy-MM-dd", CultureInfo
+                        .InvariantCulture, DateTimeStyles.None, out medicineProductionDate);
+
+                    if (!isProductionDateValid)
+                    {
+                        sb.Append(ErrorMessage);
+                        continue;
+                    }
+
+                    DateTime medicineExpityDate;
+                    bool isExpityDateValid = DateTime
+                        .TryParseExact(medDto.ExpiryDate, "yyyy-MM-dd", CultureInfo
+                        .InvariantCulture, DateTimeStyles.None, out medicineExpityDate);
+
+                    if (!isExpityDateValid)
+                    {
+                        sb.Append(ErrorMessage);
+                        continue;
+                    }
+
+                    if (medicineProductionDate >= medicineExpityDate)
                     {
                         sb.AppendLine(ErrorMessage);
                         continue;
                     }
 
-                    if (mDTO.ExpiryDate <= mDTO.ProductionDate)
+                    if (pharmacy.Medicines.Any(x => x.Name == medDto.Name
+                    && x.Producer == medDto.Producer))
                     {
                         sb.AppendLine(ErrorMessage);
                         continue;
                     }
 
-                    var medicines = new Medicine()
+                    Medicine medicine = new Medicine()
                     {
-                        Name = mDTO.Name,
-                        Category = (Category)mDTO.Category,
-                        Price = mDTO.Price,
-                        ProductionDate = mDTO.ProductionDate,
-                        ExpiryDate = mDTO.ExpiryDate,
-                        Producer = mDTO.Producer
+                        Name = medDto.Name,
+                        Price = (decimal)medDto.Price,
+                        Category = (Category)medDto.Category,
+                        ProductionDate = medicineProductionDate,
+                        ExpiryDate = medicineExpityDate,
+                        Producer = medDto.Producer,
                     };
 
-                    pharmacy.Medicines.Add(medicines);
+
+                    pharmacy.Medicines.Add(medicine);
                 }
 
                 validPharmacies.Add(pharmacy);
-                sb.AppendLine(string.Format(SuccessfullyImportedPharmacy, pharmacy.Name, pharmacy.Medicines.Count));
+                sb.AppendLine(string
+                    .Format(SuccessfullyImportedPharmacy, pharmacy.Name, pharmacy.Medicines.Count));
             }
 
             context.Pharmacies.AddRange(validPharmacies);

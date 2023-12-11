@@ -90,8 +90,10 @@
                     continue;
                 }
 
-                if (dto.DueDate == DateTime.ParseExact("01/01/0001", "dd/MM/yyyy", CultureInfo.InvariantCulture) ||
-                    dto.IssueDate == DateTime.ParseExact("01/01/0001", "dd/MM/yyyy", CultureInfo.InvariantCulture))
+                if (dto.DueDate == DateTime.ParseExact("01/01/0001", "dd/MM/yyyy",
+                    CultureInfo.InvariantCulture) ||
+                    dto.IssueDate == DateTime.ParseExact("01/01/0001", "dd/MM/yyyy",
+                    CultureInfo.InvariantCulture))
                 {
                     sb.AppendLine(ErrorMessage);
                     continue;

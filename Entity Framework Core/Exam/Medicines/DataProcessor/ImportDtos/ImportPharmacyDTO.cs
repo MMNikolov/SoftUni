@@ -19,7 +19,8 @@ namespace Medicines.DataProcessor.ImportDtos
 
         [Required]
         [XmlAttribute("non-stop")]
-        public bool IsNonStop { get; set; }
+        [RegularExpression(@"^(true|false)$")]
+        public string IsNonStop { get; set; } = null!;
 
 
         [XmlElement("PhoneNumber")]
@@ -29,6 +30,7 @@ namespace Medicines.DataProcessor.ImportDtos
         [RegularExpression(@"^\(\d{3}\) \d{3}-\d{4}$")]
         public string PhoneNumber { get; set; } = null!;
 
+        [XmlArray("Medicines")]
         public ImportMedicineDto[] Medicines { get; set; }
     }
 }

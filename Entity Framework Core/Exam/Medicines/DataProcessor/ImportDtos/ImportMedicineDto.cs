@@ -21,15 +21,15 @@ namespace Medicines.DataProcessor.ImportDtos
         [XmlElement("Price")]
         [Required]
         [Range(0.01, 1000)]
-        public decimal Price { get; set; }
+        public double Price { get; set; }
 
         [XmlElement("ProductionDate")]
         [Required]
-        public DateTime ProductionDate { get; set; } 
+        public string ProductionDate { get; set; } = null!;
 
         [XmlElement("ExpiryDate")]
         [Required]
-        public DateTime ExpiryDate { get; set; } 
+        public string ExpiryDate { get; set; } = null!;
 
         [XmlElement("Producer")]
         [Required]

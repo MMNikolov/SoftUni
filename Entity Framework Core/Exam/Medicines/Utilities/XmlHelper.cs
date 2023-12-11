@@ -8,68 +8,52 @@
         public T Deserialize<T>(string inputXml, string rootName)
         {
             XmlRootAttribute xmlRoot = new XmlRootAttribute(rootName);
-            XmlSerializer xmlSerializer =
-                new XmlSerializer(typeof(T), xmlRoot);
+            XmlSerializer serializer = new XmlSerializer(typeof(T), xmlRoot);
 
             using StringReader reader = new StringReader(inputXml);
-            T deserializedDtos =
-                (T)xmlSerializer.Deserialize(reader);
+            T deserializedDto = (T)serializer.Deserialize(reader);
+
+            return deserializedDto;
+        }
+        public IEnumerable<T> DeserializeCollection<T>(string inputXml, string rootName)
+        {
+            XmlRootAttribute xmlRoot = new XmlRootAttribute(rootName);
+            XmlSerializer serializer = new XmlSerializer(typeof(T[]), xmlRoot);
+
+            using StringReader reader = new StringReader(inputXml);
+            T[] deserializedDtos = (T[])serializer.Deserialize(reader);
 
             return deserializedDtos;
         }
 
-        // This is syntax sugar method
-        // May not be used
-        public IEnumerable<T> DeserializeCollection<T>(string inputXml, string rootName)
-        {
-            XmlRootAttribute xmlRoot = new XmlRootAttribute(rootName);
-            XmlSerializer xmlSerializer =
-                new XmlSerializer(typeof(T[]), xmlRoot);
-
-            using StringReader reader = new StringReader(inputXml);
-            T[] supplierDtos =
-                (T[])xmlSerializer.Deserialize(reader);
-
-            return supplierDtos;
-        }
-
-        // Serialize<ExportDto[]>(ExportDto[], rootName)
-        // Serialize<ExportDto>(ExportDto, rootName)
         public string Serialize<T>(T obj, string rootName)
         {
             StringBuilder sb = new StringBuilder();
 
-            XmlRootAttribute xmlRoot =
-                new XmlRootAttribute(rootName);
-            XmlSerializer xmlSerializer =
-                new XmlSerializer(typeof(T), xmlRoot);
-
+            XmlRootAttribute xmlRoot = new XmlRootAttribute(rootName);
+            XmlSerializer serializer = new XmlSerializer(typeof(T), xmlRoot);
             XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
             namespaces.Add(string.Empty, string.Empty);
 
-            using StringWriter writer = new StringWriter(sb);
-            xmlSerializer.Serialize(writer, obj, namespaces);
+            using StringWriter writer = new StringWriter();
+            serializer.Serialize(writer, obj, namespaces);
 
-            return sb.ToString().TrimEnd();
+            return sb.ToString().Trim();
         }
 
-        // Serialize<ExportDto>(ExportDto[], rootName)
         public string Serialize<T>(T[] obj, string rootName)
         {
             StringBuilder sb = new StringBuilder();
 
-            XmlRootAttribute xmlRoot =
-                new XmlRootAttribute(rootName);
-            XmlSerializer xmlSerializer =
-                new XmlSerializer(typeof(T[]), xmlRoot);
-
+            XmlRootAttribute xmlRoot = new XmlRootAttribute(rootName);
+            XmlSerializer serializer = new XmlSerializer(typeof(T[]), xmlRoot);
             XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
             namespaces.Add(string.Empty, string.Empty);
 
-            using StringWriter writer = new StringWriter(sb);
-            xmlSerializer.Serialize(writer, obj, namespaces);
+            using StringWriter writer = new StringWriter();
+            serializer.Serialize(writer, obj, namespaces);
 
-            return sb.ToString().TrimEnd();
+            return sb.ToString().Trim();
         }
     }
 }
