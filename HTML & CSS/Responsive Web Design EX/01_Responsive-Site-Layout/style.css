@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 1;
+    padding: 10px;
+}
+
+header{
+    background-color: aqua;
+    font-size: 40px;
+    display: flex;
+    padding: 18px;
+    border-radius: 0.5em;
+    margin-bottom: 10px;
+}
+
+main{
+    background-color: aqua;
+    font-size: 20px;
+    display: flex;
+    padding: 18px;
+    border-radius: 0.5em;
+}
+
+main > a{
+    text-decoration: none ;
+}
