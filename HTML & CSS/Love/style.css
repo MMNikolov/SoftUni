@@ -11,10 +11,69 @@
     text-align: center;
 }
 
-.love{
+.love, .yes, .no{
     padding-top: 25%;
 }
 
 .love span{
     color: #fc9786;
+}
+
+h2{
+    font-size: 72px;
+    margin-bottom: 30px;
+}
+
+.love a{
+    text-decoration: none;
+    background-color: #eee;
+    padding: 5px;
+    margin: 5px 10px;
+    border: 3px solid #ddd;
+    border-radius: 13px;
+}
+
+#no{
+    color: red;
+    padding: 20px 30px;
+    font-size: 25px;
+}
+
+#yes{
+    color: green;
+    padding: 20px 30px;
+    font-size: 25px;
+}
+
+.fa-solid.fa-heart{
+    color: red;
+    padding: 0px 15px;
+    animation: heart 1.5s linear infinite;
+    font-size: 50px;
+}
+
+@keyframes heart{
+    0%{transform: scale(.5);}
+    50%{transform: scale(1.5);}
+    100%{transform: scale(.5);}
+}
+
+.container #secret-yes, #secret-no{
+    color: black;
+    z-index: 1000;
+    text-decoration: none;
+    background-color: #eee;
+    padding: 5px;
+    margin: 5px 10px;
+    border: 3px solid #ddd;
+    border-radius: 13px;
+}
+
+.container p{
+    padding-top: 25%;
+    font-size: 30px;
+}
+
+.message br:nth-child(10){
+    margin-bottom: 100px;
 }
