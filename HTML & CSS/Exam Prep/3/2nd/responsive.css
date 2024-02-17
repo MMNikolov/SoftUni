@@ -1,0 +1,50 @@
+@media (max-width: 600px){
+    .home-navbar-container{
+        position: static;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .home-links-container{
+        margin-right: 10px;
+    }
+
+    .home-cta-container{
+        padding: 0px 10px;
+    }
+
+    .home-cta-btn.button.Anchor{
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .home-hero{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .home-image1{
+        width: 95vw;
+    }
+
+    .home-text{
+        width: 95%;
+        margin-left: 0px;
+        padding-top: 20px;
+    }
+
+    .home-hero-text-container{
+        width: 95%;
+        margin-left: 0px;
+        padding-top: 20px;
+    }
+
+    .home-text02.Section-Text{
+        font-size: 18.7px;
+    }
+
+    .home-cta-btn2.button.Anchor{
+        padding: 10px 10px;
+        align-self: center;
+    }
+}
