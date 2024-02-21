@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(images/poster.jpg); 
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top center;
+}
+
+.site-section {
+    display: flex;
+}
+
+.site-header {
+  overflow: hidden;
+  padding: 20px 10px;
+}
+
+.header-logo {
+    width: 100px;
+    padding-left: 50px;
+}
+
+nav {
+    padding-left: 67%;
+}
+.nav_links {
+    list-style: none;
+    float:right;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+    
+}
+ .nav_links li a {
+     transition: all 0.3s ease 0s;
+     text-decoration:none;
+     color:#ffffff;
+     font-family:Trebuchet MS;
+     font-weight: 500;
+     font-size: 16px;
+ }
+
+ .nav_links li a:hover {
+     color: #e14747;
+     
+ }
+
+ .lk {
+    position: relative;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    width: 10rem;
+    margin-bottom: 2rem;
+    
+}
+
+.lk::after {
+    content: '';
+    position:absolute;
+    width: 100%;
+    height :0.175rem;
+    left: 0;
+    bottom: 0;
+    background: #e14747;
+    top: 20px;
+    transform: scale(0, 1);
+    transition: transform 0.3s ease;
+}
+
+.lk:hover::after {
+    transform: scale(1, 1);
+}
+
+.banner {
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding-left: 25%;
+    padding-top: 5%
+}
+
+.banner h2 {
+    font-family: 'Cormorant Infant';
+    color: white;
+    text-align: center;
+    display: flexbox;
+    font-size: 90px;
+}
+.banner p {
+    font-family: 'Cormorant Infant';
+    color: white;
+    text-align: center;
+    display: flexbox;
+    font-size: 20px;
+    padding-bottom: 20%;
+}
+
+.quote {
+    background-color: #F8F0E9;
+    display: flex;
+    flex-direction: column;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 3%;
+}
+
+.quote h4 {
+    font-family: 'Karla';
+    font-size: 13px;
+    padding-top: 30px;
+}
+
+.quote p {
+    font-family: 'Cormorant Infant';
+    font-size: 63px;
+    line-height: 50px;
+    font-style: italic;
+}
+
+.support {
+    background-color: #e14747;
+    display: flex;
+    flex-direction: column;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+.support h2 {
+    color: white;
+    font-family:'Karla';
+    text-align: center;
+    padding-top: 6%;
+    font-size: 25px
+}
+
+.support p {
+    color: white;
+    font-family:'Karla';
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+    padding-left: 35%;
+    padding-right: 35%;
+    padding-bottom: 5%;
+    font-size: 20px;
+}
+
+.mind {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 10%;
+    background-color: #F8F0E9;
+}
+.mind .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 630px;
+    padding-left: 25%;
+}
+
+.mind .container img {
+    width: 625px;
+    height: 471px;
+}
+
+.mind .container h3 {
+    font-family: 'Cormorant Infant';
+    font-size: 70px;
+    text-align: center;
+}
+
+.mind .container p {
+    font-family: 'Cormorant Infant';
+    font-size: 25px;
+    text-align: center;
+}
+
+.mind .container a {
+    padding: 5px 10px;
+    background-color: white;
+    border-radius: 2px;
+    color: black;
+    border: 2px solid black;
+    text-decoration: none;
+}
+
+.mind .container .buttons{
+    display: inline-block;
+}
+
+.mind .container .buttons a:first-child{
+    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-left: -240px;
+    padding-right: -240px;
+}
+
+.mind .container .buttons a:last-child{
+    margin-top: 100px;
+}
+
+.guide {
+    background-color: #e14747;
+    display: flex;
+    flex-direction: column;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 5%
+}
+
+.guide h3 {
+    color: white;
+    font-family: 'Cormorant Infant';
+    text-align: center;
+    padding-top: 6%;
+    font-size: 60px
+}
+
+.guide p {
+    color: white;
+    font-family: 'Karla';
+    text-align: center;
+    padding-top: 6%;
+    font-size: 20px;
+    padding-bottom: 80px;
+}
+
+
+.guide a {
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 34px;
+    font-family: Arial;
+    color: #000000;
+    font-size: 20px;
+    background: #FAD87A;
+    padding: 20px 30px;
+    text-decoration: none;
+    margin-left: 364px;
+    margin-top: 20px;
+}
+
+.site-section.footer{
+    display: flex;
+    flex-direction: column;
+    background-color: #352B2A;
+    max-width: 100vw;
+    padding-left: 7%;
+    padding-top: 4%;
+}
+
+.site-section.footer img{
+    width: 110px;
+    height: 60px;
+}
+
+.site-section.footer p:first-of-type{
+    color: white;
+    font-size: 18px;
+    font-family: 'Karla';
+    padding-top: 10px
+}
+
+.site-section.footer:last-child{
+    color: #61695E;
+    font-size: 14px;
+    font-family: 'Karla';
+}
+
