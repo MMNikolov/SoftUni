@@ -26,7 +26,6 @@ function solve(input) {
     const typeList = input.shift();
     if (typeList == 'all') {
         allSongs.forEach(song => console.log(song.name));
-        // Object.values(collection).flat(1).forEach(song => console.log(song.name));
     } else {
         collection[typeList].forEach(song => console.log(song.name));
     }
