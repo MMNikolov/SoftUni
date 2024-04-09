@@ -33,7 +33,14 @@ function solve(day, age){
     } else{
         result = 'Error'
     }
+
+    if (result = 'Error') {
+         return result
+    } 
+
     console.log(result + "$");
+    
+    
 }
 
 solve('Holiday', -12);

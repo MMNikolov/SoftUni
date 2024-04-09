@@ -1,6 +1,5 @@
 class Vehicle {
     #parts = {};
-    static pi = 3.14;
 
     constructor(type, model, parts, fuel) {
         this.type = type;
@@ -8,10 +7,7 @@ class Vehicle {
         this.parts = parts;
         this.fuel = fuel;
     }
- 
-    static greet() {
-        console.log('Hello from static');
-    }
+
 
     set parts(value) {
         this.#parts = {
@@ -27,12 +23,7 @@ class Vehicle {
 
     drive(amount) {
         this.fuel -= amount;
-        this.#priv();
     }    
-
-    #priv() {
-        console.log('this is private');
-    }
 }
 
 class Car extends Vehicle {

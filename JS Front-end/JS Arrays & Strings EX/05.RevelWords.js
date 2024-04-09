@@ -1,5 +1,5 @@
 function solve(wordsInput, template){
-    const words = wordsInput.split(' ');
+    const words = wordsInput.split(', ');
     let startIndex = -1;
     let endIndex = -1;
 
@@ -14,14 +14,20 @@ function solve(wordsInput, template){
         } else{
             if (startIndex >= 0) {
                 let length = endIndex - startIndex;
-                let word = words.find(w => w.length === endIndex - startIndex);
-                template = template.replace('*'.repeat(length), word);
+                let word = words.find(w => w.length === length);
+                template = template.replace('*'.repeat(length), word)
 
                 startIndex = -1;
                 endIndex = -1;
             }
         }
         
+    }
+
+    if (startIndex >= 0) {
+        let length = endIndex - startIndex;
+        let word = words.find(w => w.length === length);
+        template = template.replace('*'.repeat(length), word)
     }
 
     console.log(template);
