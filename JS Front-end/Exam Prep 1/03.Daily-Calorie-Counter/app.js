@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3030/jsonstore/tasks/'
+const baseUrl = 'http://localhost:3030/jsonstore/tasks'
 
 const loadButtonElement = document.getElementById('load-meals')
 const mealListElement = document.getElementById('list')
