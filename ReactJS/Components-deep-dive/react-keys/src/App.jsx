@@ -22,7 +22,7 @@ function App() {
     <>
       <h1>Movies</h1>
       <ul>
-        {movies.map(movie => <li key={movie}>{movie}</li>)}
+        {movies.map(movie => <li key={movie}>{movie}</li>)} 
       </ul>
 
       <button onClick={buttonClickHandler}>Change</button>
