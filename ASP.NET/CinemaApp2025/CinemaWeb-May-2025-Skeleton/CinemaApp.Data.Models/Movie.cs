@@ -32,7 +32,7 @@ namespace CinemaApp.Data.Models
 
         [Comment("Movie Director")]
         [Required(ErrorMessage = "Director is required.")]
-        [StringLength(EntityConstants.Movie.DirectorMaxLength, ErrorMessage = "Director cannot exceed 100 characters.")]
+        [StringLength(EntityConstants.Movie.DirectorNameMaxLength, ErrorMessage = "Director cannot exceed 100 characters.")]
         public string Director { get; set; } = null!;
 
         [Comment("Movie Duration in minutes")]

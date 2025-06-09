@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaApp.Data.Models", "Ci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaApp.Web.ViewModels", "CinemaApp.Web.ViewModels\CinemaApp.Web.ViewModels.csproj", "{C9D77A74-05B7-4F4F-BB89-E20CBAB4780F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaApp.Services.Core", "CinemaApp.Services.Core\CinemaApp.Services.Core.csproj", "{9D43F673-5AC2-8B0E-BD2C-5A1B4BE66A47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaApp.Services.Common", "CinemaApp.Services.Common\CinemaApp.Services.Common.csproj", "{26F692E7-4308-76C2-E19E-B36014053B52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,14 @@ Global
 		{C9D77A74-05B7-4F4F-BB89-E20CBAB4780F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9D77A74-05B7-4F4F-BB89-E20CBAB4780F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9D77A74-05B7-4F4F-BB89-E20CBAB4780F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D43F673-5AC2-8B0E-BD2C-5A1B4BE66A47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D43F673-5AC2-8B0E-BD2C-5A1B4BE66A47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D43F673-5AC2-8B0E-BD2C-5A1B4BE66A47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D43F673-5AC2-8B0E-BD2C-5A1B4BE66A47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26F692E7-4308-76C2-E19E-B36014053B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26F692E7-4308-76C2-E19E-B36014053B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26F692E7-4308-76C2-E19E-B36014053B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26F692E7-4308-76C2-E19E-B36014053B52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +75,8 @@ Global
 		{E6111C96-2B3A-47DA-9C81-9F3EE95B714B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{E3D1A47D-9414-4ED3-8F00-0AE89D29A8F8} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{C9D77A74-05B7-4F4F-BB89-E20CBAB4780F} = {E9F39ADB-1A77-4205-8E24-7396BC55CF78}
+		{9D43F673-5AC2-8B0E-BD2C-5A1B4BE66A47} = {C8347219-1C67-45B6-BD1E-00FD5DDFF94C}
+		{26F692E7-4308-76C2-E19E-B36014053B52} = {C8347219-1C67-45B6-BD1E-00FD5DDFF94C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E01D5365-332F-4A49-8820-58BFB761EB89}
