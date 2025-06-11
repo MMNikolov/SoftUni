@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getAllExercises } from './services/exerciseService';
+import { getExercises } from './services/exerciseService';
 import ExerciseCard from './components/ExerciseCard/ExerciseCard';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const data = await getAllExercises();
+                const data = await getExercises();
                 setExercises(data);
             } catch (error) {
                 console.error('Error:', error);
