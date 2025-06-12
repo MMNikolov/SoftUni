@@ -1,5 +1,5 @@
 ﻿using Calisthenix.Server.Models;
-using Calisthenix.Server.Services;
+using Calisthenix.Server.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Calisthenix.Server.Controllers
@@ -24,7 +24,7 @@ namespace Calisthenix.Server.Controllers
 
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetExerciseById(int id)
+        public async Task<IActionResult> GetExerciseById(string id)
         {
             var exercise = await _exerciseService.GetExerciseByIdAsync(id);
 
@@ -43,42 +43,39 @@ namespace Calisthenix.Server.Controllers
         [HttpPost]
         public async Task<IActionResult> AddExercise([FromBody] Exercise exercise)
         {
-            if (exercise == null)
+            if (!ModelState.IsValid)
             {
-                return BadRequest("Invalid exercise data.");
+                return BadRequest(exercise);
             }
-        
-            var addedExercise = await _exerciseService.AddExerciseAsync(exercise);  
-        
-            if (addedExercise == null)
-            {
-                return BadRequest("Error adding exercise.");
-            }
-        
-            return CreatedAtAction(nameof(GetExerciseById), new { id = addedExercise.Id }, addedExercise);
+
+            await _exerciseService.AddExerciseAsync(exercise);
+            return CreatedAtAction(nameof(GetExerciseById), new { id = exercise.Id }, exercise);
         }
         
         
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateExercise(int id, [FromBody] Exercise exercise)
+        public async Task<IActionResult> UpdateExercise(string id, [FromBody] Exercise exercise)
         {
-            if (exercise == null || exercise.Id != id)
+            if (!ModelState.IsValid)
             {
-                return BadRequest("Invalid exercise data.");
+                return BadRequest(ModelState);
             }
 
-            var updatedExercise = await _exerciseService.UpdateExerciseAsync(exercise);
+            var existingExercise = 
+                await _exerciseService.GetExerciseByIdAsync(id);
 
-            if (updatedExercise == null)
+            if (existingExercise == null)
             {
                 return NotFound();
             }
-            return Ok(updatedExercise);
+
+            await _exerciseService.UpdateExerciseAsync(id, exercise);
+            return NoContent();
         }
         
         
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteExercise(int id)
+        public async Task<IActionResult> DeleteExercise(string id)
         {
             await _exerciseService.DeleteExerciseAsync(id);
             return NoContent();

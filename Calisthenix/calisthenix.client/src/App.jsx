@@ -1,28 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { getExercises } from './services/exerciseService';
-import ExerciseCard from './components/ExerciseCard/ExerciseCard';
+import ExerciseCard from '../src/components/ExerciseCard/ExerciseCard'
+import './App.css';
 
 function App() {
     const [exercises, setExercises] = useState([]);
 
     useEffect(() => {
-        async function fetchData() {
-            try {
-                const data = await getExercises();
-                setExercises(data);
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        }
-        fetchData();
+        fetch('https://localhost:7161/api/exercise') 
+            .then((res) => res.json())
+            .then((data) => setExercises(data))
+            .catch((err) => console.error('Error fetching exercises:', err));
     }, []);
 
     return (
-        <div className="exercise-list">
-            <h1>Calisthenics Exercises</h1>
-            {exercises.map(ex => (
-                <ExerciseCard key={ex.id} exercise={ex} />
-            ))}
+        <div className="home-container">
+            <h1>All Calisthenics Exercises</h1>
+            <div className="exercise-list">
+                {exercises.map((exercise) => (
+                    <ExerciseCard key={exercise.id} exercise={exercise} />
+                ))}
+            </div>
         </div>
     );
 }

@@ -32,7 +32,6 @@ namespace Calisthenix.Server.Models
         [MaxLength(MaxExerciseDifficultyLength)]
         public string Difficulty { get; set; } = null!; // e.g., "Beginner", "Intermediate", "Advanced"
 
-
         public string? VideoUrl { get; set; } // URL to a video demonstration
         public string? ImageUrl { get; set; } // URL to an image of the exercise
     }

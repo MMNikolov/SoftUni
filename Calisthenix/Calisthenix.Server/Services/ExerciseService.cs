@@ -1,54 +1,109 @@
 ﻿using Calisthenix.Server.Models;
+using Calisthenix.Server.Data;
+using Microsoft.EntityFrameworkCore;
+using Calisthenix.Server.Services.Interfaces;
 
-namespace Calisthenix.Server.Services
+public class ExerciseService : IExerciseService
 {
-    public class ExerciseService : IExerciseService
+    private readonly CalisthenixDbContext _context;
+
+    public ExerciseService(CalisthenixDbContext context)
     {
-        private readonly List<Exercise> _exercises = new List<Exercise>();
-        public Task<IEnumerable<Exercise>> GetAllExercisesAsync()
-        {
-            return Task.FromResult<IEnumerable<Exercise>>(_exercises);
-        }
-        public Task<Exercise?> GetExerciseByIdAsync(int id)
-        {
-            var exercise = _exercises.FirstOrDefault(e => e.Id == id);
-            return Task.FromResult(exercise);
-        }
-        public Task<Exercise> AddExerciseAsync(Exercise exercise)
-        {
-            exercise.Id = _exercises.Count > 0 ? _exercises.Max(e => e.Id) + 1 : 1;
-            _exercises.Add(exercise);
-            return Task.FromResult(exercise);
-        }
-        public Task<Exercise> UpdateExerciseAsync(Exercise exercise)
-        {
-            var existing = _exercises.FirstOrDefault(e => e.Id == exercise.Id);
+        _context = context;
+    }
 
-            if (existing != null)
+    public async Task<IEnumerable<Exercise>> GetAllExercisesAsync()
+    {
+        return await _context.Exercises
+            .Where(e => !string.IsNullOrEmpty(e.Name) && !string.IsNullOrEmpty(e.Description))
+            .AsNoTracking()
+            .Select(e => new Exercise
             {
-                existing.Name = exercise.Name;
-                existing.Description = exercise.Description;
-                existing.Category = exercise.Category;
-                existing.Equipment = exercise.Equipment;
-                existing.Difficulty = exercise.Difficulty;
-                existing.VideoUrl = exercise.VideoUrl;
-                existing.ImageUrl = exercise.ImageUrl;
-            }
-            else
-            {
-                throw new KeyNotFoundException($"Exercise with ID {exercise.Id} not found.");
-            }   
+                Id = e.Id,
+                Name = e.Name,
+                Description = e.Description,
+                Category = e.Category,
+                Equipment = e.Equipment,
+                Difficulty = e.Difficulty,
+                VideoUrl = e.VideoUrl,
+                ImageUrl = e.ImageUrl
+            })
+            .ToListAsync();
+    }
 
-            return Task.FromResult(existing);
-        }
-        public Task DeleteExerciseAsync(int id)
-        {
-            var exercise = _exercises.FirstOrDefault(e => e.Id == id);
-            if (exercise != null)
+    public async Task<Exercise?> GetExerciseByIdAsync(string id)
+    {
+        var exercise = await _context.Exercises
+            .Where(e => e.Id.ToString() == id)
+            .Select(e => new Exercise
             {
-                _exercises.Remove(exercise);
-            }
-            return Task.CompletedTask;
+                Id = e.Id,
+                Name = e.Name,
+                Description = e.Description,
+                Category = e.Category,
+                Equipment = e.Equipment,
+                Difficulty = e.Difficulty,
+                VideoUrl = e.VideoUrl,
+                ImageUrl = e.ImageUrl
+            })
+            .FirstOrDefaultAsync();
+
+        return exercise ?? throw new InvalidOperationException("Exercise not found");
+    }
+
+    public async Task AddExerciseAsync(Exercise exercise)
+    {
+        var newExercise = new Exercise
+        {
+            Name = exercise.Name,
+            Description = exercise.Description,
+            Category = exercise.Category,
+            Equipment = exercise.Equipment,
+            Difficulty = exercise.Difficulty,
+            VideoUrl = exercise.VideoUrl,
+            ImageUrl = exercise.ImageUrl
+        };
+
+        await _context.Exercises.AddAsync(newExercise);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task UpdateExerciseAsync(string id, Exercise exercise)
+    {
+        var existing = 
+            await _context.Exercises
+            .FirstOrDefaultAsync(e => e.Id.ToString() == id);
+
+        if (existing == null) 
+        {
+            throw new InvalidOperationException("Exercise not found");
         }
+
+        existing.Name = exercise.Name;
+        existing.Description = exercise.Description;
+        existing.Category = exercise.Category;
+        existing.Equipment = exercise.Equipment;
+        existing.Difficulty = exercise.Difficulty;
+        existing.VideoUrl = exercise.VideoUrl;
+        existing.ImageUrl = exercise.ImageUrl;
+
+        _context.Exercises.Update(existing);
+        await _context.SaveChangesAsync();
+        
+    }
+
+    public async Task DeleteExerciseAsync(string id)
+    {
+        var exercise = await _context.Exercises
+            .FirstOrDefaultAsync(e => e.Id.ToString() == id);
+
+        if (exercise == null)
+        {
+            throw new InvalidOperationException("Exercise not found");
+        }
+
+        _context.Exercises.Remove(exercise);
+        await _context.SaveChangesAsync();
+
     }
 }
