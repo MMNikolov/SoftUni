@@ -4,7 +4,7 @@ namespace Calisthenix.Server.Models
 {
     public class Exercise
     {
-        [Required]
+        [Key]
         public int Id { get; set; }
 
         [Required]

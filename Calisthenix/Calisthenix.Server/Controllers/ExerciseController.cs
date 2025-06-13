@@ -19,6 +19,7 @@ namespace Calisthenix.Server.Controllers
         public async Task<IActionResult> GetAllExercises()
         {
             var exercises = await _exerciseService.GetAllExercisesAsync();
+
             return Ok(exercises);
         }
 
@@ -32,10 +33,12 @@ namespace Calisthenix.Server.Controllers
             {
                 return NotFound();
             }
+
             if (string.IsNullOrEmpty(exercise.Name) || string.IsNullOrEmpty(exercise.Description))
             {
                 return BadRequest("Exercise data is incomplete.");
             }
+
             return Ok(exercise);
         }
         
@@ -46,6 +49,11 @@ namespace Calisthenix.Server.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest(exercise);
+            }
+
+            if (string.IsNullOrEmpty(exercise.Name) || string.IsNullOrEmpty(exercise.Description))
+            {
+                return BadRequest("Exercise name and description are required.");
             }
 
             await _exerciseService.AddExerciseAsync(exercise);

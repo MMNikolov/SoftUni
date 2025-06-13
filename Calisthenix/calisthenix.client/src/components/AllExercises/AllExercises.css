@@ -1,2 +1,11 @@
-body {
+.home-container {
+    padding: 24px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.exercise-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
