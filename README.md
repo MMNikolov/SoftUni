@@ -17,14 +17,6 @@ The goal of this project is to learn and apply modern full stack web development
 - Gain hands-on experience with modern tools and frameworks
 - Learn how to structure and manage a codebase
 
-## 📁 Project Structure
-
-The project is organized into:
-
-- `client/` — React frontend
-- `server/` — ASP.NET backend in C#
-- `README.md` — You're here!
-
 ## 🚧 Status
 
 > **Note:** This project is a work in progress and continuously evolving as I explore new features and technologies.
