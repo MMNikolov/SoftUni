@@ -4,8 +4,19 @@ import './Home.css';
 const Home = () => {
     return (
         <div className="home">
-            <h1>Welcome to Calisthenix!</h1>
-            <p>Your personal guide to mastering bodyweight fitness.</p>
+            <div className="home-content">
+                <div className="home-text">
+                    <h1>Welcome to <span>Calisthenix</span>!</h1>
+                    <p>Your personal guide to mastering bodyweight fitness.</p>
+                    <a href="/exercises" className="home-button">Explore Exercises</a>
+                </div>
+                <div className="home-image">
+                    <img
+                        src="../src/assets/undraw_athletes-training_koqa.svg"
+                        alt="Workout illustration"
+                    />
+                </div>
+            </div>
         </div>
     );
 };

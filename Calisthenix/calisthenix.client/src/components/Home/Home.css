@@ -1,16 +1,83 @@
 .home {
+    height: 100vh;
+    width: 97.3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    margin-top: 80px;
+    padding: 20px;
+    background: linear-gradient(135deg, #001f3f, #0074D9);
+    color: white;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
     padding: 20px;
 }
 
+.home-text {
+    flex: 1;
+    text-align: left;
+}
+
 .home h1 {
-    font-size: 2.5rem;
-    color: #003366;
+    font-size: 3rem;
     margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.home h1 span {
+    color: #FFD700;
 }
 
 .home p {
     font-size: 1.2rem;
-    color: #333;
+    margin-bottom: 30px;
+}
+
+.home-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    background-color: #FFD700;
+    color: #001f3f;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.home-button:hover {
+    background-color: #ffcc00;
+    transform: scale(1.05);
+}
+
+.home-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.home-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+
+@media (max-width: 900px) {
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-text {
+        text-align: center;
+    }
 }
