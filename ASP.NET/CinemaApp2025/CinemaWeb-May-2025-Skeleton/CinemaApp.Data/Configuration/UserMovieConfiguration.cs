@@ -15,11 +15,13 @@ namespace CinemaApp.Data.Configuration
         {
             builder
                 .HasKey(um => new { um.UserId, um.MovieId });
+
             builder
                 .HasOne(um => um.User)
                 .WithMany()
                 .HasForeignKey(um => um.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
+
             builder
                 .HasOne(um => um.Movie)
                 .WithMany()
