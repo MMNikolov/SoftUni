@@ -1,7 +1,8 @@
 namespace Horizons.Web
 {
     using Horizons.Data;
-
+    using Horizons.Services.Core;
+    using Horizons.Services.Core.Contracts;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     public class Program
@@ -12,15 +13,25 @@ namespace Horizons.Web
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
+
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options =>
             {
                 options.SignIn.RequireConfirmedAccount = false;
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
             })
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            builder.Services.AddScoped<IDestinationService, DestinationService>();
+            builder.Services.AddScoped<ITerrainService, TerrainService>();
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();

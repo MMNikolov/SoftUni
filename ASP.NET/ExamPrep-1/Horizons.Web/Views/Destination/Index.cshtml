@@ -5,8 +5,10 @@
     IsFavorite: A boolean property that indicates whether the currently logged-in user has already added this destination to their favorites.
     If true, the "Favorites" button will not be displayed.
 *@
+@using Horizons.Web.ViewModels.Destination
+@model IEnumerable<DestinationIndexViewModel>
 
-@* @{
+@{
     ViewData["Title"] = "All Destinations";
 }
 
@@ -36,10 +38,10 @@
 
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title">@destination.Name</h5>
-                    <p class="card-text">Terrain: @destination.Terrain</p>
+                    <p class="card-text">Terrain: @destination.TerrainName</p>
                     <p class="card-text"><small>Favorites: @destination.FavoritesCount</small></p>
                     <div class="d-flex justify-content-between mt-auto">
-                        @if (User?.Identity?.IsAuthenticated == true && !destination.IsPublisher && !destination.IsFavorite)
+                        @if (User?.Identity?.IsAuthenticated == true && !destination.IsUserPublisher && !destination.IsInUserFavorites)
                         {
                             <a asp-controller="Destination" asp-action="Details" asp-route-id="@destination.Id" class="btn btn-info me-2 w-50">
                                 <i class="fas fa-info-circle"></i> Details</a>
@@ -60,4 +62,3 @@
         </div>
     }
 </div>
- *@

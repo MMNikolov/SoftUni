@@ -29,11 +29,16 @@ namespace Horizons.Data.Configurations
 
             entity
                 .Property(d => d.ImageUrl)
+                .IsRequired(false);
+
+            entity
+                .Property(d => d.PublisherId)
                 .IsRequired();
 
             entity
                 .Property(d => d.PublishedOn)
                 .IsRequired();
+                
 
             entity
                 .Property(d => d.IsDeleted)
@@ -43,6 +48,12 @@ namespace Horizons.Data.Configurations
                 .HasOne(d => d.Terrain)
                 .WithMany(t => t.Destinations)
                 .HasForeignKey(d => d.TerrainId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            entity
+                .HasOne(d => d.Publisher)
+                .WithMany()
+                .HasForeignKey(d => d.PublisherId)
                 .OnDelete(DeleteBehavior.Restrict);
 
         }
