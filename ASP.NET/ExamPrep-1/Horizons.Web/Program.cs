@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Horizons.Data;
 namespace Horizons.Web
 {
     using Horizons.Data;

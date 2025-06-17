@@ -202,12 +202,15 @@
         public async Task<bool> SoftDeleteDestinationAsync(string userId, DeleteDestinationViewModel model)
         {
             bool opResult = false;
+
             IdentityUser? user = await _userManager.FindByIdAsync(userId);
+
             if (user != null)
             {
-                Destination destinationToDelete = await _context.Destinations
+                Destination? destinationToDelete = await _context.Destinations
                     .Where(d => d.Id == model.Id && d.PublisherId == userId && d.IsDeleted == false)
                     .FirstOrDefaultAsync();
+
                 if (destinationToDelete != null)
                 {
                     destinationToDelete.IsDeleted = true;
@@ -218,6 +221,80 @@
             }
             return opResult;
 
+
+        }
+
+        public async Task<IEnumerable<FavoriteDestinationsViewModel>?> GetForFavoriteDestinationAsync(string userId)
+        {
+            return await _context.UserDestinations
+                .Include(ud => ud.Destination)
+                .ThenInclude(d => d.Terrain)
+                .Where(ud => ud.UserId.ToLower() == userId.ToLower())
+                .Select(ud => new FavoriteDestinationsViewModel
+                {
+                    Id = ud.DestinationId,
+                    Name = ud.Destination.Name,
+                    ImageUrl = ud.Destination.ImageUrl,
+                    Terrain = ud.Destination.Terrain.Name,
+                })
+                .ToArrayAsync();
+        }
+
+        public async Task<bool> AddToFavoriteDestinationAsync(string userId, int destId)
+        {
+            bool opResult = false;
+
+            IdentityUser? user = await this._userManager.FindByIdAsync(userId);
+
+            Destination? favDest = await this._context.Destinations
+                .FindAsync(destId);
+
+            if (user != null && favDest != null && favDest.PublisherId.ToLower() != userId.ToLower())
+            {
+                UserDestination? existingUserDestination = await this._context.UserDestinations
+                    .SingleOrDefaultAsync(ud => ud.UserId.ToLower() == userId.ToLower()
+                                            && ud.DestinationId == destId);
+
+                if (existingUserDestination == null)
+                {
+                    UserDestination userDestination = new UserDestination
+                    {
+                        UserId = userId,
+                        DestinationId = destId
+                    };
+
+                    await _context.UserDestinations.AddAsync(userDestination);
+                    await _context.SaveChangesAsync();
+
+                    opResult = true;
+                }
+            }
+
+            return opResult;
+        }
+
+        public async Task<bool> RemoveFromFavoriteDestinationAsync(string userId, int destId)
+        {
+            bool opResult = false;
+
+            IdentityUser? user = await this._userManager.FindByIdAsync(userId);
+
+            if (user != null)
+            {
+                UserDestination? userDestination = await this._context.UserDestinations
+                    .SingleOrDefaultAsync(ud => ud.UserId.ToLower() == userId.ToLower()
+                                            && ud.DestinationId == destId);
+
+                if (userDestination != null)
+                {
+                    _context.UserDestinations.Remove(userDestination);
+                    await _context.SaveChangesAsync();
+
+                    opResult = true;
+                }
+            }
+
+            return opResult;
 
         }
     }

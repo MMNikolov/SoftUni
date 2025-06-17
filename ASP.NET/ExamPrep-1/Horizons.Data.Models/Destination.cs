@@ -1,10 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Identity;
-using static Horizons.GCommon.ValidationConstants.Destination;
-
-namespace Horizons.Data.Models
+﻿namespace Horizons.Data.Models
 {
+    using Microsoft.AspNetCore.Identity;
     public class Destination
     {
         public int Id { get; set; }

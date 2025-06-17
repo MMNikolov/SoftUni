@@ -164,7 +164,7 @@ namespace Horizons.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(DeleteDestinationViewModel model)
         {
-            if(!this.ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
                 ModelState.AddModelError(string.Empty, "Invalid model state. Please check the input data.");
                 return this.View(model);
@@ -180,6 +180,78 @@ namespace Horizons.Web.Controllers
 
             return RedirectToAction(nameof(Index));
 
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Favorites()
+        {
+            string userId = this.GetUserId()!;
+
+            IEnumerable<FavoriteDestinationsViewModel>? favoriteInputModels = await this.DestinationService.GetForFavoriteDestinationAsync(userId);
+
+            if (favoriteInputModels == null )
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(favoriteInputModels);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddToFavorites(int? id)
+        {
+            try
+            {
+                string userId = this.GetUserId()!;
+                if (id == null)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+
+                bool favAddResult = await this.DestinationService
+                    .AddToFavoriteDestinationAsync(userId, id.Value);
+
+                if (favAddResult == false)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+
+                return RedirectToAction(nameof(Favorites));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+
+                return RedirectToAction(nameof(Index));
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RemoveFromFavorites(int? id)
+        {
+            try
+            {
+                string userId = this.GetUserId()!;
+
+                if (id == null)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+
+                bool favRemoveResult = await this.DestinationService
+                    .RemoveFromFavoriteDestinationAsync(userId, id.Value);
+
+                if (favRemoveResult == false)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+                return RedirectToAction(nameof(Favorites));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return RedirectToAction(nameof(Index));
+            }
         }
     }
 

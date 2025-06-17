@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Horizons.Data.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using static Horizons.GCommon.ValidationConstants.Destination;
-
-namespace Horizons.Data.Configurations
+﻿namespace Horizons.Data.Configurations
 {
+    using Horizons.Data.Models;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Metadata.Builders;
+    using static Horizons.GCommon.ValidationConstants.Destination;
+
     public class DestinationConfiguration : IEntityTypeConfiguration<Destination>
     {
         public void Configure(EntityTypeBuilder<Destination> entity)

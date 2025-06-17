@@ -16,11 +16,6 @@
                 .IsRequired()
                 .HasMaxLength(TerrainNameMaxLength);
 
-            //entity
-            //    .HasMany(t => t.Destinations)
-            //    .WithOne(d => d.Terrain)
-            //    .HasForeignKey(d => d.TerrainId)
-            //    .OnDelete(DeleteBehavior.Restrict);
 
         }
     }

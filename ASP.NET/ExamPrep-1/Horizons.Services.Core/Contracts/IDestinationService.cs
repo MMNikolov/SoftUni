@@ -18,5 +18,11 @@ namespace Horizons.Services.Core.Contracts
 
         Task<bool> SoftDeleteDestinationAsync(string userId, DeleteDestinationViewModel model);
 
+        Task<IEnumerable<FavoriteDestinationsViewModel>?> GetForFavoriteDestinationAsync(string userId);
+
+        Task<bool> AddToFavoriteDestinationAsync(string userId, int destId);
+
+        Task<bool> RemoveFromFavoriteDestinationAsync(string userId, int destId);
+
     }
 }
