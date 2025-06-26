@@ -1,7 +1,7 @@
-﻿using Calisthenix.Server.Models;
-
-namespace Calisthenix.Server.Services.Interfaces
+﻿namespace Calisthenix.Server.Services.Interfaces
 {
+    using Calisthenix.Server.Models;
+
     public interface IExerciseService
     {
         

@@ -1,7 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-using static Calisthenix.Server.GlobalConstants.ExerciseConstants;
-namespace Calisthenix.Server.Models
+﻿namespace Calisthenix.Server.Models
 {
+    using System.ComponentModel.DataAnnotations;
+    using static Calisthenix.Server.GlobalConstants.ExerciseConstants;
+
     public class Exercise
     {
         [Key]
@@ -10,29 +11,29 @@ namespace Calisthenix.Server.Models
         [Required]
         [MinLength(MinExerciseNameLength)]
         [MaxLength(MaxExerciseNameLength)]
-        public string Name { get; set; } = null!; // e.g., "Push-Up", "Pull-Up", "Squat"
+        public string Name { get; set; } = null!; 
 
         [Required]
         [MinLength(MinExerciseDescriptionLength)]
         [MaxLength(MaxExerciseDescriptionLength)]
-        public string Description { get; set; } = null!; // e.g., "A basic bodyweight exercise for upper body strength."
+        public string Description { get; set; } = null!; 
 
         [Required]
         [MinLength(MinExerciseCategoryLength)]
         [MaxLength(MaxExerciseCategoryLength)]
-        public string Category { get; set; } = null!; // e.g., "Push", "Pull", "Legs"
+        public string Category { get; set; } = null!; 
 
         [Required]
         [MinLength(MinExerciseEquipmentLength)]
         [MaxLength(MaxExerciseEquipmentLength)]
-        public string Equipment { get; set; } = null!; // e.g., "Bodyweight", "Dumbbell", "Barbell"
+        public string Equipment { get; set; } = null!; 
 
         [Required]
         [MinLength(MinExerciseDifficultyLength)]
         [MaxLength(MaxExerciseDifficultyLength)]
-        public string Difficulty { get; set; } = null!; // e.g., "Beginner", "Intermediate", "Advanced"
+        public string Difficulty { get; set; } = null!; 
 
-        public string? VideoUrl { get; set; } // URL to a video demonstration
-        public string? ImageUrl { get; set; } // URL to an image of the exercise
+        public string? VideoUrl { get; set; } 
+        public string? ImageUrl { get; set; } 
     }
 }

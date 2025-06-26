@@ -1,17 +1,20 @@
-﻿using Calisthenix.Server.Models;
-using Calisthenix.Server.Services.Interfaces;
-using Microsoft.AspNetCore.Mvc;
-
-namespace Calisthenix.Server.Controllers
+﻿namespace Calisthenix.Server.Controllers
 {
+    using Calisthenix.Server.Data;
+    using Calisthenix.Server.Models;
+    using Calisthenix.Server.Services.Interfaces;
+    using Microsoft.AspNetCore.Mvc;
+
     [ApiController]
     [Route("api/[controller]")]
     public class ExerciseController : ControllerBase
     {
+        private readonly CalisthenixDbContext _context;
         private readonly IExerciseService _exerciseService;
-        public ExerciseController(IExerciseService exerciseService)
+        public ExerciseController(IExerciseService exerciseService, CalisthenixDbContext context)
         {
             _exerciseService = exerciseService;
+            _context = context;
         }
 
 

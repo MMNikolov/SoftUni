@@ -9,6 +9,7 @@ const Home = () => {
                     <h1>Welcome to <span>Calisthenix</span>!</h1>
                     <p>Your personal guide to mastering bodyweight fitness.</p>
                     <a href="/exercises" className="home-button">Explore Exercises</a>
+                    <a href="/add-workout" className="home-button">Add Exercise</a>
                 </div>
                 <div className="home-image">
                     <img

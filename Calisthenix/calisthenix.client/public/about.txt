@@ -1,6 +1,0 @@
-This favicon was generated using the following font:
-
-- Font Title: Blaka Hollow
-- Font Author: undefined
-- Font Source: https://fonts.gstatic.com/s/blakahollow/v7/MCoUzAL91sjRE2FsKsxUtezYB9oFyW_-oA.ttf
-- Font License: undefined)

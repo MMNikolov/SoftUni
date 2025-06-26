@@ -1,6 +1,6 @@
 .home {
-    height: 100vh;
-    width: 97.3vw;
+    height: 88.5vh;
+    width: 97.8vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,6 +51,7 @@
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 10px
 }
 
 .home-button:hover {

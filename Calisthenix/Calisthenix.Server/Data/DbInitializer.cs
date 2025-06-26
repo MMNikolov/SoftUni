@@ -1,7 +1,7 @@
-﻿using Calisthenix.Server.Models;
-
-namespace Calisthenix.Server.Data
+﻿namespace Calisthenix.Server.Data
 {
+    using Calisthenix.Server.Models;
+
     public static class DbInitializer
     {
         public static void Seed(CalisthenixDbContext context)

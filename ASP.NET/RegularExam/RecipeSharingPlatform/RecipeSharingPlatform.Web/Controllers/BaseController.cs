@@ -1,0 +1,24 @@
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace RecipeSharingPlatform.Web.Controllers
+{
+    [Authorize]
+    public abstract class BaseController : Controller
+    {
+        protected bool IsAuthenticated => User.Identity?.IsAuthenticated ?? false;
+        
+        protected string? GetUserId()
+        {
+            string? userId = null!;
+
+            if (IsAuthenticated)
+            {
+                userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            }
+
+            return userId;
+        }
+    }
+}
