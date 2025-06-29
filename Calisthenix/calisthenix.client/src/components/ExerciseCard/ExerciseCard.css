@@ -1,42 +1,65 @@
 .exercise-card {
+    background: #fff;
     border: 1px solid #ddd;
     border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
     padding: 16px;
-    margin: 16px;
-    background-color: aliceblue;
-    max-width: 300px;
+    margin: 12px;
+    width: 320px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    min-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .exercise-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .exercise-card img {
     width: 100%;
-    height: 200px;
+    max-height: 220px;
     object-fit: cover;
     border-radius: 8px;
+    margin-bottom: 12px;
 }
 
-.exercise-info h2 {
-    margin: 12px 0 8px;
+.exercise-card h3 {
+    margin: 8px 0;
+    font-size: 1.2rem;
+    color: #333;
 }
 
-.exercise-info p {
+.exercise-card p {
+    font-size: 0.95rem;
     margin: 4px 0;
+    color: #555;
 }
 
-.exercise-info a {
-    color: #0066cc;
-    font-weight: bold;
-    margin-top: 8px;
-    display: inline-block;
-    text-decoration: underline;
+.exercise-card strong {
+    color: #000;
+}
+
+.exercise-card button {
+    margin-top: 12px;
+    padding: 8px 14px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.exercise-card button:hover {
+    background-color: #0056b3;
+}
+
+.exercise-card button:active {
+    background-color: #004099;
 }

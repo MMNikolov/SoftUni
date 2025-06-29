@@ -29,6 +29,7 @@ const Navbar = () => {
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/exercises">All Exercises</Link></li>
                 {isAuthenticated() && <li><Link to="/add-workout">Add Workout</Link></li>}
+                {isAuthenticated() && <li><Link to="/my-workouts">My Workouts</Link></li>}
                 {!isLoggedIn() && <li><Link to="/login">Login</Link></li>}
                 {!isLoggedIn() && <li><Link to="/register">Register</Link></li>}
                 {isLoggedIn() && (

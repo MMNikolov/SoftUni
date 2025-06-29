@@ -13,6 +13,7 @@ builder.Services.AddDbContext<CalisthenixDbContext>(options =>
 
 builder.Services.AddScoped<IExerciseService, ExerciseService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IWorkoutService, WorkoutService>();
 
 var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!);
 
@@ -31,7 +32,13 @@ builder.Services.AddAuthentication("Bearer")
 
 builder.Services.AddAuthorization();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+        options.JsonSerializerOptions.WriteIndented = true;
+    });
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

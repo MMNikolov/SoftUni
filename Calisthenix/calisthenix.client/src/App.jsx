@@ -25,7 +25,8 @@ function App() {
                             path="/add-workout"
                             element={isAuthenticated() ? <AddWorkout /> : <Navigate to="/login" />}
                         />
-                        <Route path="/exercises/:id" element={<ExerciseDetails />} />
+                        <Route path="/my-workouts" element={<MyWorkouts />} />
+                        <Route path="/exercise/:id" element={<ExerciseDetails />} />
                         <Route path="/my-workouts" element={<MyWorkouts />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />

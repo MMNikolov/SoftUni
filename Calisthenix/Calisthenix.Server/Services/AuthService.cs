@@ -45,6 +45,7 @@ namespace Calisthenix.Server.Services
         public async Task<string> LoginAsync(string username, string password)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+
             if (user == null || !VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
                 throw new Exception("Invalid credentials");
 
@@ -73,6 +74,7 @@ namespace Calisthenix.Server.Services
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[] {
+                    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                     new Claim(ClaimTypes.Name, user.Username)
                 }),
                 Expires = DateTime.UtcNow.AddDays(1),
