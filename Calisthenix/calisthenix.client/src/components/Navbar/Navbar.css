@@ -1,26 +1,33 @@
+
 .navbar {
-    background-color: #003366;
-    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: linear-gradient(to right, #003366, #005fa3);
     padding: 16px 32px;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .navbar-logo a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.5rem;
+    color: #ffffff;
+    font-size: 1.8rem;
     font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-logo a:hover {
+    color: #cce6ff;
 }
 
 .navbar-links {
-    list-style: none;
     display: flex;
     gap: 24px;
+    list-style: none;
     margin: 0;
     padding: 0;
 }
@@ -29,9 +36,33 @@
     color: white;
     text-decoration: none;
     font-size: 1rem;
-    transition: color 0.3s;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .navbar-links li a:hover {
-    color: #00ccff;
+    color: #a6d4fa;
+    text-decoration: underline;
+}
+
+.navbar-user {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #e6f2ff;
+}
+
+.navbar-links li button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+.navbar-links li button:hover {
+    color: #a6d4fa;
+    text-decoration: underline;
 }

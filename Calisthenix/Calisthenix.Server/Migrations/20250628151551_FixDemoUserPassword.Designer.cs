@@ -3,6 +3,7 @@ using Calisthenix.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Calisthenix.Server.Migrations
 {
     [DbContext(typeof(CalisthenixDbContext))]
-    partial class CalisthenixDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250628151551_FixDemoUserPassword")]
+    partial class FixDemoUserPassword
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,7 +70,7 @@ namespace Calisthenix.Server.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Exercises", (string)null);
+                    b.ToTable("Exercises");
 
                     b.HasData(
                         new
@@ -106,7 +109,7 @@ namespace Calisthenix.Server.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
 
                     b.HasData(
                         new

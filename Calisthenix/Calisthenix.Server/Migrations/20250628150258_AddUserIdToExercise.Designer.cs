@@ -3,6 +3,7 @@ using Calisthenix.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Calisthenix.Server.Migrations
 {
     [DbContext(typeof(CalisthenixDbContext))]
-    partial class CalisthenixDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250628150258_AddUserIdToExercise")]
+    partial class AddUserIdToExercise
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,7 +70,7 @@ namespace Calisthenix.Server.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Exercises", (string)null);
+                    b.ToTable("Exercises");
 
                     b.HasData(
                         new
@@ -106,14 +109,14 @@ namespace Calisthenix.Server.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            PasswordHash = new byte[] { 162, 244, 22, 7, 196, 148, 177, 44, 230, 67, 83, 173, 99, 145, 185, 38, 71, 137, 76, 139, 91, 30, 180, 90, 210, 152, 194, 132, 93, 125, 25, 204, 108, 2, 239, 54, 151, 251, 12, 170, 55, 138, 178, 52, 9, 44, 211, 103, 10, 179, 43, 161, 90, 145, 135, 100, 174, 67, 232, 213, 119, 30, 53, 154 },
-                            PasswordSalt = new byte[] { 141, 178, 163, 24, 240, 98, 72, 31, 45, 144, 91, 70, 167, 250, 234, 99, 114, 136, 203, 25, 48, 35, 36, 88, 65, 214, 122, 43, 47, 21, 156, 83, 56, 163, 248, 112, 86, 99, 181, 111, 18, 4, 94, 249, 148, 228, 104, 182, 7, 101, 209, 43, 25, 207, 86, 173, 81, 119, 29, 77, 61, 208, 67, 251, 201, 190, 75, 115, 46, 21, 40, 139, 56, 32, 147, 12, 202, 53, 52, 196, 181, 30, 248, 120, 55, 28, 12, 11, 10, 146, 1, 117, 36, 244, 241, 138, 31, 73, 71, 116, 132, 187, 33, 18, 251, 21, 135, 187, 99, 103, 101, 203, 65, 47, 198, 45, 47, 65, 106, 52 },
+                            PasswordHash = new byte[] { 1, 2, 3 },
+                            PasswordSalt = new byte[] { 4, 5, 6 },
                             Username = "demo"
                         });
                 });

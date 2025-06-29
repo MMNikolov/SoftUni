@@ -26,7 +26,8 @@ public class ExerciseService : IExerciseService
                 Equipment = e.Equipment,
                 Difficulty = e.Difficulty,
                 VideoUrl = e.VideoUrl,
-                ImageUrl = e.ImageUrl
+                ImageUrl = e.ImageUrl,
+                UserId = e.UserId,
             })
             .ToListAsync();
     }
@@ -44,7 +45,8 @@ public class ExerciseService : IExerciseService
                 Equipment = e.Equipment,
                 Difficulty = e.Difficulty,
                 VideoUrl = e.VideoUrl,
-                ImageUrl = e.ImageUrl
+                ImageUrl = e.ImageUrl,
+                UserId = e.UserId
             })
             .FirstOrDefaultAsync();
 
@@ -61,7 +63,8 @@ public class ExerciseService : IExerciseService
             Equipment = exercise.Equipment,
             Difficulty = exercise.Difficulty,
             VideoUrl = exercise.VideoUrl,
-            ImageUrl = exercise.ImageUrl
+            ImageUrl = exercise.ImageUrl,
+            UserId = exercise.UserId
         };
 
         await _context.Exercises.AddAsync(newExercise);

@@ -1,0 +1,47 @@
+.exercise-details {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    background-color: #f7faff;
+    text-align: center;
+}
+
+.exercise-details img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.exercise-details h2 {
+    margin-bottom: 12px;
+}
+
+.exercise-details p {
+    margin: 8px 0;
+}
+
+.exercise-details a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+.back-button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+    margin-left: 20px;
+}
+
+.back-button:hover {
+    background-color: #004b99;
+}

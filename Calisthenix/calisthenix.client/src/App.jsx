@@ -7,6 +7,10 @@ import './App.css';
 import AddWorkout from './components/AddWorkout/AddWorkout';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import MyWorkouts from './components/MyWorkouts/MyWorkouts';
+import { isAuthenticated } from './utils/auth';
+import { Navigate } from 'react-router-dom';
+import ExerciseDetails from './components/ExerciseDetails/ExerciseDetails';
 
 function App() {
     return (
@@ -17,7 +21,12 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/exercises" element={<AllExercises />} />
-                        <Route path="/add-workout" element={<AddWorkout />} />
+                        <Route
+                            path="/add-workout"
+                            element={isAuthenticated() ? <AddWorkout /> : <Navigate to="/login" />}
+                        />
+                        <Route path="/exercises/:id" element={<ExerciseDetails />} />
+                        <Route path="/my-workouts" element={<MyWorkouts />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
                     </Routes>

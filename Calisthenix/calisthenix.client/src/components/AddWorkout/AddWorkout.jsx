@@ -9,7 +9,8 @@ const AddWorkout = () => {
         difficulty: '',
         description: '',
         imageUrl: '',
-        videoUrl: ''
+        videoUrl: '',
+        userId: 4
     });
 
     const handleChange = (e) => {
@@ -24,8 +25,22 @@ const AddWorkout = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         })
-            .then(res => res.ok ? alert('Workout added!') : Promise.reject('Failed to add!'))
-            .catch(err => alert(err));
+            .then(async res => {
+                if (res.ok)
+                {
+                    alert('Workout added!');
+                }
+                else
+                {
+                    const errorText = await res.text();
+                    console.error('Backend error:', errorText);
+                    alert('Failed to add! Check console.');
+                }
+            })
+            .catch(err => {
+                console.error('Catch error:', err);
+                alert('Something went wrong!');
+            });
     };
 
     return (

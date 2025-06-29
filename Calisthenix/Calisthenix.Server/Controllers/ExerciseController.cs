@@ -3,7 +3,9 @@
     using Calisthenix.Server.Data;
     using Calisthenix.Server.Models;
     using Calisthenix.Server.Services.Interfaces;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
 
     [ApiController]
     [Route("api/[controller]")]
@@ -44,8 +46,25 @@
 
             return Ok(exercise);
         }
-        
-        
+
+        [HttpGet("mine")]
+        [Authorize]
+        public async Task<IActionResult> GetMyWorkouts()
+        {
+            var username = User.Identity?.Name;
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+
+            if (user == null)
+                return Unauthorized();
+
+            var exercises = await _context.Exercises
+                .Where(e => e.UserId == user.Id)
+                .ToListAsync();
+
+            return Ok(exercises);
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> AddExercise([FromBody] Exercise exercise)
         {
