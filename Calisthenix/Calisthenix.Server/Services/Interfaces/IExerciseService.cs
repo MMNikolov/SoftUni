@@ -1,11 +1,12 @@
 ﻿namespace Calisthenix.Server.Services.Interfaces
 {
     using Calisthenix.Server.Models;
+    using Calisthenix.Server.Models.DTOs;
 
     public interface IExerciseService
     {
         
-        Task<IEnumerable<Exercise>> GetAllExercisesAsync();
+        Task<IEnumerable<ExerciseDTO>> GetAllExercisesAsync();
         
         Task<Exercise?> GetExerciseByIdAsync(string id);
         

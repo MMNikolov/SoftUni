@@ -4,7 +4,24 @@ import './AllExercises.css';
 
 function AllExercises() {
     const [exercises, setExercises] = useState([]);
+    const [workouts, setWorkouts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [search, setSearch] = useState('');
+    const [categoryFilter, setCategoryFilter] = useState('');
+    const [difficultyFilter, setDifficultyFilter] = useState('');
+    const [highlightId, setHighlightId] = useState(null);
+
+    const handleDelete = (id) => {
+        setExercises(prev => prev.filter(e => e.id !== id));
+    };
+
+    const filteredExercises = exercises.filter(ex => {
+        return (
+            ex.name.toLowerCase().includes(search.toLowerCase()) &&
+            (categoryFilter === '' || ex.category === categoryFilter) &&
+            (difficultyFilter === '' || ex.difficulty === difficultyFilter)
+        );
+    });
 
     useEffect(() => {
         const fetchData = async () => {
@@ -14,14 +31,11 @@ function AllExercises() {
             try {
                 const [exRes, workoutRes] = await Promise.all([
                     fetch('https://localhost:7161/api/exercise', { headers }),
-                    fetch('https://localhost:7161/api/workout', { headers })
+                    fetch('https://localhost:7161/api/workout/my', { headers })
                 ]);
 
                 if (!exRes.ok || !workoutRes.ok) {
-                    const errorText = !exRes.ok
-                        ? await exRes.text()
-                        : await workoutRes.text();
-
+                    const errorText = !exRes.ok ? await exRes.text() : await workoutRes.text();
                     console.error('API Error:', errorText);
                     throw new Error('Failed to fetch exercises or workouts.');
                 }
@@ -31,6 +45,8 @@ function AllExercises() {
 
                 const allExercises = exData.$values || exData;
                 const workoutList = workoutData.$values || workoutData;
+
+                setWorkouts(workoutList);
 
                 const workoutExerciseIds = workoutList.flatMap(w => {
                     const exercises = w.workoutExercises?.$values || [];
@@ -48,6 +64,12 @@ function AllExercises() {
         };
 
         fetchData();
+
+        const storedId = localStorage.getItem('highlightExerciseId');
+        if (storedId) {
+            setHighlightId(parseInt(storedId));
+            localStorage.removeItem('highlightExerciseId');
+        }
     }, []);
 
     const handleAddToWorkout = (exerciseId) => {
@@ -59,15 +81,42 @@ function AllExercises() {
     return (
         <div className="home-container">
             <h1>All Calisthenics Exercises</h1>
+            <div className="filters">
+                <input
+                    type="text"
+                    placeholder="Search by name..."
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                />
+
+                <select value={categoryFilter} onChange={(e) => setCategoryFilter(e.target.value)}>
+                    <option value="">All Categories</option>
+                    <option value="Push">Push</option>
+                    <option value="Pull">Pull</option>
+                    <option value="Legs">Legs</option>
+                    <option value="Core">Core</option>
+                </select>
+
+                <select value={difficultyFilter} onChange={(e) => setDifficultyFilter(e.target.value)}>
+                    <option value="">All Difficulties</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                    <option value="Expert">Expert</option>
+                </select>
+            </div>
             <div className="exercise-list">
-                {exercises.length === 0 ? (
-                    <p>No available exercises to add.</p>
+                {filteredExercises.length === 0 ? (
+                    <p>No exercises match your search or filters.</p>
                 ) : (
-                    exercises.map((exercise) => (
+                    filteredExercises.map((exercise) => (
                         <ExerciseCard
                             key={exercise.id}
                             exercise={exercise}
                             onAdd={handleAddToWorkout}
+                            onDelete={handleDelete}
+                            workouts={workouts}
+                            highlight={highlightId === exercise.id}
                         />
                     ))
                 )}

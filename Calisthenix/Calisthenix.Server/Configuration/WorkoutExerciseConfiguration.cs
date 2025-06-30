@@ -21,7 +21,7 @@ namespace Calisthenix.Server.Configuration
                 .HasOne(we => we.Exercise)
                 .WithMany()
                 .HasForeignKey(we => we.ExerciseId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

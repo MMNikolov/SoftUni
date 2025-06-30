@@ -2,6 +2,7 @@
 using Calisthenix.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Calisthenix.Server.Services.Interfaces;
+using Calisthenix.Server.Models.DTOs;
 
 public class ExerciseService : IExerciseService
 {
@@ -12,24 +13,25 @@ public class ExerciseService : IExerciseService
         _context = context;
     }
 
-    public async Task<IEnumerable<Exercise>> GetAllExercisesAsync()
+    public async Task<IEnumerable<ExerciseDTO>> GetAllExercisesAsync()
     {
         return await _context.Exercises
-            .Where(e => !string.IsNullOrEmpty(e.Name) && !string.IsNullOrEmpty(e.Description))
-            .AsNoTracking()
-            .Select(e => new Exercise
-            {
-                Id = e.Id,
-                Name = e.Name,
-                Description = e.Description,
-                Category = e.Category,
-                Equipment = e.Equipment,
-                Difficulty = e.Difficulty,
-                VideoUrl = e.VideoUrl,
-                ImageUrl = e.ImageUrl,
-                UserId = e.UserId,
-            })
-            .ToListAsync();
+        .Where(e => !string.IsNullOrEmpty(e.Name) && !string.IsNullOrEmpty(e.Description))
+        .Include(e => e.User)
+        .AsNoTracking()
+        .Select(e => new ExerciseDTO
+        {
+            Id = e.Id,
+            Name = e.Name,
+            Description = e.Description,
+            Category = e.Category,
+            Equipment = e.Equipment,
+            Difficulty = e.Difficulty,
+            VideoUrl = e.VideoUrl,
+            ImageUrl = e.ImageUrl,
+            UserName = e.User.Username
+        })
+        .ToListAsync();
     }
 
     public async Task<Exercise?> GetExerciseByIdAsync(string id)
@@ -98,7 +100,7 @@ public class ExerciseService : IExerciseService
     public async Task DeleteExerciseAsync(string id)
     {
         var exercise = await _context.Exercises
-            .FirstOrDefaultAsync(e => e.Id.ToString() == id);
+            .FirstOrDefaultAsync(e => e.Id.ToString().ToLower() == id.ToString().ToLower());
 
         if (exercise == null)
         {

@@ -125,9 +125,14 @@ namespace Calisthenix.Server.Migrations
                     b.Property<int>("ExerciseId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("ExerciseId1")
+                        .HasColumnType("int");
+
                     b.HasKey("WorkoutId", "ExerciseId");
 
                     b.HasIndex("ExerciseId");
+
+                    b.HasIndex("ExerciseId1");
 
                     b.ToTable("WorkoutExercises");
                 });
@@ -159,8 +164,12 @@ namespace Calisthenix.Server.Migrations
                     b.HasOne("Calisthenix.Server.Models.Exercise", "Exercise")
                         .WithMany()
                         .HasForeignKey("ExerciseId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Calisthenix.Server.Models.Exercise", null)
+                        .WithMany("WorkoutExercises")
+                        .HasForeignKey("ExerciseId1");
 
                     b.HasOne("Calisthenix.Server.Models.Workout", "Workout")
                         .WithMany("WorkoutExercises")
@@ -171,6 +180,11 @@ namespace Calisthenix.Server.Migrations
                     b.Navigation("Exercise");
 
                     b.Navigation("Workout");
+                });
+
+            modelBuilder.Entity("Calisthenix.Server.Models.Exercise", b =>
+                {
+                    b.Navigation("WorkoutExercises");
                 });
 
             modelBuilder.Entity("Calisthenix.Server.Models.User", b =>

@@ -1,5 +1,6 @@
 ﻿namespace Calisthenix.Server.Controllers
 {
+    using System.Security.Claims;
     using Calisthenix.Server.Data;
     using Calisthenix.Server.Models;
     using Calisthenix.Server.Services.Interfaces;
@@ -66,6 +67,7 @@
 
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> AddExercise([FromBody] Exercise exercise)
         {
             if (!ModelState.IsValid)
@@ -78,11 +80,14 @@
                 return BadRequest("Exercise name and description are required.");
             }
 
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            exercise.UserId = int.Parse(userId); 
+
             await _exerciseService.AddExerciseAsync(exercise);
             return CreatedAtAction(nameof(GetExerciseById), new { id = exercise.Id }, exercise);
         }
-        
-        
+
+
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateExercise(string id, [FromBody] Exercise exercise)
         {
@@ -102,13 +107,35 @@
             await _exerciseService.UpdateExerciseAsync(id, exercise);
             return NoContent();
         }
-        
-        
+
+
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteExercise(string id)
+        [Authorize]
+        public async Task<IActionResult> DeleteExercise(int id)
         {
-            await _exerciseService.DeleteExerciseAsync(id);
-            return NoContent();
+            
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (!int.TryParse(userId, out int parsedUserId))
+            {
+                return Unauthorized(); 
+            }
+
+            var exercise = await _context.Exercises
+                .Include(e => e.WorkoutExercises)
+                .FirstOrDefaultAsync(e => e.Id == id && e.UserId == parsedUserId);
+
+            if (exercise == null)
+            {
+                return Forbid();
+            }
+
+            _context.WorkoutExercises.RemoveRange(exercise.WorkoutExercises);
+
+            _context.Exercises.Remove(exercise);
+            await _context.SaveChangesAsync();
+
+            return NoContent(); 
         }
     }
 }

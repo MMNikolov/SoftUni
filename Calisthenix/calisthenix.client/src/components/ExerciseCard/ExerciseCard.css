@@ -63,3 +63,45 @@
 .exercise-card button:active {
     background-color: #004099;
 }
+
+.remove-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin-top: 6px;
+    cursor: pointer;
+}
+
+.workout-select {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 2px solid #1d3557;
+    border-radius: 6px;
+    background-color: #f1f1f1;
+    color: #1d3557;
+    cursor: pointer;
+    outline: none;
+    margin-top: 10px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.workout-select:hover {
+    background-color: #e0e0e0;
+}
+
+.workout-select:focus {
+    border-color: #457b9d;
+    background-color: #ffffff;
+}

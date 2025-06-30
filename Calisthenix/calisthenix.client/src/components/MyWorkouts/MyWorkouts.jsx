@@ -1,10 +1,65 @@
 import React, { useEffect, useState } from 'react';
 import ExerciseCard from '../ExerciseCard/ExerciseCard';
+import ConfirmationModal from '../ConfirmationModal/ConfirmationModal';
 import './MyWorkouts.css';
 
 const MyWorkouts = () => {
     const [workouts, setWorkouts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [showModal, setShowModal] = useState(false);
+    const [pendingDelete, setPendingDelete] = useState({ workoutId: null, exerciseId: null });
+    const [toastMessage, setToastMessage] = useState(null);
+
+    const requestRemove = (workoutId, exerciseId) => {
+        setPendingDelete({ workoutId, exerciseId });
+        setShowModal(true);
+    };
+
+    const confirmRemove = () => {
+        const { workoutId, exerciseId } = pendingDelete;
+        setShowModal(false);
+
+        handleRemove(workoutId, exerciseId);
+        setToastMessage("Exercise removed successfully!");
+
+        setTimeout(() => setToastMessage(null), 3000); // hide after 3s
+    };
+
+    const cancelRemove = () => {
+        setShowModal(false);
+        setPendingDelete({ workoutId: null, exerciseId: null });
+    };
+
+    const handleRemove = async (workoutId, exerciseId) => {
+        const token = localStorage.getItem('token');
+
+        try {
+            const res = await fetch(`https://localhost:7161/api/workout/${workoutId}/exercise/${exerciseId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+            if (!res.ok) throw new Error('Failed to remove exercise.');
+
+            setWorkouts(prev =>
+                prev.map(w => {
+                    if (w.id !== workoutId) return w;
+
+                    return {
+                        ...w,
+                        workoutExercises: {
+                            $values: w.workoutExercises.$values.filter(e => e.exerciseId !== exerciseId)
+                        }
+                    };
+                })
+            );
+        } catch (err) {
+            console.error(err);
+            alert('Error removing exercise.');
+        }
+    };
 
     useEffect(() => {
         const fetchWorkouts = async () => {
@@ -54,6 +109,7 @@ const MyWorkouts = () => {
                                             key={we.exerciseId}
                                             exercise={we.exercise}
                                             showAddButton={false}
+                                            onRemove={() => requestRemove(workout.id, we.exerciseId)}
                                         />
                                     ))}
                                 </div>
@@ -64,7 +120,20 @@ const MyWorkouts = () => {
                     ))}
                 </div>
             )}
+
+            {showModal && (
+                <ConfirmationModal
+                    title="Remove Exercise"
+                    message="Are you sure you want to remove this exercise from the workout?"
+                    onConfirm={confirmRemove}
+                    onCancel={cancelRemove}
+                />
+            )}
+            {toastMessage && (
+                <div className="toast">{toastMessage}</div>
+            )}
         </div>
+
     );
 };
 

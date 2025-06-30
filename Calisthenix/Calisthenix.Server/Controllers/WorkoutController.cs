@@ -1,5 +1,6 @@
 ﻿using Calisthenix.Server.Data;
 using Calisthenix.Server.Models;
+using Calisthenix.Server.Models.DTOs;
 using Calisthenix.Server.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -110,6 +111,55 @@ namespace Calisthenix.Server.Controllers
             var created = await _workoutService.CreateAsync(workout, userId);
 
             return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+        }
+
+        [HttpGet("my")]
+        [Authorize]
+        public async Task<IActionResult> GetMyWorkouts()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var workouts = await _workoutService.GetWorkoutsByUserIdAsync(userId);
+
+            return Ok(workouts);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> CreateWorkout([FromBody] CreateWorkoutDTO dto)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var created = await _workoutService.CreateWorkoutAsync(userId, dto);
+
+            return CreatedAtAction(nameof(GetMyWorkouts), new { id = created.Id }, created);
+        }
+
+        [HttpPost("{workoutId}/exercise/{exerciseId}")]
+        [Authorize]
+        public async Task<IActionResult> AddExerciseToWorkout(int workoutId, int exerciseId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var success = await _workoutService.AddExerciseToWorkoutAsync(workoutId, exerciseId, userId);
+
+            if (!success)
+                return BadRequest("Could not add exercise (invalid workout or duplicate).");
+
+            return Ok("Exercise added to workout.");
+        }
+
+        [HttpDelete("{workoutId}/exercise/{exerciseId}")]
+        [Authorize]
+        public async Task<IActionResult> RemoveExercise(int workoutId, int exerciseId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var success = await _workoutService.RemoveExerciseFromWorkoutAsync(workoutId, exerciseId, userId);
+
+            if (!success)
+                return BadRequest("Failed to remove exercise from workout.");
+
+            return NoContent();
         }
 
     }

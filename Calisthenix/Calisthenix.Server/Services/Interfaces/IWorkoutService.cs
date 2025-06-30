@@ -1,4 +1,5 @@
 ﻿using Calisthenix.Server.Models;
+using Calisthenix.Server.Models.DTOs;
 
 namespace Calisthenix.Server.Services.Interfaces
 {
@@ -12,5 +13,9 @@ namespace Calisthenix.Server.Services.Interfaces
         Task<bool> AddExerciseToWorkoutAsync(int workoutId, int exerciseId);
         Task AddExerciseToUserWorkoutAsync(int userId, int exerciseId);
         User GetUserByUsername(string username);
+        Task<List<WorkoutDTO>> GetWorkoutsByUserIdAsync(string userId);
+        Task<WorkoutDTO> CreateWorkoutAsync(string userId, CreateWorkoutDTO dto);
+        Task<bool> AddExerciseToWorkoutAsync(int workoutId, int exerciseId, string userId);
+        Task<bool> RemoveExerciseFromWorkoutAsync(int workoutId, int exerciseId, string userId);
     }
 }
