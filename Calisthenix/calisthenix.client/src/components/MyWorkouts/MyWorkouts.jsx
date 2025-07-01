@@ -90,7 +90,14 @@ const MyWorkouts = () => {
         fetchWorkouts();
     }, []);
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) {
+        return (
+            <div className="spinner-container">
+                <div className="spinner"></div>
+                <p>Loading your workouts...</p>
+            </div>
+        );
+    }
 
     return (
         <div className="my-workouts-container">

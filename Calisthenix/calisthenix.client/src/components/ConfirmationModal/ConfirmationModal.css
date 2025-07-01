@@ -1,4 +1,3 @@
-/* Blurred overlay with fade-in */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -14,7 +13,6 @@
     z-index: 999;
 }
 
-/* Slide-up modal box */
 .modal-content {
     background: #ffffff;
     padding: 2rem;
@@ -27,7 +25,6 @@
     width: 90%;
 }
 
-/* Buttons */
 .modal-buttons {
     margin-top: 1.5rem;
     display: flex;
@@ -55,7 +52,6 @@
     font-weight: bold;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;

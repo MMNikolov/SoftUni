@@ -9,10 +9,13 @@ function AllExercises() {
     const [search, setSearch] = useState('');
     const [categoryFilter, setCategoryFilter] = useState('');
     const [difficultyFilter, setDifficultyFilter] = useState('');
+    const [toastMessage, setToastMessage] = useState(null);
     const [highlightId, setHighlightId] = useState(null);
 
-    const handleDelete = (id) => {
+    const handleDelete = (id, name) => {
         setExercises(prev => prev.filter(e => e.id !== id));
+        setToastMessage(`"${name}" removed`);
+        setTimeout(() => setToastMessage(null), 3000);
     };
 
     const filteredExercises = exercises.filter(ex => {
@@ -76,7 +79,14 @@ function AllExercises() {
         setExercises(prev => prev.filter(e => e.id !== exerciseId));
     };
 
-    if (loading) return <p>Loading exercises...</p>;
+    if (loading) {
+        return (
+            <div className="spinner-container">
+                <div className="spinner"></div>
+                <p>Loading exercises...</p>
+            </div>
+        );
+    }
 
     return (
         <div className="home-container">
@@ -88,22 +98,34 @@ function AllExercises() {
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                 />
-
-                <select value={categoryFilter} onChange={(e) => setCategoryFilter(e.target.value)}>
-                    <option value="">All Categories</option>
-                    <option value="Push">Push</option>
-                    <option value="Pull">Pull</option>
-                    <option value="Legs">Legs</option>
-                    <option value="Core">Core</option>
-                </select>
-
-                <select value={difficultyFilter} onChange={(e) => setDifficultyFilter(e.target.value)}>
-                    <option value="">All Difficulties</option>
-                    <option value="Beginner">Beginner</option>
-                    <option value="Intermediate">Intermediate</option>
-                    <option value="Advanced">Advanced</option>
-                    <option value="Expert">Expert</option>
-                </select>
+                <div className="filter-row">
+                    <label className="filter-label">Category:</label>
+                    <div className="chip-group">
+                        {['', 'Push', 'Pull', 'Legs', 'Core'].map((cat) => (
+                            <button
+                                key={cat}
+                                className={`chip ${categoryFilter === cat ? 'active' : ''}`}
+                                onClick={() => setCategoryFilter(cat)}
+                            >
+                                {cat === '' ? 'All' : cat}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+                <div className="filter-row">
+                    <label className="filter-label">Difficulty:</label>
+                    <div className="chip-group">
+                        {['', 'Beginner', 'Intermediate', 'Advanced', 'Expert'].map((lvl) => (
+                            <button
+                                key={lvl}
+                                className={`chip ${difficultyFilter === lvl ? 'active' : ''}`}
+                                onClick={() => setDifficultyFilter(lvl)}
+                            >
+                                {lvl === '' ? 'All Levels' : lvl}
+                            </button>
+                        ))}
+                    </div>
+                </div>
             </div>
             <div className="exercise-list">
                 {filteredExercises.length === 0 ? (
@@ -114,13 +136,16 @@ function AllExercises() {
                             key={exercise.id}
                             exercise={exercise}
                             onAdd={handleAddToWorkout}
-                            onDelete={handleDelete}
+                            onDelete={(id) => handleDelete(id, exercise.name)}
                             workouts={workouts}
                             highlight={highlightId === exercise.id}
                         />
                     ))
                 )}
             </div>
+            {toastMessage && (
+                <div className="toast">{toastMessage}</div>
+            )}
         </div>
     );
 }

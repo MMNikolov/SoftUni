@@ -1,49 +1,88 @@
 .container {
-    height: 86.5vh;
-    width: 99.3vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
 }
 
 .add-workout-container {
+    width: 100%;
     max-width: 600px;
-    margin: 60px auto;
-    padding: 20px;
-    background: #f8f9ff;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background: #f5f9ff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .add-workout-container h2 {
-    text-align: center;
-    color: #003366;
+    font-size: 1.8rem;
     margin-bottom: 20px;
+    color: #1d3557;
+    font-weight: 600;
 }
 
 .add-workout-container form {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
 .add-workout-container input,
 .add-workout-container textarea,
-.add-workout-container select{
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+.add-workout-container select {
+    padding: 10px 12px;
     font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    transition: border-color 0.2s ease;
+}
+
+.add-workout-container input:focus,
+.add-workout-container textarea:focus,
+.add-workout-container select:focus {
+    border-color: #0066cc;
+    outline: none;
+}
+
+.add-workout-container textarea {
+    resize: vertical;
+    min-height: 100px;
 }
 
 .add-workout-container button {
     padding: 12px;
-    background: #0066cc;
+    background-color: #0066cc;
     color: white;
     border: none;
-    border-radius: 6px;
-    font-weight: bold;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-color 0.3s;
+    margin-top: 10px;
 }
 
 .add-workout-container button:hover {
-    background: #004c99;
+    background-color: #004b99;
+}
+
+.error {
+    color: #e63946;
+    font-size: 0.85rem;
+    margin: -6px 0;
+    padding-left: 10px;
+    text-align: left;
+}
+
+input.input-error,
+select.input-error,
+textarea.input-error{
+    border: 2px solid red;
+    background-color: #fff5f5;
+    transition: border 0.2s ease, background-color 0.2s ease;
 }

@@ -1,11 +1,11 @@
 .exercise-card {
     background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 14px;
     padding: 16px;
     margin: 12px;
-    width: 320px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 300px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
@@ -40,24 +40,24 @@
 }
 
 .exercise-card strong {
-    color: #000;
+    color: #1d3557;
 }
 
 .exercise-card button {
-    margin-top: 12px;
-    padding: 8px 14px;
-    background-color: #007bff;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #0066cc;
     border: none;
     color: white;
     font-weight: 500;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.2s ease;
     font-size: 0.95rem;
 }
 
 .exercise-card button:hover {
-    background-color: #0056b3;
+    background-color: #004b99;
 }
 
 .exercise-card button:active {
@@ -105,3 +105,5 @@
     border-color: #457b9d;
     background-color: #ffffff;
 }
+
+

@@ -51,6 +51,154 @@
     z-index: 1000;
 }
 
+.spinner-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 70px;
+    height: 70px;
+    border: 8px solid rgba(0, 102, 204, 0.2); 
+    border-top-color: #0066cc; 
+    border-radius: 50%;
+    animation: spin 1s ease-in-out infinite;
+}
+
+.spinner-container p {
+    font-size: 1.1rem;
+    color: #0066cc;
+    font-weight: 500;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.chip-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.chip {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 5.5px 12px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.chip:hover {
+    background-color: #d0d0d0;
+}
+
+.chip.active {
+    background-color: #0066cc;
+    color: white;
+}
+
+.filters {
+    background-color: #f5f9ff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin: 20px auto 30px;
+    max-width: 800px;
+    border: 1px solid #dde7f3;
+}
+
+.filters input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 14px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.filter-group-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.filter-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.filter-label {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+    width: 80px; 
+    text-align: right;
+}
+
+.chip-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.toast {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    margin: 20px auto;
+    width: fit-content;
+    border-radius: 5px;
+    text-align: center;
+    animation: fadein 0.3s, fadeout 0.3s 2.7s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
 @keyframes fadeInOut {
     0% {
         opacity: 0;

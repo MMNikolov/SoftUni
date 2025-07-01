@@ -30,8 +30,6 @@ function ExerciseCard({ exercise, onAdd, onRemove, onDelete, showAddButton = tru
     };
 
     const handleDelete = async () => {
-        const confirmed = window.confirm(`Are you sure you want to delete "${exercise.name}"?`);
-        if (!confirmed) return;
 
         const token = localStorage.getItem('token');
         try {

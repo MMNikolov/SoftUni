@@ -28,7 +28,7 @@ const Navbar = () => {
             <ul className="navbar-links">
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/exercises">All Exercises</Link></li>
-                {isAuthenticated() && <li><Link to="/add-workout">Add Workout</Link></li>}
+                {isAuthenticated() && <li><Link to="/add-workout">Add Exercise</Link></li>}
                 {isAuthenticated() && <li><Link to="/my-workouts">My Workouts</Link></li>}
                 {!isLoggedIn() && <li><Link to="/login">Login</Link></li>}
                 {!isLoggedIn() && <li><Link to="/register">Register</Link></li>}
@@ -41,7 +41,9 @@ const Navbar = () => {
                 )}
             </ul>
             {isLoggedIn() && (
-                <div className="navbar-user">Greetings, {username}!</div>
+                <div className="navbar-greeting">
+                    <span className="typewriter">Greetings, <strong>{username}</strong>!</span>
+                </div>
             )}
 
             {showModal && (

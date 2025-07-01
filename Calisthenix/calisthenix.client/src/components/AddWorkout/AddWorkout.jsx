@@ -4,6 +4,7 @@ import './AddWorkout.css';
 
 const AddWorkout = () => {
     const navigate = useNavigate();
+    const [errors, setErrors] = useState({});
     const [formData, setFormData] = useState({
         name: '',
         category: '',
@@ -14,12 +15,43 @@ const AddWorkout = () => {
         videoUrl: '',
     });
 
+    const validate = () => {
+        const newErrors = {};
+
+        if (!formData.name.trim()) newErrors.name = "Name is required.";
+        if (!formData.category) newErrors.category = "Please select a category.";
+        if (!formData.equipment.trim()) newErrors.equipment = "Equipment is required.";
+        if (!formData.difficulty) newErrors.difficulty = "Please select a difficulty level.";
+        if (!formData.description.trim()) newErrors.description = "Description is required.";
+
+        return newErrors;
+    };
+
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+
+        setFormData(prev => ({ ...prev, [name]: value }));
+
+        setErrors(prev => {
+            const updated = { ...prev };
+            if (value.trim() !== '' || name === 'category' || name === 'difficulty') {
+                delete updated[name];
+            }
+            return updated;
+        });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        const newErrors = validate();
+
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            return;
+        }
+
+        setErrors({});
 
         const token = localStorage.getItem('token');
 
@@ -53,28 +85,61 @@ const AddWorkout = () => {
     return (
         <div className="container">
             <div className="add-workout-container">
-                <h2>Add New Workout</h2>
+                <h2>Add New Exercise</h2>
                 <form onSubmit={handleSubmit}>
-                    <input name="name" placeholder="Name" onChange={handleChange} required />
-                    <select name="category" value={formData.category} onChange={handleChange} required>
+                    <input
+                        name="name"
+                        placeholder="Name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className={errors.name ? 'input-error' : ''}
+                    />
+                    {errors.name && <p className="error">{errors.name}</p>}
+                    <select
+                        name="category"
+                        value={formData.category}
+                        onChange={handleChange}
+                        className={errors.category ? 'input-error' : ''}
+                    >
                         <option value="">Select category</option>
                         <option value="Push">Push</option>
                         <option value="Pull">Pull</option>
                         <option value="Core">Core</option>
                         <option value="Legs">Legs</option>
                     </select>
-                    <input name="equipment" placeholder="Equipment" onChange={handleChange} required />
-                    <select name="difficulty" value={formData.difficulty} onChange={handleChange} required>
+                    {errors.category && <p className="error">{errors.category}</p>}
+                    <input
+                        name="equipment"
+                        placeholder="Equipment"
+                        value={formData.equipment}
+                        onChange={handleChange}
+                        className={errors.equipment ? 'input-error' : ''}
+                    />
+                    {errors.equipment && <p className="error">{errors.equipment}</p>}
+                    <select
+                        name="difficulty"
+                        value={formData.difficulty}
+                        onChange={handleChange}
+                        className={errors.difficulty ? 'input-error' : ''}
+                    >
                         <option value="">Select difficulty</option>
                         <option value="Beginner">Beginner</option>
                         <option value="Intermediate">Intermediate</option>
                         <option value="Advanced">Advanced</option>
                         <option value="Expert">Expert</option>
                     </select>
-                    <textarea name="description" placeholder="Description" onChange={handleChange} required />
+                    {errors.difficulty && <p className="error">{errors.difficulty}</p>}
+                    <textarea
+                        name="description"
+                        placeholder="Description"
+                        value={formData.description}
+                        onChange={handleChange}
+                        className={errors.difficulty ? 'input-error' : ''}
+                    />
+                    {errors.description && <p className="error">{errors.description}</p>}
                     <input name="imageUrl" placeholder="Image URL" onChange={handleChange} />
                     <input name="videoUrl" placeholder="Video URL" onChange={handleChange} />
-                    <button type="submit">Add Workout</button>
+                    <button type="submit">Add Exercise</button>
                 </form>
             </div>
         </div>

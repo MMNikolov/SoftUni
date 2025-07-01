@@ -66,3 +66,42 @@
     color: #a6d4fa;
     text-decoration: underline;
 }
+
+.navbar-greeting {
+    margin-left: 16px;
+    font-size: 1rem;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    animation: typing 2s steps(25) forwards, blink 0.75s step-end infinite;
+    animation-delay: 0s, 2s;
+    animation-fill-mode: forwards, forwards;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    from, to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: white;
+    }
+}
