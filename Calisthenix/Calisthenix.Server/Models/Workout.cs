@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Calisthenix.Server.Models
+﻿namespace Calisthenix.Server.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class Workout
     {
         [Key]

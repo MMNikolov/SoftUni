@@ -1,9 +1,9 @@
-﻿using Calisthenix.Server.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-namespace Calisthenix.Server.Configuration
+﻿namespace Calisthenix.Server.Configuration
 {
+    using Calisthenix.Server.Models;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
     public class WorkoutExerciseConfiguration : IEntityTypeConfiguration<WorkoutExercise>
     {
         public void Configure(EntityTypeBuilder<WorkoutExercise> builder)

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CinemaApp.Data;
+using CinemaApp.Data.Repository.Contracts;
 using CinemaApp.Services.Core.Interfaces;
 using CinemaApp.Web.Areas.Identity;
 using CinemaApp.Web.ViewModels.Watchlist;
@@ -13,16 +14,16 @@ namespace CinemaApp.Services.Core
 {
     public class WatchlistService : IWatchlistService
     {
-        private readonly CinemaAppDbContext _context;
+        private readonly IWatchlistRepository _watchlistRepository;
 
-        public WatchlistService(CinemaAppDbContext context)
+        public WatchlistService(IWatchlistRepository watchlistRepository)
         {
-            _context = context;
+            _watchlistRepository = watchlistRepository;
         }
 
         public async Task<IEnumerable<WatchlistViewModel>> GetUserWatchlistAsync(string userId)
         {
-            return await _context.UserMovies
+            return await _watchlistRepository.GetAllAttached()
                 .Where(w => w.UserId == userId)
                 .Select(w => new WatchlistViewModel
                 {
@@ -38,7 +39,7 @@ namespace CinemaApp.Services.Core
 
         public async Task<bool> IsMovieInWatchlistAsync(string userId, Guid movieId)
         {
-            return await _context.UserMovies
+            return await _watchlistRepository.GetAllAttached()
                 .AnyAsync(w => w.UserId == userId && w.MovieId == movieId);
         }
 
@@ -50,19 +51,19 @@ namespace CinemaApp.Services.Core
                 MovieId = Guid.Parse(movieId)
             };
 
-            await _context.UserMovies.AddAsync(userMovie);
-            await _context.SaveChangesAsync();
+            await _watchlistRepository.AddAsync(userMovie);
+            await _watchlistRepository.SaveChangesAsync();
         }
 
         public async Task RemoveFromWatchlistAsync(string userId, string movieId)
         {
-            var userMovie = await _context.UserMovies
+            var userMovie = await _watchlistRepository.GetAllAttached()
                 .FirstOrDefaultAsync(w => w.UserId == userId && w.MovieId.ToString() == movieId);
 
             if (userMovie != null)
             {
-                _context.UserMovies.Remove(userMovie);
-                await _context.SaveChangesAsync();
+                _watchlistRepository.Delete(userMovie);
+                await _watchlistRepository.SaveChangesAsync();
             }
         }
     }

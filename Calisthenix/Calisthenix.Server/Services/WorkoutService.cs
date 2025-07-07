@@ -1,11 +1,11 @@
-﻿using Calisthenix.Server.Data;
-using Calisthenix.Server.Models;
-using Calisthenix.Server.Models.DTOs;
-using Calisthenix.Server.Services.Interfaces;
-using Microsoft.EntityFrameworkCore;
-
-namespace Calisthenix.Server.Services
+﻿namespace Calisthenix.Server.Services
 {
+    using Calisthenix.Server.Data;
+    using Calisthenix.Server.Models;
+    using Calisthenix.Server.Models.DTOs;
+    using Calisthenix.Server.Services.Interfaces;
+    using Microsoft.EntityFrameworkCore;
+
     public class WorkoutService : IWorkoutService
     {
         private readonly CalisthenixDbContext _context;
@@ -112,7 +112,7 @@ namespace Calisthenix.Server.Services
                 };
 
                 _context.Workouts.Add(workout);
-                await _context.SaveChangesAsync(); // Save so we have the workout.Id
+                await _context.SaveChangesAsync();
             }
 
             if (workout.WorkoutExercises.Any(we => we.ExerciseId == exerciseId))
@@ -159,7 +159,6 @@ namespace Calisthenix.Server.Services
 
         public async Task<bool> AddExerciseToWorkoutAsync(int workoutId, int exerciseId, string userId)
         {
-            // Validate workout belongs to the user
             var workout = await _context.Workouts
                 .Include(w => w.WorkoutExercises)
                 .FirstOrDefaultAsync(w => w.Id == workoutId && w.UserId.ToString().ToLower() == userId.ToString().ToLower());
@@ -167,7 +166,6 @@ namespace Calisthenix.Server.Services
             if (workout == null)
                 return false;
 
-            // Prevent duplicates
             bool alreadyAdded = workout.WorkoutExercises
                 .Any(we => we.ExerciseId == exerciseId);
 

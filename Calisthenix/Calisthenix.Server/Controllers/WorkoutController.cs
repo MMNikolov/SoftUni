@@ -1,14 +1,14 @@
-﻿using Calisthenix.Server.Data;
-using Calisthenix.Server.Models;
-using Calisthenix.Server.Models.DTOs;
-using Calisthenix.Server.Services.Interfaces;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
-
-namespace Calisthenix.Server.Controllers
+﻿namespace Calisthenix.Server.Controllers
 {
+    using Calisthenix.Server.Data;
+    using Calisthenix.Server.Models;
+    using Calisthenix.Server.Models.DTOs;
+    using Calisthenix.Server.Services.Interfaces;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
+    using System.Security.Claims;
+
     [ApiController]
     [Route("api/[controller]")]
     [Authorize]

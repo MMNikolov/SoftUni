@@ -1,8 +1,8 @@
-﻿using Calisthenix.Server.Services.Interfaces;
-using Microsoft.AspNetCore.Mvc;
-
-namespace Calisthenix.Server.Controllers
+﻿namespace Calisthenix.Server.Controllers
 {
+    using Calisthenix.Server.Services.Interfaces;
+    using Microsoft.AspNetCore.Mvc;
+
     [ApiController]
     [Route("api/[controller]")]
     public class AuthController : ControllerBase

@@ -22,7 +22,7 @@ const MyWorkouts = () => {
         handleRemove(workoutId, exerciseId);
         setToastMessage("Exercise removed successfully!");
 
-        setTimeout(() => setToastMessage(null), 3000); // hide after 3s
+        setTimeout(() => setToastMessage(null), 3000);
     };
 
     const cancelRemove = () => {

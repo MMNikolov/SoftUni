@@ -160,13 +160,6 @@
     gap: 8px;
 }
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-
 .toast {
     background-color: #4caf50;
     color: white;
@@ -176,6 +169,12 @@
     border-radius: 5px;
     text-align: center;
     animation: fadein 0.3s, fadeout 0.3s 2.7s;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes fadein {

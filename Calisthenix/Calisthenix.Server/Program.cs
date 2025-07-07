@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Calisthenix.Server.Services.Interfaces;
 using Calisthenix.Server.Services;
 using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);

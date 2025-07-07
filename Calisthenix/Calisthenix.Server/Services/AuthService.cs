@@ -1,16 +1,15 @@
-﻿using System.Security.Cryptography;
-using System.Text;
-using Calisthenix.Server.Data;
-using Calisthenix.Server.Models;
-using Calisthenix.Server.Services.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-
-namespace Calisthenix.Server.Services
+﻿namespace Calisthenix.Server.Services
 {
+    using System.Security.Cryptography;
+    using System.Text;
+    using Calisthenix.Server.Data;
+    using Calisthenix.Server.Models;
+    using Calisthenix.Server.Services.Interfaces;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.IdentityModel.Tokens;
+    using System.IdentityModel.Tokens.Jwt;
+    using System.Security.Claims;
+
     public class AuthService : IAuthService
     {
         private readonly CalisthenixDbContext _context;

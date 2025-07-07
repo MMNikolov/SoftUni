@@ -50,5 +50,11 @@ namespace CinemaApp.Data.Models
         public string? ImageUrl { get; set; }
 
         public bool IsDeleted { get; set; } = false;
+
+        [Comment("Navigation property for CinemaMovies")]
+        public virtual ICollection<CinemaMovie> CinemaMovies { get; set; } = new HashSet<CinemaMovie>();
+
+        [Comment("Navigation property for Tickets")]
+        public virtual ICollection<Ticket> Tickets { get; set; } = new HashSet<Ticket>();
     }
 }

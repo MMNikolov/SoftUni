@@ -59,12 +59,6 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 .toast {
     position: fixed;
     bottom: 20px;
@@ -78,6 +72,12 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     animation: fadeInOut 3s ease-in-out;
     z-index: 1000;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes fadeInOut {

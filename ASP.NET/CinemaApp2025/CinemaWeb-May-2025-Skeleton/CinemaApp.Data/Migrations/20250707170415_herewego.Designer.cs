@@ -4,6 +4,7 @@ using CinemaApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CinemaApp.Data.Migrations
 {
     [DbContext(typeof(CinemaAppDbContext))]
-    partial class CinemaAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250707170415_herewego")]
+    partial class herewego
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -546,13 +549,13 @@ namespace CinemaApp.Data.Migrations
                     b.HasOne("CinemaApp.Data.Models.Cinema", "Cinema")
                         .WithMany("CinemaMovies")
                         .HasForeignKey("CinemaId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("CinemaApp.Data.Models.Movie", "Movie")
                         .WithMany("CinemaMovies")
                         .HasForeignKey("MovieId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Cinema");
@@ -565,19 +568,19 @@ namespace CinemaApp.Data.Migrations
                     b.HasOne("CinemaApp.Data.Models.Cinema", "Cinema")
                         .WithMany("Tickets")
                         .HasForeignKey("CinemaId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("CinemaApp.Data.Models.Movie", "Movie")
                         .WithMany("Tickets")
                         .HasForeignKey("MovieId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Cinema");
@@ -598,7 +601,7 @@ namespace CinemaApp.Data.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Ticket");

@@ -1,8 +1,8 @@
-﻿using Calisthenix.Server.Models;
-using Calisthenix.Server.Models.DTOs;
-
-namespace Calisthenix.Server.Services.Interfaces
+﻿namespace Calisthenix.Server.Services.Interfaces
 {
+    using Calisthenix.Server.Models;
+    using Calisthenix.Server.Models.DTOs;
+
     public interface IWorkoutService
     {
         Task<IEnumerable<Workout>> GetAllAsync(int userId);
