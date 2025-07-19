@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { getUsername, isLoggedIn, isAuthenticated } from '../../utils/auth';
 import LogoutPage from '../LogoutPage/LogoutPage'; 
@@ -7,11 +7,25 @@ import './Navbar.css';
 const Navbar = () => {
     const [username, setUsername] = useState(null);
     const [showModal, setShowModal] = useState(false);
+    const [showDropdown, setShowDropdown] = useState(false);
+    const dropdownRef = useRef(null);
 
     useEffect(() => {
         if (isLoggedIn()) {
             setUsername(getUsername());
         }
+
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setShowDropdown(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
     }, []);
 
     const handleLogout = () => {
@@ -41,8 +55,21 @@ const Navbar = () => {
                 )}
             </ul>
             {isLoggedIn() && (
-                <div className="navbar-greeting">
-                    <span className="typewriter">Greetings, <strong>{username}</strong>!</span>
+                <div className="profile-dropdown" ref={ dropdownRef }>
+                    <button
+                        className="user-badge"
+                        onClick={() => setShowDropdown(!showDropdown)}
+                    >
+                        {username} {showDropdown ? '▲' : '▼'}
+                    </button>
+
+                    {showDropdown && (
+                        <div className="dropdown-menu">
+                            <Link to="/profile" onClick={() => setShowDropdown(false)}>Profile</Link>
+                            <Link to="/my-workouts" onClick={() => setShowDropdown(false)}>My Workouts</Link>
+                            <button onClick={() => { setShowDropdown(false); setShowModal(true); }}>Logout</button>
+                        </div>
+                    )}
                 </div>
             )}
 

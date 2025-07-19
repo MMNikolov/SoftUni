@@ -1,0 +1,170 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    min-height: 80vh;
+    background-color: #f5f9ff;
+}
+
+.profile-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+    .profile-card h2 {
+        color: #1d3557;
+        margin-bottom: 8px;
+    }
+
+.profile-subtext {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.profile-section {
+    margin: 12px 0;
+    text-align: left;
+}
+
+    .profile-section strong {
+        color: #0066cc;
+    }
+
+.profile-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+    .profile-actions button {
+        padding: 10px 16px;
+        border: none;
+        border-radius: 6px;
+        background-color: #0066cc;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+        .profile-actions button:hover {
+            background-color: #004b99;
+        }
+
+        .profile-actions button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+.avatar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.avatar-preview {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #0066cc;
+}
+
+.avatar-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.remove-avatar-button {
+    margin-top: 8px;
+    background-color: #e63946;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+    .remove-avatar-button:hover {
+        background-color: #c62828;
+    }
+
+.custom-file-button {
+    background-color: #0066cc;
+    color: white;
+    padding: 8px 2px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.90rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.custom-file-button:hover {
+    background-color: #004b99;
+}
+
+.avatar-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.custom-file-button,
+.remove-avatar-button {
+    width: 140px;
+    text-align: center;
+}
+
+.change-password-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+    width: 100%;
+}
+
+    .change-password-form input {
+        padding: 10px;
+        font-size: 0.95rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    .change-password-form button[type="submit"] {
+        background-color: #0066cc;
+        color: white;
+        font-weight: 500;
+        border: none;
+        padding: 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    .change-password-form button:hover {
+        background-color: #004b99;
+    }
