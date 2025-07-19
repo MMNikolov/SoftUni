@@ -26,13 +26,10 @@
             if (await _context.Users.AnyAsync(u => u.Username == username))
                 throw new Exception("User already exists");
 
-            CreatePasswordHash(password, out byte[] hash, out byte[] salt);
-
             var user = new User
             {
                 Username = username,
-                PasswordHash = hash,
-                PasswordSalt = salt
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(password)
             };
 
             _context.Users.Add(user);
@@ -45,24 +42,10 @@
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
 
-            if (user == null || !VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
+            if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
                 throw new Exception("Invalid credentials");
 
             return GenerateJwtToken(user);
-        }
-
-        private void CreatePasswordHash(string password, out byte[] hash, out byte[] salt)
-        {
-            using var hmac = new HMACSHA512();
-            salt = hmac.Key;
-            hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
-        }
-
-        private bool VerifyPasswordHash(string password, byte[] hash, byte[] salt)
-        {
-            using var hmac = new HMACSHA512(salt);
-            var computed = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
-            return computed.SequenceEqual(hash);
         }
 
         private string GenerateJwtToken(User user)

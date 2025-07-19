@@ -4,8 +4,7 @@
     {
         public int Id { get; set; }
         public string Username { get; set; } = null!;
-        public byte[] PasswordHash { get; set; } = null!;
-        public byte[] PasswordSalt { get; set; } = null!;
+        public string PasswordHash { get; set; } = null!;
         public ICollection<Exercise> Exercises { get; set; } = new List<Exercise>();
     }
 }
