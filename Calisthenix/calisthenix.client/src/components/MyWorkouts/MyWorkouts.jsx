@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import ExerciseCard from '../ExerciseCard/ExerciseCard';
 import ConfirmationModal from '../ConfirmationModal/ConfirmationModal';
 import './MyWorkouts.css';
@@ -9,6 +9,14 @@ const MyWorkouts = () => {
     const [showModal, setShowModal] = useState(false);
     const [pendingDelete, setPendingDelete] = useState({ workoutId: null, exerciseId: null });
     const [toastMessage, setToastMessage] = useState(null);
+    const [newWorkoutName, setNewWorkoutName] = useState('');
+    const [showCreateForm, setShowCreateForm] = useState(false);
+    const [editingWorkoutId, setEditingWorkoutId] = useState(null);
+    const [editingName, setEditingName] = useState('');
+    const [showWorkoutDeleteModal, setShowWorkoutDeleteModal] = useState(false);
+    const [workoutToDelete, setWorkoutToDelete] = useState(null);
+
+
 
     const requestRemove = (workoutId, exerciseId) => {
         setPendingDelete({ workoutId, exerciseId });
@@ -61,6 +69,99 @@ const MyWorkouts = () => {
         }
     };
 
+    const handleCreateWorkout = async (e) => {
+        e.preventDefault();
+        const token = localStorage.getItem('token');
+
+        try {
+            const res = await fetch('https://localhost:7161/api/workout/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({ name: newWorkoutName })
+            });
+
+            if (!res.ok) throw new Error('Failed to create workout');
+
+            const newWorkout = await res.json();
+            setWorkouts(prev => [...prev, newWorkout]);
+            setToastMessage('Workout created!');
+            setNewWorkoutName('');
+            setShowCreateForm(false);
+
+            setTimeout(() => setToastMessage(null), 3000);
+        } catch (err) {
+            console.error(err);
+            alert('Error creating workout.');
+        }
+    };
+
+    const handleRenameWorkout = async (id) => {
+        const token = localStorage.getItem('token');
+
+        const res = await fetch(`https://localhost:7161/api/workout/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ name: editingName })
+        });
+
+        if (!res.ok) {
+            console.error(await res.text());
+            return;
+        }
+
+        setWorkouts(prev =>
+            prev.map(w =>
+                w.id === id ? { ...w, name: editingName } : w
+            )
+        );
+        setEditingWorkoutId(null);
+        setEditingName('');
+        setToastMessage("Workout renamed!");
+
+        setTimeout(() => setToastMessage(null), 3000);
+    };
+
+    const handleDeleteWorkout = async (id) => {
+        const token = localStorage.getItem('token');
+
+        try {
+            const res = await fetch(`https://localhost:7161/api/workout/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+            if (!res.ok) throw new Error("Failed to delete workout");
+
+            setWorkouts(prev => prev.filter(w => w.id !== id));
+            setToastMessage("Workout deleted!");
+            setTimeout(() => setToastMessage(null), 3000);
+        } catch (err) {
+            console.error(err);
+            alert("Error deleting workout.");
+        }
+    };
+
+    const confirmWorkoutDelete = async () => {
+        if (!workoutToDelete) return;
+        await handleDeleteWorkout(workoutToDelete);
+        setWorkoutToDelete(null);
+        setShowWorkoutDeleteModal(false);
+    };
+
+    const cancelWorkoutDelete = () => {
+        setWorkoutToDelete(null);
+        setShowWorkoutDeleteModal(false);
+    };
+
+
     useEffect(() => {
         const fetchWorkouts = async () => {
             const token = localStorage.getItem('token');
@@ -101,6 +202,24 @@ const MyWorkouts = () => {
 
     return (
         <div className="my-workouts-container">
+            <div className="create-workout-header">
+                <button className="create-workout-button" onClick={() => setShowCreateForm(!showCreateForm)}>
+                    {showCreateForm ? 'Cancel' : '➕ Create Workout'}
+                </button>
+
+                {showCreateForm && (
+                    <form className="create-workout-form" onSubmit={handleCreateWorkout}>
+                        <input
+                            type="text"
+                            placeholder="Workout name..."
+                            value={newWorkoutName}
+                            onChange={(e) => setNewWorkoutName(e.target.value)}
+                            required
+                        />
+                        <button type="submit">Save</button>
+                    </form>
+                )}
+            </div>
             <h2>My Workouts</h2>
             {workouts.length === 0 ? (
                 <p>You haven't added any workouts yet.</p>
@@ -108,7 +227,41 @@ const MyWorkouts = () => {
                 <div className="workout-list">
                     {workouts.map(workout => (
                         <div className="workout-card" key={workout.id}>
-                            <h3>{workout.name}</h3>
+                            <div className="workout-title">
+                                {editingWorkoutId === workout.id ? (
+                                    <>
+                                        <input
+                                            value={editingName}
+                                            onChange={(e) => setEditingName(e.target.value)}
+                                            onKeyDown={(e) => {
+                                                if (e.key === 'Enter') handleRenameWorkout(workout.id);
+                                            }}
+                                            autoFocus
+                                        />
+                                        <button className="save-btn" onClick={() => handleRenameWorkout(workout.id)}>
+                                            💾
+                                        </button>
+                                    </>
+                                ) : (
+                                    <>
+                                        <h3>{workout.name}</h3>
+                                        <div className="workout-actions">
+                                            <button className="icon-btn" onClick={() => {
+                                                setEditingWorkoutId(workout.id);
+                                                setEditingName(workout.name);
+                                            }}>
+                                                ✏️
+                                            </button>
+                                                <button className="icon-btn delete-btn" onClick={() => {
+                                                    setWorkoutToDelete(workout.id);
+                                                    setShowWorkoutDeleteModal(true);
+                                                }}>
+                                                    ❌
+                                                </button>
+                                        </div>
+                                    </>
+                                )}
+                            </div>
                             {workout.workoutExercises?.$values?.length > 0 ? (
                                 <div className="exercise-list">
                                     {workout.workoutExercises.$values.map(we => (
@@ -138,6 +291,14 @@ const MyWorkouts = () => {
             )}
             {toastMessage && (
                 <div className="toast">{toastMessage}</div>
+            )}
+            {showWorkoutDeleteModal && (
+                <ConfirmationModal
+                    title="Delete Workout"
+                    message="Are you sure you want to delete this entire workout?"
+                    onConfirm={confirmWorkoutDelete}
+                    onCancel={cancelWorkoutDelete}
+                />
             )}
         </div>
 

@@ -5,10 +5,12 @@
     using Calisthenix.Server.Models.DTOs;
     using Calisthenix.Server.Services.Interfaces;
     using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Cors;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using System.Security.Claims;
 
+    [EnableCors("AllowVite")]
     [ApiController]
     [Route("api/[controller]")]
     [Authorize]
@@ -124,7 +126,7 @@
             return Ok(workouts);
         }
 
-        [HttpPost]
+        [HttpPost("create")]
         [Authorize]
         public async Task<IActionResult> CreateWorkout([FromBody] CreateWorkoutDTO dto)
         {
@@ -158,6 +160,39 @@
 
             if (!success)
                 return BadRequest("Failed to remove exercise from workout.");
+
+            return NoContent();
+        }
+
+        [HttpPut("{id}")]
+        [Authorize]
+        public async Task<IActionResult> UpdateWorkoutName(int id, [FromBody] WorkoutDTO dto)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var workout = await _context.Workouts.FirstOrDefaultAsync(w => w.Id == id && w.UserId.ToString().ToLower() == userId.ToString().ToLower());
+            if (workout == null) return NotFound("Workout not found");
+
+            workout.Name = dto.Name;
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Workout name updated" });
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteWorkout(int id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var workout = await _context.Workouts
+                .Include(w => w.WorkoutExercises)
+                .FirstOrDefaultAsync(w => w.Id == id && w.UserId.ToString().ToLower() == userId.ToString().ToLower());
+
+            if (workout == null)
+                return NotFound();
+
+            _context.Workouts.Remove(workout);
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }
