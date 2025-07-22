@@ -53,7 +53,6 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-app.UseCors("AllowVite");
 
 using (var scope = app.Services.CreateScope())
 {
@@ -61,8 +60,6 @@ using (var scope = app.Services.CreateScope())
     DbInitializer.Seed(dbContext);
 }
 
-app.UseDefaultFiles();
-app.UseStaticFiles();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -72,6 +69,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseDefaultFiles();
+app.UseRouting();
+
+app.UseCors("AllowVite");
 
 app.UseAuthentication();
 app.UseAuthorization();
