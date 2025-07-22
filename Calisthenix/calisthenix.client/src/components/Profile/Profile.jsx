@@ -160,7 +160,29 @@ const Profile = () => {
                             <button type="submit">Save Password</button>
                         </form>
                     )}
-                    <button disabled>Delete Account</button>
+                    <button
+                        className="logout-button"
+                        onClick={() => {
+                            localStorage.removeItem('token');
+                            localStorage.removeItem('username');
+                            toast.info("You have been logged out.", {
+                                icon: "👋",
+                                style: {
+                                    borderRadius: '8px',
+                                    background: '#e63946',
+                                    color: 'white',
+                                    fontWeight: 'bold',
+                                    fontFamily: 'Segoe UI, sans-serif',
+                                    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)',
+                                }
+                            });
+                            setTimeout(() => {
+                                window.location.href = '/login';
+                            }, 1000);
+                        }}
+                    >
+                        Logout
+                    </button>
                 </div>
             </div>
         </div>

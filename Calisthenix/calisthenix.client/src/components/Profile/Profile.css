@@ -168,3 +168,18 @@
     .change-password-form button:hover {
         background-color: #004b99;
     }
+
+.logout-button {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+    .logout-button:hover {
+        background-color: #c62828;
+    }
