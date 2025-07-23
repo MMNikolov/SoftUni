@@ -93,9 +93,9 @@
     font-size: 1rem;
 }
 
-    .create-workout-button:hover {
-        background-color: #004b99;
-    }
+.create-workout-button:hover {
+    background-color: #004b99;
+}
 
 .create-workout-form {
     margin-top: 12px;
@@ -103,27 +103,27 @@
     gap: 10px;
 }
 
-    .create-workout-form input {
-        padding: 8px;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-        font-size: 0.95rem;
-        width: 220px;
-    }
+.create-workout-form input {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    width: 220px;
+}
 
-    .create-workout-form button {
-        background-color: #38b000;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        padding: 8px 14px;
-        font-weight: bold;
-        cursor: pointer;
-    }
+.create-workout-form button {
+    background-color: #38b000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-        .create-workout-form button:hover {
-            background-color: #2a8700;
-        }
+.create-workout-form button:hover {
+    background-color: #2a8700;
+}
 
 .workout-title {
     display: flex;
@@ -133,38 +133,38 @@
     margin-bottom: 12px;
 }
 
-    .workout-title h3 {
-        margin: 0;
-        font-size: 1.1rem;
-        color: #1d3557;
-        flex: 1;
-        word-break: break-word;
-    }
+.workout-title h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #1d3557;
+    flex: 1;
+    word-break: break-word;
+}
 
-    .workout-title input {
-        flex: 1;
-        padding: 8px;
-        font-size: 1rem;
-        border: 2px solid #0066cc;
-        border-radius: 6px;
-        background-color: #f9f9f9;
-        outline: none;
-    }
+.workout-title input {
+    flex: 1;
+    padding: 8px;
+    font-size: 1rem;
+    border: 2px solid #0066cc;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    outline: none;
+}
 
-    .workout-title button {
-        background: transparent;
-        border: none;
-        padding: 4px 6px;
-        cursor: pointer;
-        font-size: 1.1rem;
-        color: #1d3557;
-        transition: transform 0.15s ease;
-    }
+.workout-title button {
+    background: transparent;
+    border: none;
+    padding: 4px 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #1d3557;
+    transition: transform 0.15s ease;
+}
 
-        .workout-title button:hover {
-            transform: scale(1.15);
-            color: #0066cc;
-        }
+.workout-title button:hover {
+    transform: scale(1.15);
+    color: #0066cc;
+}
 
 .workout-actions {
     display: flex;
@@ -182,17 +182,17 @@
     color: #1d3557;
 }
 
-    .icon-btn:hover {
-        transform: scale(1.1);
-    }
+.icon-btn:hover {
+    transform: scale(1.1);
+}
 
-    .icon-btn.delete-btn {
-        color: #e63946;
-    }
+.icon-btn.delete-btn {
+    color: #e63946;
+}
 
-        .icon-btn.delete-btn:hover {
-            color: #c1121f;
-        }
+.icon-btn.delete-btn:hover {
+    color: #c1121f;
+}
 
 @keyframes spin {
     to {

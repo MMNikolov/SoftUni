@@ -15,6 +15,7 @@
         public virtual DbSet<User> Users { get; set; } = null!;
         public virtual DbSet<Workout> Workouts { get; set; } = null!;
         public virtual DbSet<WorkoutExercise> WorkoutExercises { get; set; } = null!;
+        public virtual DbSet<Comment> Comments { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

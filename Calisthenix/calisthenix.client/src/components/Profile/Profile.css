@@ -17,10 +17,10 @@
     text-align: center;
 }
 
-    .profile-card h2 {
-        color: #1d3557;
-        margin-bottom: 8px;
-    }
+.profile-card h2 {
+    color: #1d3557;
+    margin-bottom: 8px;
+}
 
 .profile-subtext {
     color: #555;
@@ -32,9 +32,9 @@
     text-align: left;
 }
 
-    .profile-section strong {
-        color: #0066cc;
-    }
+.profile-section strong {
+    color: #0066cc;
+}
 
 .profile-actions {
     display: flex;
@@ -43,25 +43,25 @@
     margin-top: 24px;
 }
 
-    .profile-actions button {
-        padding: 10px 16px;
-        border: none;
-        border-radius: 6px;
-        background-color: #0066cc;
-        color: white;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.2s ease;
-    }
+.profile-actions button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #0066cc;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
 
-        .profile-actions button:hover {
-            background-color: #004b99;
-        }
+.profile-actions button:hover {
+    background-color: #004b99;
+}
 
-        .profile-actions button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
+.profile-actions button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
 
 .avatar-wrapper {
     display: flex;
@@ -105,9 +105,9 @@
     transition: background-color 0.2s ease;
 }
 
-    .remove-avatar-button:hover {
-        background-color: #c62828;
-    }
+.remove-avatar-button:hover {
+    background-color: #c62828;
+}
 
 .custom-file-button {
     background-color: #0066cc;
@@ -147,27 +147,27 @@
     width: 100%;
 }
 
-    .change-password-form input {
-        padding: 10px;
-        font-size: 0.95rem;
-        border: 1px solid #ccc;
-        border-radius: 6px;
-    }
+.change-password-form input {
+    padding: 10px;
+    font-size: 0.95rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
 
-    .change-password-form button[type="submit"] {
-        background-color: #0066cc;
-        color: white;
-        font-weight: 500;
-        border: none;
-        padding: 10px;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background-color 0.2s ease;
-    }
+.change-password-form button[type="submit"] {
+    background-color: #0066cc;
+    color: white;
+    font-weight: 500;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
 
-    .change-password-form button:hover {
-        background-color: #004b99;
-    }
+.change-password-form button:hover {
+    background-color: #004b99;
+}
 
 .logout-button {
     background-color: #e63946;
@@ -180,6 +180,6 @@
     transition: background-color 0.2s ease;
 }
 
-    .logout-button:hover {
-        background-color: #c62828;
-    }
+.logout-button:hover {
+    background-color: #c62828;
+}
