@@ -11,5 +11,7 @@
 
         public int UserId { get; set; }
         public User User { get; set; } = null!;
+
+        public ICollection<CommentReaction> Reactions { get; set; } = new List<CommentReaction>();
     }
 }

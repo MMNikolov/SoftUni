@@ -132,6 +132,40 @@
     color: #333;
 }
 
+.like-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+.like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 6px 12px;
+    transition: transform 0.1s ease;
+    border-radius: 6px;
+    outline: none
+}
+
+.like-button:hover {
+    transform: scale(1.05);
+    background-color: #f0f8ff;
+    border: none;
+}
+
+.like-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.like-button.liked {
+    color: #0066ff;
+    font-weight: bold;
+    background-color: #e7f0ff;
+}
+
 @media (max-width: 900px) {
     .exercise-details-wrapper {
         flex-direction: column;

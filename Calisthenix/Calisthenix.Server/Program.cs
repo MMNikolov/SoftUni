@@ -13,6 +13,7 @@ builder.Services.AddDbContext<CalisthenixDbContext>(options =>
 builder.Services.AddScoped<IExerciseService, ExerciseService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IWorkoutService, WorkoutService>();
+builder.Services.AddScoped<ICommentService, CommentService>();
 
 var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!);
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './ExerciseDetails.css';
 
@@ -20,12 +20,12 @@ const ExerciseDetails = () => {
             .then(data => {
                 const safeComments = Array.isArray(data)
                     ? data
-                    : data?.$values || []; 
+                    : data?.$values || [];
                 setComments(safeComments);
             })
             .catch(err => {
                 console.error('Error fetching comments:', err);
-                setComments([]); 
+                setComments([]);
             });
     }, [id]);
 
@@ -45,20 +45,49 @@ const ExerciseDetails = () => {
             });
 
             if (res.ok) {
-                setComments(prev => [
-                    {
-                        username: 'You',
-                        content: newComment,
-                        createdAt: new Date().toISOString()
-                    },
-                    ...prev
-                ]);
+                const added = await res.json();
+                setComments(prev => [added, ...prev]);
                 setNewComment('');
             } else {
                 console.error('Failed to post comment.');
             }
         } catch (err) {
             console.error('Error posting comment:', err);
+        }
+    };
+
+    const handleThumbsUp = async (commentId) => {
+        const token = localStorage.getItem('token');
+
+        try {
+            const res = await fetch(`https://localhost:7161/api/comments/${commentId}/like`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+            if (res.ok) {
+                const data = await res.json();
+                const liked = data.liked;
+
+                setComments(prev =>
+                    prev.map(c =>
+                        c.id === commentId
+                            ? {
+                                ...c,
+                                likedByCurrentUser: liked,
+                                thumbsUpCount: c.thumbsUpCount + (liked ? 1 : -1)
+                            }
+                            : c
+                    )
+                );
+            } else {
+                console.error('Failed to toggle thumbs up.');
+            }
+        } catch (err) {
+            console.error('Error reacting to comment:', err);
         }
     };
 
@@ -97,13 +126,21 @@ const ExerciseDetails = () => {
                 {comments.length === 0 ? (
                     <p>No comments yet. Be the first!</p>
                 ) : (
-                    comments.map((c, index) => (
-                        <div className="comment" key={index}>
+                    comments.map((c) => (
+                        <div className="comment" key={c.id}>
                             <div className="comment-header">
                                 <span>{c.username || "Anonymous"}</span>
                                 <span>{new Date(c.createdAt).toLocaleString()}</span>
                             </div>
                             <p>{c.content}</p>
+                            <div className="like-row">
+                                <button
+                                    className={`like-button ${c.likedByCurrentUser ? 'liked' : ''}`}
+                                    onClick={() => handleThumbsUp(c.id)}
+                                >
+                                    👍 {c.thumbsUpCount || 0}
+                                </button>
+                            </div>
                         </div>
                     ))
                 )}
