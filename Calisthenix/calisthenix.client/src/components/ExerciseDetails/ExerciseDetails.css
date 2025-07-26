@@ -15,37 +15,37 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
-    .exercise-details-left h1 {
-        color: #003366;
-        font-size: 2rem;
-        margin-bottom: 20px;
-    }
+.exercise-details-left h1 {
+    color: #003366;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
 
-    .exercise-details-left img {
-        width: 100%;
-        max-height: 400px;
-        object-fit: cover;
-        border-radius: 10px;
-        margin-bottom: 20px;
-    }
+.exercise-details-left img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
 
-    .exercise-details-left p {
-        margin: 8px 0;
-        font-size: 1rem;
-        color: #333;
-    }
+.exercise-details-left p {
+    margin: 8px 0;
+    font-size: 1rem;
+    color: #333;
+}
 
-    .exercise-details-left a {
-        display: inline-block;
-        margin-top: 16px;
-        color: #0066cc;
-        font-weight: bold;
-        text-decoration: none;
-    }
+.exercise-details-left a {
+    display: inline-block;
+    margin-top: 16px;
+    color: #0066cc;
+    font-weight: bold;
+    text-decoration: none;
+}
 
-        .exercise-details-left a:hover {
-            text-decoration: underline;
-        }
+.exercise-details-left a:hover {
+    text-decoration: underline;
+}
 
 .back-button {
     margin-top: 20px;
@@ -59,9 +59,9 @@
     transition: background-color 0.3s ease;
 }
 
-    .back-button:hover {
-        background-color: #004b99;
-    }
+.back-button:hover {
+    background-color: #004b99;
+}
 
 .exercise-details-right {
     flex: 1;
@@ -86,29 +86,29 @@
     margin-bottom: 24px;
 }
 
-    .comment-form textarea {
-        padding: 10px;
-        border-radius: 8px;
-        font-size: 1rem;
-        resize: vertical;
-        border: 1px solid #ccc;
-    }
+.comment-form textarea {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    resize: vertical;
+    border: 1px solid #ccc;
+}
 
-    .comment-form button {
-        align-self: flex-start;
-        padding: 10px 16px;
-        border: none;
-        background-color: #0066cc;
-        color: white;
-        font-weight: 500;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background-color 0.2s ease;
-    }
+.comment-form button {
+    align-self: flex-start;
+    padding: 10px 16px;
+    border: none;
+    background-color: #0066cc;
+    color: white;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
 
-        .comment-form button:hover {
-            background-color: #004b99;
-        }
+.comment-form button:hover {
+    background-color: #004b99;
+}
 
 .comment {
     background-color: #f4f7ff;

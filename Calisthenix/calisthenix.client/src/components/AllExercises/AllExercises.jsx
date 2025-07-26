@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ExerciseCard from '../ExerciseCard/ExerciseCard';
+import { motion } from 'framer-motion';
+import ShimmerCard from '../ShimmerCard/ShimmerCard';
 import './AllExercises.css';
-
+motion
 function AllExercises() {
     const [exercises, setExercises] = useState([]);
     const [workouts, setWorkouts] = useState([]);
@@ -81,15 +83,22 @@ function AllExercises() {
 
     if (loading) {
         return (
-            <div className="spinner-container">
-                <div className="spinner"></div>
-                <p>Loading exercises...</p>
+            <div className="exercise-list">
+                {Array(6).fill().map((_, i) => (
+                    <ShimmerCard key={i} />
+                ))}
             </div>
         );
     }
 
     return (
-        <div className="home-container">
+        <motion.div
+            className="home-container"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+        >
             <h1>All Calisthenics Exercises</h1>
             <div className="filters">
                 <input
@@ -146,7 +155,7 @@ function AllExercises() {
             {toastMessage && (
                 <div className="toast">{toastMessage}</div>
             )}
-        </div>
+        </motion.div>
     );
 }
 

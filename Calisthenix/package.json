@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "framer-motion": "^12.23.9",
     "jwt-decode": "^4.0.0",
     "react-router-dom": "^7.6.2",
     "react-toastify": "^11.0.5"

@@ -201,7 +201,13 @@ const MyWorkouts = () => {
     }
 
     return (
-        <div className="my-workouts-container">
+        <motion.div
+            className="my-workouts-container"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+        >
             <div className="create-workout-header">
                 <button className="create-workout-button" onClick={() => setShowCreateForm(!showCreateForm)}>
                     {showCreateForm ? 'Cancel' : '➕ Create Workout'}
@@ -300,8 +306,7 @@ const MyWorkouts = () => {
                     onCancel={cancelWorkoutDelete}
                 />
             )}
-        </div>
-
+        </motion.div>
     );
 };
 
