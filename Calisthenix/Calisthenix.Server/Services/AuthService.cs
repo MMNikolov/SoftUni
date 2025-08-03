@@ -9,6 +9,9 @@
     using Microsoft.IdentityModel.Tokens;
     using System.IdentityModel.Tokens.Jwt;
     using System.Security.Claims;
+    using Calisthenix.Server.Models.DTOs;
+    using Calisthenix.Server.Enums;
+    using BCrypt.Net;
 
     public class AuthService : IAuthService
     {
@@ -29,7 +32,7 @@
             var user = new User
             {
                 Username = username,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(password)
+                PasswordHash = BCrypt.HashPassword(password)
             };
 
             _context.Users.Add(user);
@@ -42,7 +45,7 @@
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
 
-            if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
+            if (user == null || !BCrypt.Verify(password, user.PasswordHash))
                 throw new Exception("Invalid credentials");
 
             return GenerateJwtToken(user);
@@ -68,6 +71,20 @@
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
+        }
+
+        public async Task<AuthResult> ChangePasswordAsync(int userId, ChangePasswordRequest request)
+        {
+            var user = await _context.Users.FindAsync(userId);
+            if (user == null) return AuthResult.NotFound;
+
+            if (!BCrypt.Verify(request.CurrentPassword, user.PasswordHash))
+                return AuthResult.InvalidPassword;
+
+            user.PasswordHash = BCrypt.HashPassword(request.NewPassword);
+            await _context.SaveChangesAsync();
+
+            return AuthResult.Success;
         }
     }
 }

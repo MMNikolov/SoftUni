@@ -13,51 +13,31 @@ namespace Calisthenix.Server.Controllers
     [Route("api/[controller]")]
     public class CommentsController : ControllerBase
     {
-        private readonly CalisthenixDbContext _context;
         private readonly ICommentService _commentService;
 
-        public CommentsController(CalisthenixDbContext context, ICommentService commentService)
+        public CommentsController(ICommentService commentService)
         {
-            _context = context;
             _commentService = commentService;
         }
 
         [HttpGet("{exerciseId}")]
         public async Task<IActionResult> GetComments(int exerciseId)
         {
-            var userId = User.Identity?.IsAuthenticated == true
-                ? int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!)
-                : (int?)null;
+            int? userId = User.Identity?.IsAuthenticated == true
+            ? int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!)
+            : null;
 
-            var comments = await _commentService.GetCommentsForExerciseAsync(exerciseId);
-
-            var dto = comments.Select(c => new CommentDTO
-            {
-                Id = c.Id,
-                Content = c.Content,
-                Username = c.User?.Username ?? "Anonymous",
-                CreatedAt = c.CreatedAt,
-                ThumbsUpCount = c.Reactions?.Count(r => r.IsThumbsUp) ?? 0,
-                LikedByCurrentUser = userId.HasValue && c.Reactions.Any(r => r.UserId == userId.Value && r.IsThumbsUp)
-            }).ToList();
-
-            return Ok(dto);
+            var comments = await _commentService.GetCommentsForExerciseAsync(exerciseId, userId);
+            return Ok(comments);
         }
 
         [Authorize]
         [HttpPost("{exerciseId}")]
-        public async Task<IActionResult> PostComment(int exerciseId, [FromBody] string content)
+        public async Task<IActionResult> PostComment(int exerciseId, [FromBody] CreateCommentDTO dto)
         {
             var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-            var comment = await _commentService.AddCommentAsync(exerciseId, userId, content);
-            return Ok(new CommentDTO
-            {
-                Id = comment.Id,
-                Content = comment.Content,
-                Username = User.Identity?.Name ?? "You",
-                CreatedAt = comment.CreatedAt,
-                ThumbsUpCount = 0
-            });
+            var result = await _commentService.AddCommentAsync(exerciseId, userId, dto.Content);
+            return Ok(result);
         }
 
         [HttpPost("react")]
@@ -65,25 +45,11 @@ namespace Calisthenix.Server.Controllers
         public async Task<IActionResult> ReactToComment([FromBody] CommentReactionDTO dto)
         {
             var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-        
-            var existing = await _context.CommentReactions
-                .FirstOrDefaultAsync(r => r.CommentId == dto.CommentId && r.UserId == userId);
-        
-            if (existing != null)
-            {
-                return BadRequest("You already reacted to this comment.");
-            }
-        
-            var reaction = new CommentReaction
-            {
-                CommentId = dto.CommentId,
-                UserId = userId,
-                IsThumbsUp = true
-            };
-        
-            _context.CommentReactions.Add(reaction);
-            await _context.SaveChangesAsync();
-        
+
+            var success = await _commentService.ToggleReactionAsync(dto.CommentId, userId);
+            if (!success)
+                return BadRequest("Already reacted to this comment.");
+
             return Ok(new { message = "Thumbs up added." });
         }
 

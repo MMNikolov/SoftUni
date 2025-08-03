@@ -1,5 +1,6 @@
 ﻿using Calisthenix.Server.Data;
 using Calisthenix.Server.Models;
+using Calisthenix.Server.Models.DTOs;
 using Calisthenix.Server.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,7 +14,7 @@ namespace Calisthenix.Server.Services
             _context = context;
         }
 
-        public async Task<Comment> AddCommentAsync(int exerciseId, int userId, string content)
+        public async Task<CommentDTO> AddCommentAsync(int exerciseId, int userId, string content)
         {
             var comment = new Comment
             {
@@ -25,35 +26,52 @@ namespace Calisthenix.Server.Services
 
             _context.Comments.Add(comment);
             await _context.SaveChangesAsync();
-            return comment;
+
+            var user = await _context.Users.FindAsync(userId);
+
+            return new CommentDTO
+            {
+                Id = comment.Id,
+                Content = comment.Content,
+                Username = user?.Username ?? "You",
+                CreatedAt = comment.CreatedAt,
+                ThumbsUpCount = 0,
+                LikedByCurrentUser = false
+            };
         }
 
-        public async Task<List<Comment>> GetCommentsForExerciseAsync(int exerciseId)
+        public async Task<List<CommentDTO>> GetCommentsForExerciseAsync(int exerciseId, int? currentUserId)
         {
-            return await _context.Comments
+            var comments = await _context.Comments
                 .Include(c => c.User)
                 .Include(c => c.Reactions)
                 .Where(c => c.ExerciseId == exerciseId)
                 .OrderByDescending(c => c.CreatedAt)
                 .ToListAsync();
+
+            return comments.Select(c => new CommentDTO
+            {
+                Id = c.Id,
+                Content = c.Content,
+                Username = c.User?.Username ?? "Anonymous",
+                CreatedAt = c.CreatedAt,
+                ThumbsUpCount = c.Reactions.Count(r => r.IsThumbsUp),
+                LikedByCurrentUser = currentUserId.HasValue && c.Reactions.Any(r => r.UserId == currentUserId.Value)
+            }).ToList();
         }
 
         public async Task<bool> ToggleReactionAsync(int commentId, int userId)
         {
-            var existing = await _context.CommentReactions
-                .FirstOrDefaultAsync(r => r.CommentId == commentId && r.UserId == userId);
+            var exists = await _context.CommentReactions
+                .AnyAsync(r => r.CommentId == commentId && r.UserId == userId);
 
-            if (existing != null)
-            {
-                _context.CommentReactions.Remove(existing);
-                await _context.SaveChangesAsync();
-                return false;
-            }
+            if (exists) return false;
 
             _context.CommentReactions.Add(new CommentReaction
             {
                 CommentId = commentId,
-                UserId = userId
+                UserId = userId,
+                IsThumbsUp = true
             });
 
             await _context.SaveChangesAsync();

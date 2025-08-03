@@ -3,35 +3,53 @@ using Calisthenix.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Calisthenix.Server.Services.Interfaces;
 using Calisthenix.Server.Models.DTOs;
+using Microsoft.Extensions.Caching.Memory;
 
 public class ExerciseService : IExerciseService
 {
     private readonly CalisthenixDbContext _context;
+    private readonly IMemoryCache _cache;
 
-    public ExerciseService(CalisthenixDbContext context)
+    private const string AllExercisesCacheKey = "AllExercises";
+
+    public ExerciseService(CalisthenixDbContext context, IMemoryCache cache)
     {
         _context = context;
+        _cache = cache;
     }
 
     public async Task<IEnumerable<ExerciseDTO>> GetAllExercisesAsync()
     {
-        return await _context.Exercises
-        .Where(e => !string.IsNullOrEmpty(e.Name) && !string.IsNullOrEmpty(e.Description))
-        .Include(e => e.User)
-        .AsNoTracking()
-        .Select(e => new ExerciseDTO
+        if (_cache.TryGetValue(AllExercisesCacheKey, out IEnumerable<ExerciseDTO> cachedExercises))
         {
-            Id = e.Id,
-            Name = e.Name,
-            Description = e.Description,
-            Category = e.Category,
-            Equipment = e.Equipment,
-            Difficulty = e.Difficulty,
-            VideoUrl = e.VideoUrl,
-            ImageUrl = e.ImageUrl,
-            UserName = e.User.Username
-        })
-        .ToListAsync();
+            return cachedExercises;
+        }
+
+        var exercises =  await _context.Exercises
+            .Where(e => !string.IsNullOrEmpty(e.Name) && !string.IsNullOrEmpty(e.Description))
+            .Include(e => e.User)
+            .AsNoTracking()
+            .Select(e => new ExerciseDTO
+            {
+                Id = e.Id,
+                Name = e.Name,
+                Description = e.Description,
+                Category = e.Category,
+                Equipment = e.Equipment,
+                Difficulty = e.Difficulty,
+                VideoUrl = e.VideoUrl,
+                ImageUrl = e.ImageUrl,
+                UserName = e.User.Username
+            })
+            .ToListAsync();
+
+        _cache.Set(AllExercisesCacheKey, exercises, new MemoryCacheEntryOptions
+        {
+            AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10),
+            SlidingExpiration = TimeSpan.FromMinutes(2)
+        });
+
+        return exercises;
     }
 
     public async Task<Exercise?> GetExerciseByIdAsync(string id)
@@ -71,6 +89,8 @@ public class ExerciseService : IExerciseService
 
         await _context.Exercises.AddAsync(newExercise);
         await _context.SaveChangesAsync();
+
+        _cache.Remove(AllExercisesCacheKey);
     }
 
     public async Task UpdateExerciseAsync(string id, Exercise exercise)
@@ -94,7 +114,9 @@ public class ExerciseService : IExerciseService
 
         _context.Exercises.Update(existing);
         await _context.SaveChangesAsync();
-        
+
+        _cache.Remove(AllExercisesCacheKey);
+
     }
 
     public async Task DeleteExerciseAsync(string id)
@@ -110,5 +132,6 @@ public class ExerciseService : IExerciseService
         _context.Exercises.Remove(exercise);
         await _context.SaveChangesAsync();
 
+        _cache.Remove(AllExercisesCacheKey);
     }
 }

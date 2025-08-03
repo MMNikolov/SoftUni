@@ -7,29 +7,28 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using BCrypt.Net;
+    using Calisthenix.Server.Enums;
 
     [ApiController]
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
-        private readonly CalisthenixDbContext _context;
 
         public AuthController(IAuthService authService, CalisthenixDbContext context)
         {
             _authService = authService;
-            _context = context;
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] LoginDto dto)
+        public async Task<IActionResult> Register([FromBody] LoginDTO dto)
         {
             var token = await _authService.RegisterAsync(dto.Username, dto.Password);
             return Ok(new { token });
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginDto dto)
+        public async Task<IActionResult> Login([FromBody] LoginDTO dto)
         {
             var token = await _authService.LoginAsync(dto.Username, dto.Password);
             return Ok(new { token });
@@ -37,29 +36,21 @@
 
         [Authorize]
         [HttpPost("change-password")]
-        public async Task<IActionResult> ChangePassword(ChangePasswordRequest request)
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request)
         {
             var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (!int.TryParse(userIdStr, out var userId))
                 return Unauthorized("Invalid user ID");
 
-            var user = await _context.Users.FindAsync(userId);
+            var result = await _authService.ChangePasswordAsync(userId, request);
 
-            if (user == null) return NotFound("User not found.");
-
-            if (!BCrypt.Verify(request.CurrentPassword, user.PasswordHash))
-                return BadRequest("Current password is incorrect.");
-
-            user.PasswordHash = BCrypt.HashPassword(request.NewPassword);
-            await _context.SaveChangesAsync();
-
-            return Ok("Password changed successfully.");
+            return result switch
+            {
+                AuthResult.Success => Ok("Password changed successfully."),
+                AuthResult.NotFound => NotFound("User not found."),
+                AuthResult.InvalidPassword => BadRequest("Current password is incorrect."),
+                _ => StatusCode(500, "An unexpected error occurred.")
+            };
         }
-    }
-
-    public class LoginDto
-    {
-        public string Username { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
     }
 }
