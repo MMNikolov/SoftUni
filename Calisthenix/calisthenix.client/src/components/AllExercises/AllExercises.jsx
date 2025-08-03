@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import ExerciseCard from '../ExerciseCard/ExerciseCard';
 import { motion } from 'framer-motion';
+import { useMemo } from 'react';
+import ExerciseCard from '../ExerciseCard/ExerciseCard';
 import ShimmerCard from '../ShimmerCard/ShimmerCard';
 import './AllExercises.css';
 motion
@@ -20,13 +21,13 @@ function AllExercises() {
         setTimeout(() => setToastMessage(null), 3000);
     };
 
-    const filteredExercises = exercises.filter(ex => {
-        return (
+    const filteredExercises = useMemo(() => {
+        return exercises.filter(ex =>
             ex.name.toLowerCase().includes(search.toLowerCase()) &&
             (categoryFilter === '' || ex.category === categoryFilter) &&
             (difficultyFilter === '' || ex.difficulty === difficultyFilter)
         );
-    });
+    }, [exercises, search, categoryFilter, difficultyFilter]);
 
     useEffect(() => {
         const fetchData = async () => {

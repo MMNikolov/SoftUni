@@ -62,7 +62,11 @@ function ExerciseCard({ exercise, onAdd, onRemove, onDelete, showAddButton = tru
             className={`exercise-card ${highlight ? 'highlight' : ''}`}
             onClick={goToDetails}
         >
-            <img src={exercise.imageUrl || 'https://via.placeholder.com/150'} alt={exercise.name} />
+            <img
+                src={exercise.imageUrl || 'https://via.placeholder.com/150'}
+                alt={exercise.name}
+                loading="lazy"
+            />
             <h3>{exercise.name}</h3>
             <p><strong>Category:</strong> {exercise.category}</p>
             <p><strong>Difficulty:</strong> {exercise.difficulty}</p>

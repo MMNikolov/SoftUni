@@ -97,7 +97,7 @@ const ExerciseDetails = () => {
         <div className="exercise-details-wrapper">
             <div className="exercise-details-left">
                 <h1>{exercise.name}</h1>
-                <img src={exercise.imageUrl} alt={exercise.name} />
+                <img src={exercise.imageUrl} alt={exercise.name} loading="lazy" />
                 <p><strong>Category:</strong> {exercise.category}</p>
                 <p><strong>Equipment:</strong> {exercise.equipment}</p>
                 <p><strong>Difficulty:</strong> {exercise.difficulty}</p>

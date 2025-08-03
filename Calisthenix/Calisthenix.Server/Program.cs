@@ -4,6 +4,7 @@ using Calisthenix.Server.Services.Interfaces;
 using Calisthenix.Server.Services;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,8 @@ builder.Services.AddAuthentication("Bearer")
         };
     });
 
+builder.Services.AddMemoryCache();
+
 builder.Services.AddAuthorization();
 
 builder.Services.AddControllers()
@@ -52,6 +55,23 @@ builder.Services.AddCors(options =>
             .AllowCredentials());
 });
 
+builder.Services.AddResponseCompression(options =>
+{
+    options.EnableForHttps = true; // compress even HTTPS responses
+    options.Providers.Add<BrotliCompressionProvider>();
+    options.Providers.Add<GzipCompressionProvider>();
+});
+
+builder.Services.Configure<BrotliCompressionProviderOptions>(options =>
+{
+    options.Level = System.IO.Compression.CompressionLevel.Fastest;
+});
+
+builder.Services.Configure<GzipCompressionProviderOptions>(options =>
+{
+    options.Level = System.IO.Compression.CompressionLevel.Fastest;
+});
+
 var app = builder.Build();
 
 
@@ -68,6 +88,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseResponseCompression();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

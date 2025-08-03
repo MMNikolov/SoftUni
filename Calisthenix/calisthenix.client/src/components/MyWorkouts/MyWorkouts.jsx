@@ -1,7 +1,9 @@
 ﻿import React, { useEffect, useState } from 'react';
 import ExerciseCard from '../ExerciseCard/ExerciseCard';
 import ConfirmationModal from '../ConfirmationModal/ConfirmationModal';
+import { motion } from 'framer-motion';
 import './MyWorkouts.css';
+motion
 
 const MyWorkouts = () => {
     const [workouts, setWorkouts] = useState([]);

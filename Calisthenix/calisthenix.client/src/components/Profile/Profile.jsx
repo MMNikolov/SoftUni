@@ -100,7 +100,7 @@ const Profile = () => {
                 
                 <div className="avatar-wrapper">
                     {avatar ? (
-                        <img src={avatar} alt="Avatar" className="avatar-preview" />
+                        <img src={avatar} alt="Avatar" className="avatar-preview" loading="lazy" />
                     ) : (
                         <div className="avatar-placeholder">No Avatar</div>
                     )}
