@@ -232,61 +232,63 @@ const MyWorkouts = () => {
             {workouts.length === 0 ? (
                 <p>You haven't added any workouts yet.</p>
             ) : (
-                <div className="workout-list">
-                    {workouts.map(workout => (
-                        <div className="workout-card" key={workout.id}>
-                            <div className="workout-title">
-                                {editingWorkoutId === workout.id ? (
-                                    <>
-                                        <input
-                                            value={editingName}
-                                            onChange={(e) => setEditingName(e.target.value)}
-                                            onKeyDown={(e) => {
-                                                if (e.key === 'Enter') handleRenameWorkout(workout.id);
-                                            }}
-                                            autoFocus
-                                        />
-                                        <button className="save-btn" onClick={() => handleRenameWorkout(workout.id)}>
-                                            💾
-                                        </button>
-                                    </>
-                                ) : (
-                                    <>
-                                        <h3>{workout.name}</h3>
-                                        <div className="workout-actions">
-                                            <button className="icon-btn" onClick={() => {
-                                                setEditingWorkoutId(workout.id);
-                                                setEditingName(workout.name);
-                                            }}>
-                                                ✏️
-                                            </button>
-                                                <button className="icon-btn delete-btn" onClick={() => {
-                                                    setWorkoutToDelete(workout.id);
-                                                    setShowWorkoutDeleteModal(true);
-                                                }}>
-                                                    ❌
+                    <div className="workout-list">
+                        {workouts.map(workout => (
+                            <div className="workout-row" key={workout.id}>
+                                <div className="workout-card">
+                                    <div className="workout-title">
+                                        {editingWorkoutId === workout.id ? (
+                                            <>
+                                                <input
+                                                    value={editingName}
+                                                    onChange={(e) => setEditingName(e.target.value)}
+                                                    onKeyDown={(e) => {
+                                                        if (e.key === 'Enter') handleRenameWorkout(workout.id);
+                                                    }}
+                                                    autoFocus
+                                                />
+                                                <button className="save-btn" onClick={() => handleRenameWorkout(workout.id)}>
+                                                    💾
                                                 </button>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <h3>{workout.name}</h3>
+                                                <div className="workout-actions">
+                                                    <button className="icon-btn" onClick={() => {
+                                                        setEditingWorkoutId(workout.id);
+                                                        setEditingName(workout.name);
+                                                    }}>
+                                                        ✏️
+                                                    </button>
+                                                    <button className="icon-btn delete-btn" onClick={() => {
+                                                        setWorkoutToDelete(workout.id);
+                                                        setShowWorkoutDeleteModal(true);
+                                                    }}>
+                                                        ❌
+                                                    </button>
+                                                </div>
+                                            </>
+                                        )}
+                                    </div>
+                                    {workout.workoutExercises?.$values?.length > 0 ? (
+                                        <div className="exercise-row">
+                                            {workout.workoutExercises.$values.map(we => (
+                                                <ExerciseCard
+                                                    key={we.exerciseId}
+                                                    exercise={we.exercise}
+                                                    showAddButton={false}
+                                                    onRemove={() => requestRemove(workout.id, we.exerciseId)}
+                                                />
+                                            ))}
                                         </div>
-                                    </>
-                                )}
-                            </div>
-                            {workout.workoutExercises?.$values?.length > 0 ? (
-                                <div className="exercise-list">
-                                    {workout.workoutExercises.$values.map(we => (
-                                        <ExerciseCard
-                                            key={we.exerciseId}
-                                            exercise={we.exercise}
-                                            showAddButton={false}
-                                            onRemove={() => requestRemove(workout.id, we.exerciseId)}
-                                        />
-                                    ))}
+                                    ) : (
+                                        <p>No exercises in this workout yet.</p>
+                                    )}
                                 </div>
-                            ) : (
-                                <p>No exercises in this workout yet.</p>
-                            )}
-                        </div>
-                    ))}
-                </div>
+                            </div>
+                        ))}
+                    </div>
             )}
 
             {showModal && (
