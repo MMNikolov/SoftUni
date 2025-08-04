@@ -171,6 +171,29 @@
     animation: fadein 0.3s, fadeout 0.3s 2.7s;
 }
 
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.pagination-controls button {
+    padding: 0.5rem 1rem;
+    background-color: #2e3a59;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.pagination-controls button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
 @keyframes spin {
     to {
         transform: rotate(360deg);

@@ -57,7 +57,7 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddResponseCompression(options =>
 {
-    options.EnableForHttps = true; // compress even HTTPS responses
+    options.EnableForHttps = true; 
     options.Providers.Add<BrotliCompressionProvider>();
     options.Providers.Add<GzipCompressionProvider>();
 });
@@ -82,7 +82,7 @@ using (var scope = app.Services.CreateScope())
 }
 
 
-// Configure the HTTP request pipeline.
+// Pipeline starts from here :D
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

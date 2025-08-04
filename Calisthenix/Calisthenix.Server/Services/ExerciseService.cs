@@ -135,4 +135,28 @@ public class ExerciseService : IExerciseService
         _cache.Remove(AllExercisesCacheKey);
         return true;
     }
+
+    public async Task<IEnumerable<ExerciseDTO>> GetPaginatedExercisesAsync(int page, int pageSize)
+    {
+        return await _context.Exercises
+            .Where(e => !string.IsNullOrEmpty(e.Name) && !string.IsNullOrEmpty(e.Description))
+            .OrderBy(e => e.Id)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .Include(e => e.User)
+            .Select(e => new ExerciseDTO
+            {
+                Id = e.Id,
+                Name = e.Name,
+                Description = e.Description,
+                Category = e.Category,
+                Equipment = e.Equipment,
+                Difficulty = e.Difficulty,
+                VideoUrl = e.VideoUrl,
+                ImageUrl = e.ImageUrl,
+                UserName = e.User.Username
+            })
+            .AsNoTracking()
+            .ToListAsync();
+    }
 }

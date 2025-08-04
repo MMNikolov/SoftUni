@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useMemo } from 'react';
 import ExerciseCard from '../ExerciseCard/ExerciseCard';
@@ -14,6 +14,8 @@ function AllExercises() {
     const [difficultyFilter, setDifficultyFilter] = useState('');
     const [toastMessage, setToastMessage] = useState(null);
     const [highlightId, setHighlightId] = useState(null);
+    const [page, setPage] = useState(1);
+    const [pageSize] = useState(10);
 
     const handleDelete = (id, name) => {
         setExercises(prev => prev.filter(e => e.id !== id));
@@ -36,7 +38,7 @@ function AllExercises() {
 
             try {
                 const [exRes, workoutRes] = await Promise.all([
-                    fetch('https://localhost:7161/api/exercise', { headers }),
+                    fetch(`https://localhost:7161/api/exercise?page=${page}&pageSize=${pageSize}`, { headers }),
                     fetch('https://localhost:7161/api/workout/my', { headers })
                 ]);
 
@@ -76,7 +78,11 @@ function AllExercises() {
             setHighlightId(parseInt(storedId));
             localStorage.removeItem('highlightExerciseId');
         }
-    }, []);
+    }, [page]);
+
+    useEffect(() => {
+        setPage(1);
+    }, [search, categoryFilter, difficultyFilter]);
 
     const handleAddToWorkout = (exerciseId) => {
         setExercises(prev => prev.filter(e => e.id !== exerciseId));
@@ -152,6 +158,23 @@ function AllExercises() {
                         />
                     ))
                 )}
+            </div>
+            <div className="pagination-controls">
+                <button
+                    onClick={() => setPage(p => Math.max(1, p - 1))}
+                    disabled={page === 1}
+                >
+                    ← Previous
+                </button>
+
+                <span>Page {page}</span>
+
+                <button
+                    onClick={() => setPage(p => p + 1)}
+                    disabled={exercises.length < pageSize} 
+                >
+                    Next →
+                </button>
             </div>
             {toastMessage && (
                 <div className="toast">{toastMessage}</div>

@@ -1,6 +1,7 @@
 ﻿namespace Calisthenix.Server.Controllers
 {
     using System.Security.Claims;
+    using Azure;
     using Calisthenix.Server.Models;
     using Calisthenix.Server.Services.Interfaces;
     using Microsoft.AspNetCore.Authorization;
@@ -18,10 +19,12 @@
 
 
         [HttpGet]
-        public async Task<IActionResult> GetAllExercises()
+        public async Task<IActionResult> GetAllExercises([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {
-            var exercises = await _exerciseService.GetAllExercisesAsync();
+            if (page < 1 || pageSize < 1)
+                return BadRequest("Page and pageSize must be greater than 0.");
 
+            var exercises = await _exerciseService.GetPaginatedExercisesAsync(page, pageSize);
             return Ok(exercises);
         }
 

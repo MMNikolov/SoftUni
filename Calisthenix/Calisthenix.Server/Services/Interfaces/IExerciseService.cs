@@ -7,13 +7,11 @@
     {
         
         Task<IEnumerable<ExerciseDTO>> GetAllExercisesAsync();
-        
         Task<Exercise?> GetExerciseByIdAsync(string id);
-        
         Task AddExerciseAsync(Exercise exercise);
-        
         Task UpdateExerciseAsync(string id, Exercise exercise);
-        
         Task<bool> DeleteExerciseAsync(string id, int userId);
+        Task<IEnumerable<ExerciseDTO>> GetPaginatedExercisesAsync(int page, int pageSize);
+
     }
 }
