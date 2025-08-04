@@ -85,7 +85,7 @@ function AllExercises() {
     if (loading) {
         return (
             <div className="exercise-list">
-                {Array(6).fill().map((_, i) => (
+                {Array(10).fill().map((_, i) => (
                     <ShimmerCard key={i} />
                 ))}
             </div>

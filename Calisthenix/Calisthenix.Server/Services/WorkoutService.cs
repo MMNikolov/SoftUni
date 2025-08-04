@@ -20,6 +20,38 @@
                    ?? throw new Exception("User not found");
         }
 
+        public async Task<object> GetAllWorkoutsWithExercisesRawAsync(int userId)
+        {
+            var workouts = await _context.Workouts
+                .Include(w => w.WorkoutExercises)
+                .ThenInclude(we => we.Exercise)
+                .Where(w => w.UserId == userId)
+                .ToListAsync();
+
+            var result = workouts.Select(w => new
+            {
+                w.Id,
+                w.Name,
+                w.UserId,
+                WorkoutExercises = w.WorkoutExercises.Select(we => new
+                {
+                    we.ExerciseId,
+                    Exercise = new
+                    {
+                        we.Exercise.Id,
+                        we.Exercise.Name,
+                        we.Exercise.Category,
+                        we.Exercise.Difficulty,
+                        we.Exercise.Equipment,
+                        we.Exercise.ImageUrl,
+                        we.Exercise.VideoUrl
+                    }
+                }).ToList()
+            });
+
+            return result;
+        }
+
         public async Task<IEnumerable<Workout>> GetAllAsync(int userId)
         {
             return await _context.Workouts
@@ -199,6 +231,18 @@
             workout.WorkoutExercises.Remove(link);
             await _context.SaveChangesAsync();
 
+            return true;
+        }
+
+        public async Task<bool> UpdateWorkoutNameAsync(int id, string userId, string newName)
+        {
+            var workout = await _context.Workouts
+                .FirstOrDefaultAsync(w => w.Id == id && w.UserId.ToString().ToLower() == userId.ToLower());
+
+            if (workout == null) return false;
+
+            workout.Name = newName;
+            await _context.SaveChangesAsync();
             return true;
         }
     }

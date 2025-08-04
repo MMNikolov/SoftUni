@@ -119,19 +119,20 @@ public class ExerciseService : IExerciseService
 
     }
 
-    public async Task DeleteExerciseAsync(string id)
+    public async Task<bool> DeleteExerciseAsync(string id, int userId)
     {
         var exercise = await _context.Exercises
-            .FirstOrDefaultAsync(e => e.Id.ToString().ToLower() == id.ToString().ToLower());
+        .Include(e => e.WorkoutExercises)
+        .FirstOrDefaultAsync(e => e.Id.ToString() == id && e.UserId == userId);
 
         if (exercise == null)
-        {
-            throw new InvalidOperationException("Exercise not found");
-        }
+            return false;
 
+        _context.WorkoutExercises.RemoveRange(exercise.WorkoutExercises);
         _context.Exercises.Remove(exercise);
         await _context.SaveChangesAsync();
 
         _cache.Remove(AllExercisesCacheKey);
+        return true;
     }
 }

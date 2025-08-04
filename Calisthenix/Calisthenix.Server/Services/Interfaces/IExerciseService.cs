@@ -14,6 +14,6 @@
         
         Task UpdateExerciseAsync(string id, Exercise exercise);
         
-        Task DeleteExerciseAsync(string id);
+        Task<bool> DeleteExerciseAsync(string id, int userId);
     }
 }

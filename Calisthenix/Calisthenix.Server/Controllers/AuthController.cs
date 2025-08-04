@@ -1,12 +1,10 @@
 ﻿namespace Calisthenix.Server.Controllers
 {
     using System.Security.Claims;
-    using Calisthenix.Server.Data;
     using Calisthenix.Server.Models.DTOs;
     using Calisthenix.Server.Services.Interfaces;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using BCrypt.Net;
     using Calisthenix.Server.Enums;
 
     [ApiController]
@@ -15,7 +13,7 @@
     {
         private readonly IAuthService _authService;
 
-        public AuthController(IAuthService authService, CalisthenixDbContext context)
+        public AuthController(IAuthService authService)
         {
             _authService = authService;
         }

@@ -27,24 +27,44 @@
 
         private int GetUserId()
         {
-            var username = User.Identity?.Name;
-            var user = _context.Users.FirstOrDefault(u => u.Username == username)
-                       ?? throw new Exception("User not found");
-            return user.Id;
+            var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            return int.TryParse(userIdStr, out int userId) ? userId 
+                : throw new UnauthorizedAccessException("Invalid user ID.");
         }
 
-        [HttpPost("add-exercise")]
-        public async Task<IActionResult> AddExerciseToWorkout([FromBody] int exerciseId)
+        [HttpPost("create")]
+        [Authorize]
+        public async Task<IActionResult> CreateWorkout([FromBody] CreateWorkoutDTO dto)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var created = await _workoutService.CreateWorkoutAsync(userId, dto);
+
+            return CreatedAtAction(nameof(GetMyWorkouts), new { id = created.Id }, created);
+        }
+
+        [HttpGet("my")]
+        [Authorize]
+        public async Task<IActionResult> GetMyWorkouts()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var workouts = await _workoutService.GetWorkoutsByUserIdAsync(userId);
+
+            return Ok(workouts);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
         {
             var userId = GetUserId();
 
-            var workout = await _workoutService.GetOrCreateDefaultWorkoutAsync(userId);
-            var success = await _workoutService.AddExerciseToWorkoutAsync(workout.Id, exerciseId);
+            var workout = await _workoutService.GetByIdAsync(id, userId);
 
-            if (!success)
-                return BadRequest("Could not add exercise.");
+            if (workout == null)
+                return NotFound("Workout not found!");
 
-            return Ok();
+            return Ok(workout);
         }
 
         [HttpPost("add/{exerciseId}")]
@@ -59,83 +79,13 @@
 
         [HttpGet]
         [Authorize]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
             var userId = GetUserId();
-        
-            var workouts = _context.Workouts
-                .Include(w => w.WorkoutExercises)
-                    .ThenInclude(we => we.Exercise)
-                .Where(w => w.UserId == userId)
-                .Select(w => new
-                {
-                    w.Id,
-                    w.Name,
-                    w.UserId,
-                    WorkoutExercises = w.WorkoutExercises.Select(we => new
-                    {
-                        we.ExerciseId,
-                        Exercise = new
-                        {
-                            we.Exercise.Id,
-                            we.Exercise.Name,
-                            we.Exercise.Category,
-                            we.Exercise.Difficulty,
-                            we.Exercise.Equipment,
-                            we.Exercise.ImageUrl,
-                            we.Exercise.VideoUrl
-                        }
-                    })
-                })
-                .ToList();
-        
-            return Ok(workouts);
+            var result = await _workoutService.GetAllWorkoutsWithExercisesRawAsync(userId);
+            return Ok(result);
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
-        {
-            var userId = GetUserId();
-
-            var workout = await _workoutService.GetByIdAsync(id, userId);
-
-            if (workout == null)
-                return NotFound();
-
-            return Ok(workout);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Workout workout)
-        {
-            var userId = GetUserId();
-
-            var created = await _workoutService.CreateAsync(workout, userId);
-
-            return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
-        }
-
-        [HttpGet("my")]
-        [Authorize]
-        public async Task<IActionResult> GetMyWorkouts()
-        {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            var workouts = await _workoutService.GetWorkoutsByUserIdAsync(userId);
-
-            return Ok(workouts);
-        }
-
-        [HttpPost("create")]
-        [Authorize]
-        public async Task<IActionResult> CreateWorkout([FromBody] CreateWorkoutDTO dto)
-        {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            var created = await _workoutService.CreateWorkoutAsync(userId, dto);
-
-            return CreatedAtAction(nameof(GetMyWorkouts), new { id = created.Id }, created);
-        }
 
         [HttpPost("{workoutId}/exercise/{exerciseId}")]
         [Authorize]
@@ -169,30 +119,22 @@
         public async Task<IActionResult> UpdateWorkoutName(int id, [FromBody] WorkoutDTO dto)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var updated = await _workoutService.UpdateWorkoutNameAsync(id, userId, dto.Name);
 
-            var workout = await _context.Workouts.FirstOrDefaultAsync(w => w.Id == id && w.UserId.ToString().ToLower() == userId.ToString().ToLower());
-            if (workout == null) return NotFound("Workout not found");
+            if (!updated)
+                return NotFound("Workout not found or unauthorized.");
 
-            workout.Name = dto.Name;
-            await _context.SaveChangesAsync();
-
-            return Ok(new { message = "Workout name updated" });
+            return Ok(new { message = "Workout name updated." });
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteWorkout(int id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var deleted = await _workoutService.DeleteAsync(id, int.Parse(userId));
 
-            var workout = await _context.Workouts
-                .Include(w => w.WorkoutExercises)
-                .FirstOrDefaultAsync(w => w.Id == id && w.UserId.ToString().ToLower() == userId.ToString().ToLower());
-
-            if (workout == null)
-                return NotFound();
-
-            _context.Workouts.Remove(workout);
-            await _context.SaveChangesAsync();
+            if (!deleted)
+                return NotFound("Workout not found or unauthorized.");
 
             return NoContent();
         }

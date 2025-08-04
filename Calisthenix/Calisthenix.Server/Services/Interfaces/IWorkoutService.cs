@@ -17,5 +17,7 @@
         Task<WorkoutDTO> CreateWorkoutAsync(string userId, CreateWorkoutDTO dto);
         Task<bool> AddExerciseToWorkoutAsync(int workoutId, int exerciseId, string userId);
         Task<bool> RemoveExerciseFromWorkoutAsync(int workoutId, int exerciseId, string userId);
+        Task<bool> UpdateWorkoutNameAsync(int id, string userId, string newName);
+        Task<object> GetAllWorkoutsWithExercisesRawAsync(int userId);
     }
 }
