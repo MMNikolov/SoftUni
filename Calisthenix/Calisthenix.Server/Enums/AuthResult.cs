@@ -5,6 +5,7 @@
         Success,
         NotFound,
         InvalidPassword,
-        Failure
+        Failure,
+        InvalidCredentials
     }
 }

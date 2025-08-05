@@ -83,8 +83,14 @@
 
         public async Task<bool> DeleteAsync(int id, int userId)
         {
-            var workout = await _context.Workouts.FirstOrDefaultAsync(w => w.Id == id && w.UserId == userId);
-            if (workout == null) return false;
+            var workout = await _context.Workouts
+                .Include(w => w.WorkoutExercises)
+                .FirstOrDefaultAsync(w => w.Id == id && w.UserId == userId);
+
+            if (workout == null)
+                return false;
+
+            _context.WorkoutExercises.RemoveRange(workout.WorkoutExercises);
 
             _context.Workouts.Remove(workout);
             await _context.SaveChangesAsync();

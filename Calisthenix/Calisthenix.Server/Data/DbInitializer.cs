@@ -17,7 +17,7 @@
                 {
                     Name = "Push-up",
                     Description = "A basic upper body exercise.",
-                    Category = "Upper Body",
+                    Category = "Push",
                     Equipment = "None",
                     Difficulty = "Beginner",
                     ImageUrl = "https://img.freepik.com/free-photo/young-powerful-sportsman-training-push-ups-dark-wall_176420-537.jpg",
@@ -28,7 +28,7 @@
                 {
                     Name = "Pull-up",
                     Description = "A compound exercise targeting the back and biceps.",
-                    Category = "Upper Body",
+                    Category = "Pull",
                     Equipment = "Pull-up bar",
                     Difficulty = "Intermediate",
                     ImageUrl = "https://t3.ftcdn.net/jpg/01/42/58/38/360_F_142583801_56XCH5zG6KeW288T9Xjrpjsbwu4nT6KO.jpg",
@@ -39,7 +39,7 @@
                 {
                     Name = "Squat",
                     Description = "A lower body movement working quads and glutes.",
-                    Category = "Lower Body",
+                    Category = "Legs",
                     Equipment = "None",
                     Difficulty = "Beginner",
                     ImageUrl = "https://hips.hearstapps.com/hmg-prod/images/man-doing-gym-front-squat-royalty-free-image-1649261343.jpg",
@@ -61,7 +61,7 @@
                 {
                     Name = "Burpee",
                     Description = "A full-body exercise combining a squat, push-up, and jump.",
-                    Category = "Full Body",
+                    Category = "Core",
                     Equipment = "None",
                     Difficulty = "Intermediate",
                     ImageUrl = "https://hips.hearstapps.com/hmg-prod/images/photo-23-07-2019-20-27-08-1593507744.jpg?resize=980:*",

@@ -1,14 +1,11 @@
-﻿using Calisthenix.Server.Data;
-using Calisthenix.Server.Models.DTOs;
-using Calisthenix.Server.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
-using Calisthenix.Server.Services.Interfaces;
-
-namespace Calisthenix.Server.Controllers
+﻿namespace Calisthenix.Server.Controllers
 {
+    using Calisthenix.Server.Models.DTOs;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+    using System.Security.Claims;
+    using Calisthenix.Server.Services.Interfaces;
+
     [ApiController]
     [Route("api/[controller]")]
     public class CommentsController : ControllerBase

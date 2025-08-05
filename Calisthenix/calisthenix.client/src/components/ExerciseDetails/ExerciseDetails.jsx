@@ -41,7 +41,7 @@ const ExerciseDetails = () => {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
                 },
-                body: JSON.stringify(newComment)
+                body: JSON.stringify({ content: newComment })
             });
 
             if (res.ok) {
