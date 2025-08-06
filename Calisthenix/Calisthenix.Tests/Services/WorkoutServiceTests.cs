@@ -1,12 +1,8 @@
-﻿using Xunit;
-using Microsoft.EntityFrameworkCore;
-using Moq;
+﻿using Microsoft.EntityFrameworkCore;
 using Calisthenix.Server.Data;
 using Calisthenix.Server.Services;
 using Calisthenix.Server.Models;
-using System.Threading.Tasks;
 using Calisthenix.Server.Models.DTOs;
-using System.Text.Json;
 
 public class WorkoutServiceTests
 {
@@ -22,7 +18,10 @@ public class WorkoutServiceTests
         var service = new WorkoutService(context);
 
         string userId = "1";
-        var dto = new CreateWorkoutDTO { Name = "Push Routine" };
+        var dto = new CreateWorkoutDTO 
+        { 
+            Name = "Push Routine" 
+        };
 
         // Act
         var result = await service.CreateWorkoutAsync(userId, dto);
@@ -49,11 +48,26 @@ public class WorkoutServiceTests
         var service = new WorkoutService(context);
 
         var workouts = new List<Workout>
-    {
-        new Workout { Id = 1, Name = "Morning Routine", UserId = 1 },
-        new Workout { Id = 2, Name = "Evening Pump", UserId = 1 },
-        new Workout { Id = 3, Name = "Not My Workout", UserId = 2 }
-    };
+        {
+            new Workout 
+            { 
+                Id = 1, 
+                Name = "Morning Routine", 
+                UserId = 1 
+            },
+            new Workout 
+            { 
+                Id = 2, 
+                Name = "Evening Pump", 
+                UserId = 1 
+            },
+            new Workout 
+            { 
+                Id = 3, 
+                Name = "Not My Workout", 
+                UserId = 2 
+            }
+        };
 
         context.Workouts.AddRange(workouts);
         await context.SaveChangesAsync();
@@ -80,7 +94,14 @@ public class WorkoutServiceTests
 
         using var context = new CalisthenixDbContext(options);
 
-        var workout = new Workout { Id = 1, Name = "Full Body", UserId = 1, WorkoutExercises = new List<WorkoutExercise>() };
+        var workout = new Workout 
+        { 
+            Id = 1, 
+            Name = "Full Body", 
+            UserId = 1, 
+            WorkoutExercises = new List<WorkoutExercise>() 
+        };
+
         var exercise = new Exercise
         {
             Id = 10,
@@ -125,9 +146,13 @@ public class WorkoutServiceTests
             Name = "Cardio",
             UserId = 1,
             WorkoutExercises = new List<WorkoutExercise>
-        {
-            new WorkoutExercise { WorkoutId = 1, ExerciseId = 20 }
-        }
+            {
+                new WorkoutExercise 
+                { 
+                    WorkoutId = 1, 
+                    ExerciseId = 20 
+                }
+            }
         };
 
         context.Workouts.Add(workout);
@@ -174,11 +199,11 @@ public class WorkoutServiceTests
     }
 
     [Fact]
-    public async Task RemoveExerciseFromWorkoutAsync_RemovesLink_WhenValid()
+    public async Task RemoveExerciseFromWorkoutAsyncRemovesLinkWhenValid()
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
-            .UseInMemoryDatabase("WorkoutService_RemoveExercise_Valid")
+            .UseInMemoryDatabase("WorkoutServiceRemoveExerciseValid")
             .Options;
 
         using var context = new CalisthenixDbContext(options);
@@ -189,9 +214,13 @@ public class WorkoutServiceTests
             Name = "Leg Day",
             UserId = 1,
             WorkoutExercises = new List<WorkoutExercise>
-        {
-            new WorkoutExercise { WorkoutId = 1, ExerciseId = 100 }
-        }
+            {
+                new WorkoutExercise 
+                { 
+                    WorkoutId = 1, 
+                    ExerciseId = 100 
+                }
+            }
         };
 
         context.Workouts.Add(workout);
@@ -222,11 +251,11 @@ public class WorkoutServiceTests
     }
 
     [Fact]
-    public async Task RemoveExerciseFromWorkoutAsync_ReturnsFalse_WhenWorkoutNotFound()
+    public async Task RemoveExerciseFromWorkoutAsyncReturnsFalseWhenWorkoutNotFound()
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
-            .UseInMemoryDatabase("WorkoutService_RemoveExercise_NoWorkout")
+            .UseInMemoryDatabase("WorkoutServiceRemoveExerciseNoWorkout")
             .Options;
 
         using var context = new CalisthenixDbContext(options);
@@ -240,11 +269,11 @@ public class WorkoutServiceTests
     }
 
     [Fact]
-    public async Task RemoveExerciseFromWorkoutAsync_ReturnsFalse_WhenExerciseNotInWorkout()
+    public async Task RemoveExerciseFromWorkoutAsyncReturnsFalseWhenExerciseNotInWorkout()
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
-            .UseInMemoryDatabase("WorkoutService_RemoveExercise_NotInWorkout")
+            .UseInMemoryDatabase("WorkoutServiceRemoveExerciseNotInWorkout")
             .Options;
 
         using var context = new CalisthenixDbContext(options);
@@ -254,7 +283,7 @@ public class WorkoutServiceTests
             Id = 1,
             Name = "Upper Body",
             UserId = 1,
-            WorkoutExercises = new List<WorkoutExercise>() // empty
+            WorkoutExercises = new List<WorkoutExercise>()
         };
 
         context.Workouts.Add(workout);
@@ -270,16 +299,22 @@ public class WorkoutServiceTests
     }
 
     [Fact]
-    public async Task UpdateWorkoutNameAsync_UpdatesName_WhenWorkoutExists()
+    public async Task UpdateWorkoutNameAsyncUpdatesNameWhenWorkoutExists()
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
-            .UseInMemoryDatabase("WorkoutService_UpdateWorkoutName_Valid")
+            .UseInMemoryDatabase("WorkoutServiceUpdateWorkoutNameValid")
             .Options;
 
         using var context = new CalisthenixDbContext(options);
 
-        var workout = new Workout { Id = 1, Name = "Old Name", UserId = 1 };
+        var workout = new Workout 
+        { 
+            Id = 1, 
+            Name = "Old Name", 
+            UserId = 1 
+        };
+
         context.Workouts.Add(workout);
         await context.SaveChangesAsync();
 
@@ -295,16 +330,22 @@ public class WorkoutServiceTests
     }
 
     [Fact]
-    public async Task UpdateWorkoutNameAsync_ReturnsFalse_WhenWorkoutNotFound()
+    public async Task UpdateWorkoutNameAsyncReturnsFalseWhenWorkoutNotFound()
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
-            .UseInMemoryDatabase("WorkoutService_UpdateWorkoutName_NotFound")
+            .UseInMemoryDatabase("WorkoutServiceUpdateWorkoutNameNotFound")
             .Options;
 
         using var context = new CalisthenixDbContext(options);
 
-        context.Workouts.Add(new Workout { Id = 1, Name = "Test", UserId = 1 });
+        context.Workouts.Add(new Workout 
+        { 
+            Id = 1, 
+            Name = "Test", 
+            UserId = 1 
+        });
+
         await context.SaveChangesAsync();
 
         var service = new WorkoutService(context);
@@ -319,11 +360,11 @@ public class WorkoutServiceTests
     }
 
     [Fact]
-    public async Task GetOrCreateDefaultWorkoutAsync_CreatesWorkout_IfNotExists()
+    public async Task GetOrCreateDefaultWorkoutAsyncCreatesWorkoutIfNotExists()
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
-            .UseInMemoryDatabase("WorkoutService_GetOrCreateWorkout_Create")
+            .UseInMemoryDatabase("WorkoutServiceGetOrCreateWorkoutCreate")
             .Options;
 
         using var context = new CalisthenixDbContext(options);
@@ -337,21 +378,28 @@ public class WorkoutServiceTests
         Assert.Equal("MyWorkout", result.Name);
         Assert.Equal(1, result.UserId);
 
-        var inDb = await context.Workouts.FirstOrDefaultAsync(w => w.Name == "MyWorkout" && w.UserId == 1);
+        var inDb = await context.Workouts.FirstOrDefaultAsync(w => w.Name == "MyWorkout" 
+                                                                && w.UserId == 1);
         Assert.NotNull(inDb);
     }
 
     [Fact]
-    public async Task GetOrCreateDefaultWorkoutAsync_ReturnsExisting_IfAlreadyExists()
+    public async Task GetOrCreateDefaultWorkoutAsyncReturnsExistingIfAlreadyExists()
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
-            .UseInMemoryDatabase("WorkoutService_GetOrCreateWorkout_Exists")
+            .UseInMemoryDatabase("WorkoutServiceGetOrCreateWorkoutExists")
             .Options;
 
         using var context = new CalisthenixDbContext(options);
 
-        var existing = new Workout { Id = 99, Name = "MyWorkout", UserId = 2 };
+        var existing = new Workout 
+        { 
+            Id = 99, 
+            Name = "MyWorkout", 
+            UserId = 2 
+        };
+
         context.Workouts.Add(existing);
         await context.SaveChangesAsync();
 
@@ -361,7 +409,7 @@ public class WorkoutServiceTests
         var result = await service.GetOrCreateDefaultWorkoutAsync(2);
 
         // Assert
-        Assert.Equal(99, result.Id); // same ID
+        Assert.Equal(99, result.Id);
         Assert.Equal("MyWorkout", result.Name);
         Assert.Equal(2, result.UserId);
     }

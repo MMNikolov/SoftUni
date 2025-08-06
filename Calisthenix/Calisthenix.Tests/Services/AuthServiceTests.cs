@@ -1,11 +1,8 @@
-﻿using Xunit;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Moq;
 using Calisthenix.Server.Data;
 using Calisthenix.Server.Services;
-using System.Threading.Tasks;
-using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using Calisthenix.Server.Enums;
 using Calisthenix.Server.Models.DTOs;
@@ -13,22 +10,22 @@ using Calisthenix.Server.Models.DTOs;
 public class AuthServiceTests
 {
     [Fact]
-    public async Task RegisterAsync_CreatesUserAndReturnsToken()
+    public async Task RegisterAsyncCreatesUserAndReturnsToken()
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
             .UseInMemoryDatabase("AuthService_Register")
             .Options;
 
-        var jwtKey = "supersecretkey!123supersecretkey!123"; // must be at least 32 bytes for HMAC
+        var jwtKey = "supersecretkey!123supersecretkey!123";
         var configMock = new Mock<IConfiguration>();
         configMock.Setup(c => c["Jwt:Key"]).Returns(jwtKey);
 
         using var context = new CalisthenixDbContext(options);
         var service = new AuthService(context, configMock.Object);
 
-        string username = "newuser";
-        string password = "pass123";
+        string username = "Georgi";
+        string password = "123";
 
         // Act
         var token = await service.RegisterAsync(username, password);
@@ -38,20 +35,19 @@ public class AuthServiceTests
 
         var userInDb = await context.Users.FirstOrDefaultAsync(u => u.Username == username);
         Assert.NotNull(userInDb);
-        Assert.NotEqual(password, userInDb.PasswordHash); // should be hashed
+        Assert.NotEqual(password, userInDb.PasswordHash); 
 
-        // Optional: verify token is valid JWT
         var handler = new JwtSecurityTokenHandler();
         var readable = handler.CanReadToken(token);
         Assert.True(readable);
     }
 
     [Fact]
-    public async Task RegisterAsync_ThrowsException_WhenUserAlreadyExists()
+    public async Task RegisterAsyncThrowsExceptionWhenUserAlreadyExists()
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
-            .UseInMemoryDatabase("AuthService_Register_AlreadyExists")
+            .UseInMemoryDatabase("AuthServiceRegisterAlreadyExists")
             .Options;
 
         var jwtKey = "anothersecretkeysuperlong123456";
@@ -60,10 +56,9 @@ public class AuthServiceTests
 
         using var context = new CalisthenixDbContext(options);
 
-        // Pre-add the user
         context.Users.Add(new Calisthenix.Server.Models.User
         {
-            Username = "existinguser",
+            Username = "Alexcho",
             PasswordHash = "hashed"
         });
         await context.SaveChangesAsync();
@@ -72,17 +67,17 @@ public class AuthServiceTests
 
         // Act + Assert
         var ex = await Assert.ThrowsAsync<Exception>(() =>
-            service.RegisterAsync("existinguser", "anyPassword"));
+            service.RegisterAsync("Alexcho", "anyPassword"));
 
         Assert.Equal("User already exists", ex.Message);
     }
 
     [Fact]
-    public async Task LoginAsync_ReturnsToken_WhenCredentialsAreValid()
+    public async Task LoginAsyncReturnsTokenWhenCredentialsAreValid()
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
-            .UseInMemoryDatabase("AuthService_Login_Valid")
+            .UseInMemoryDatabase("AuthServiceLoginValid")
             .Options;
 
         var jwtKey = "validloginsecretkeymustbelong12345";
@@ -91,8 +86,8 @@ public class AuthServiceTests
 
         using var context = new CalisthenixDbContext(options);
 
-        string username = "loginuser";
-        string password = "mypassword";
+        string username = "Mitacheto";
+        string password = "123";
         string hashed = BCrypt.Net.BCrypt.HashPassword(password);
 
         context.Users.Add(new Calisthenix.Server.Models.User
@@ -112,13 +107,13 @@ public class AuthServiceTests
     }
 
     [Theory]
-    [InlineData("wronguser", "mypassword")]    // username doesn't exist
-    [InlineData("realuser", "wrongpassword")]  // password is incorrect
-    public async Task LoginAsync_ThrowsException_WhenCredentialsInvalid(string username, string password)
+    [InlineData("wronguser", "mypassword")]    
+    [InlineData("realuser", "wrongpassword")]  
+    public async Task LoginAsyncThrowsExceptionWhenCredentialsInvalid(string username, string password)
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
-            .UseInMemoryDatabase("AuthService_Login_Invalid")
+            .UseInMemoryDatabase("AuthServiceLoginInvalid")
             .Options;
 
         var jwtKey = "invalidsecretkeysupersecurekey";
@@ -137,16 +132,16 @@ public class AuthServiceTests
         var service = new AuthService(context, configMock.Object);
 
         // Act + Assert
-        var ex = await Assert.ThrowsAsync<Exception>(() => service.LoginAsync(username, password));
-        Assert.Equal("Invalid credentials", ex.Message);
+        var ex = await Assert.ThrowsAsync<UnauthorizedAccessException>(() => service.LoginAsync(username, password));
+        Assert.Equal("Invalid username or password", ex.Message);
     }
 
     [Fact]
-    public async Task ChangePasswordAsync_UpdatesPassword_WhenCurrentPasswordIsCorrect()
+    public async Task ChangePasswordAsyncUpdatesPasswordWhenCurrentPasswordIsCorrect()
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
-            .UseInMemoryDatabase("AuthService_ChangePassword_Success")
+            .UseInMemoryDatabase("AuthServiceChangePasswordSuccess")
             .Options;
 
         using var context = new CalisthenixDbContext(options);
@@ -154,7 +149,7 @@ public class AuthServiceTests
         var user = new Calisthenix.Server.Models.User
         {
             Id = 1,
-            Username = "testuser",
+            Username = "Pesho",
             PasswordHash = BCrypt.Net.BCrypt.HashPassword("oldpass")
         };
 
@@ -181,11 +176,11 @@ public class AuthServiceTests
     }
 
     [Fact]
-    public async Task ChangePasswordAsync_ReturnsInvalidPassword_WhenOldPasswordIncorrect()
+    public async Task ChangePasswordAsyncReturnsInvalidPasswordWhenOldPasswordIncorrect()
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
-            .UseInMemoryDatabase("AuthService_ChangePassword_InvalidOld")
+            .UseInMemoryDatabase("AuthServiceChangePasswordInvalidOld")
             .Options;
 
         using var context = new CalisthenixDbContext(options);
@@ -217,11 +212,11 @@ public class AuthServiceTests
     }
 
     [Fact]
-    public async Task ChangePasswordAsync_ReturnsNotFound_WhenUserDoesNotExist()
+    public async Task ChangePasswordAsyncReturnsNotFoundWhenUserDoesNotExist()
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
-            .UseInMemoryDatabase("AuthService_ChangePassword_NotFound")
+            .UseInMemoryDatabase("AuthServiceChangePasswordNotFound")
             .Options;
 
         using var context = new CalisthenixDbContext(options);
@@ -236,7 +231,7 @@ public class AuthServiceTests
         };
 
         // Act
-        var result = await service.ChangePasswordAsync(999, request); // user doesn't exist
+        var result = await service.ChangePasswordAsync(999, request);
 
         // Assert
         Assert.Equal(AuthResult.NotFound, result);

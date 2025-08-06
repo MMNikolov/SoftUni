@@ -107,4 +107,18 @@
     background-color: #ffffff;
 }
 
+.edit-button {
+    background-color: #5bc0de;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: #31b0d5;
+}
+
+
 

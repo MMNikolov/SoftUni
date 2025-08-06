@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
+﻿using System.Security.Claims;
 using System.Text.Json;
-using System.Threading.Tasks;
 using Calisthenix.Server.Controllers;
 using Calisthenix.Server.Models.DTOs;
 using Calisthenix.Server.Services.Interfaces;
@@ -17,11 +12,15 @@ namespace Calisthenix.Tests.Controllers
     public class CommentsControllerTests
     {
         [Fact]
-        public async Task GetComments_ReturnsCommentsList()
+        public async Task GetCommentsReturnsCommentsList()
         {
             var mockService = new Mock<ICommentService>();
             mockService.Setup(s => s.GetCommentsForExerciseAsync(5, null))
-                       .ReturnsAsync(new List<CommentDTO> { new() { Id = 1, Content = "Great" } });
+                       .ReturnsAsync(new List<CommentDTO> { new() 
+                       { 
+                           Id = 1, 
+                           Content = "Great" 
+                       }});
 
             var controller = new CommentsController(mockService.Object);
 
@@ -29,7 +28,7 @@ namespace Calisthenix.Tests.Controllers
             {
                 HttpContext = new DefaultHttpContext
                 {
-                    User = new ClaimsPrincipal(new ClaimsIdentity()) // empty identity = IsAuthenticated = false
+                    User = new ClaimsPrincipal(new ClaimsIdentity()) 
                 }
             };
 
@@ -41,11 +40,15 @@ namespace Calisthenix.Tests.Controllers
         }
 
         [Fact]
-        public async Task PostComment_ReturnsCreatedComment()
+        public async Task PostCommentReturnsCreatedComment()
         {
             var mockService = new Mock<ICommentService>();
             mockService.Setup(s => s.AddCommentAsync(5, 1, "Nice"))
-                       .ReturnsAsync(new CommentDTO { Id = 1, Content = "Nice" });
+                       .ReturnsAsync(new CommentDTO 
+                       { 
+                           Id = 1, 
+                           Content = "Nice" 
+                       });
 
             var controller = new CommentsController(mockService.Object);
             controller.ControllerContext = new ControllerContext
@@ -69,12 +72,13 @@ namespace Calisthenix.Tests.Controllers
         }
 
         [Fact]
-        public async Task ReactToComment_ReturnsOk_WhenSuccess()
+        public async Task ReactToCommentReturnsOkWhenSuccess()
         {
             var mockService = new Mock<ICommentService>();
             mockService.Setup(s => s.ToggleReactionAsync(1, 1)).ReturnsAsync(true);
 
             var controller = new CommentsController(mockService.Object);
+
             controller.ControllerContext = new ControllerContext
             {
                 HttpContext = new DefaultHttpContext
@@ -97,7 +101,7 @@ namespace Calisthenix.Tests.Controllers
         }
 
         [Fact]
-        public async Task ReactToComment_ReturnsBadRequest_WhenAlreadyReacted()
+        public async Task ReactToCommentReturnsBadRequestWhenAlreadyReacted()
         {
             var mockService = new Mock<ICommentService>();
             mockService.Setup(s => s.ToggleReactionAsync(1, 1)).ReturnsAsync(false);
@@ -123,7 +127,7 @@ namespace Calisthenix.Tests.Controllers
         }
 
         [Fact]
-        public async Task ToggleLike_ReturnsLikedFlag()
+        public async Task ToggleLikeReturnsLikedFlag()
         {
             var mockService = new Mock<ICommentService>();
             mockService.Setup(s => s.ToggleReactionAsync(1, 1)).ReturnsAsync(true);

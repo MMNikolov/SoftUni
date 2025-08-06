@@ -85,5 +85,24 @@
                 return NotFound(ex.Message);
             }
         }
+
+        [HttpPut("{id}")]
+        [Authorize]
+        public async Task<IActionResult> UpdateExercise(string id, [FromBody] Exercise updatedExercise)
+        {
+            var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!int.TryParse(userIdStr, out int userId))
+                return Unauthorized();
+
+            var existing = await _exerciseService.GetExerciseByIdAsync(id);
+
+            if (existing == null || existing.UserId != userId)
+                return Forbid();
+
+            updatedExercise.UserId = userId;
+
+            await _exerciseService.UpdateExerciseAsync(id, updatedExercise);
+            return NoContent();
+        }
     }
 }

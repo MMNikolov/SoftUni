@@ -1,6 +1,5 @@
 ﻿namespace Calisthenix.Server.Services
 {
-    using System.Security.Cryptography;
     using System.Text;
     using Calisthenix.Server.Data;
     using Calisthenix.Server.Models;
@@ -62,7 +61,7 @@
                 {
                     new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                     new Claim(ClaimTypes.Name, user.Username),
-                    new Claim(ClaimTypes.Role, "Admin")
+                    new Claim(ClaimTypes.Role, user.Role)
                 }),
                 Expires = DateTime.UtcNow.AddDays(1),
                 SigningCredentials = new SigningCredentials(

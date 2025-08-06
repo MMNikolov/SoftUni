@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Security.Claims;
 using Calisthenix.Server.Controllers;
 using Calisthenix.Server.Models;
 using Calisthenix.Server.Models.DTOs;
@@ -17,14 +12,22 @@ namespace Calisthenix.Tests.Controllers
     public class ExerciseControllerTests
     {
         [Fact]
-        public async Task GetAllExercises_ReturnsPagedResults()
+        public async Task GetAllExercisesReturnsPagedResults()
         {
             var mockService = new Mock<IExerciseService>();
             mockService.Setup(s => s.GetPaginatedExercisesAsync(1, 10))
                        .ReturnsAsync(new List<ExerciseDTO>
                        {
-                   new ExerciseDTO { Id = 1, Name = "Push Up" },
-                   new ExerciseDTO { Id = 2, Name = "Pull Up" }
+                           new ExerciseDTO 
+                           { 
+                               Id = 1, 
+                               Name = "Push Up" 
+                           },
+                           new ExerciseDTO 
+                           { 
+                               Id = 2, 
+                               Name = "Pull Up" 
+                           }
                        });
 
             var controller = new ExerciseController(mockService.Object);
@@ -37,7 +40,7 @@ namespace Calisthenix.Tests.Controllers
         }
 
         [Fact]
-        public async Task GetAllExercises_ReturnsBadRequest_WhenPageInvalid()
+        public async Task GetAllExercisesReturnsBadRequestWhenPageInvalid()
         {
             var mockService = new Mock<IExerciseService>();
             var controller = new ExerciseController(mockService.Object);
@@ -49,11 +52,15 @@ namespace Calisthenix.Tests.Controllers
         }
 
         [Fact]
-        public async Task GetExerciseById_ReturnsExercise_WhenFound()
+        public async Task GetExerciseByIdReturnsExerciseWhenFound()
         {
             var mockService = new Mock<IExerciseService>();
             mockService.Setup(s => s.GetExerciseByIdAsync("1"))
-                       .ReturnsAsync(new Exercise { Id = 1, Name = "Push Up" });
+                       .ReturnsAsync(new Exercise 
+                       { 
+                           Id = 1, 
+                           Name = "Push Up" 
+                       });
 
             var controller = new ExerciseController(mockService.Object);
             var result = await controller.GetExerciseById("1") as OkObjectResult;
@@ -63,7 +70,7 @@ namespace Calisthenix.Tests.Controllers
         }
 
         [Fact]
-        public async Task GetExerciseById_ReturnsNotFound_WhenMissing()
+        public async Task GetExerciseByIdReturnsNotFoundWhenMissing()
         {
             var mockService = new Mock<IExerciseService>();
             mockService.Setup(s => s.GetExerciseByIdAsync("999")).ReturnsAsync((Exercise)null);
@@ -75,7 +82,7 @@ namespace Calisthenix.Tests.Controllers
         }
 
         [Fact]
-        public async Task AddExercise_ReturnsCreated_WhenValid()
+        public async Task AddExerciseReturnsCreatedWhenValid()
         {
             var mockService = new Mock<IExerciseService>();
             mockService.Setup(s => s.AddExerciseAsync(It.IsAny<Exercise>()))
@@ -108,7 +115,7 @@ namespace Calisthenix.Tests.Controllers
         }
 
         [Fact]
-        public async Task AddExercise_ReturnsBadRequest_WhenNameMissing()
+        public async Task AddExerciseReturnsBadRequestWhenNameMissing()
         {
             var mockService = new Mock<IExerciseService>();
             var controller = new ExerciseController(mockService.Object);
@@ -131,7 +138,7 @@ namespace Calisthenix.Tests.Controllers
         }
 
         [Fact]
-        public async Task DeleteExercise_ReturnsNoContent_WhenDeleted()
+        public async Task DeleteExerciseReturnsNoContentWhenDeleted()
         {
             var mockService = new Mock<IExerciseService>();
             mockService.Setup(s => s.DeleteExerciseAsync("1", 1)).ReturnsAsync(true);

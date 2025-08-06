@@ -8,6 +8,7 @@ function ExerciseCard({ exercise, onAdd, onRemove, onDelete, showAddButton = tru
     const cardRef = useRef(null);
     const isOwner = exercise.userName === getUsername();
 
+
     const handleAddClick = async (e, workoutId) => {
         e.stopPropagation();
         if (!workoutId) return;
@@ -102,16 +103,29 @@ function ExerciseCard({ exercise, onAdd, onRemove, onDelete, showAddButton = tru
             )}
 
             {isOwner && (
-                <button
-                    className="delete-button"
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        handleDelete();
-                    }}
-                >
-                    Delete
-                </button>
+                <>
+                    <button
+                        className="edit-button"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            navigate(`/exercise/edit/${exercise.id}`, { state: { exercise } });
+                        }}
+                    >
+                        Edit
+                    </button>
+
+                    <button
+                        className="delete-button"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            handleDelete();
+                        }}
+                    >
+                        Delete
+                    </button>
+                </>
             )}
+
         </div>
     );
 }

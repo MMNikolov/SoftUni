@@ -10,7 +10,6 @@
         Task<Workout> CreateAsync(Workout workout, int userId);
         Task<bool> DeleteAsync(int id, int userId);
         Task<Workout> GetOrCreateDefaultWorkoutAsync(int userId);
-        Task<bool> AddExerciseToWorkoutAsync(int workoutId, int exerciseId);
         Task AddExerciseToUserWorkoutAsync(int userId, int exerciseId);
         User GetUserByUsername(string username);
         Task<List<WorkoutDTO>> GetWorkoutsByUserIdAsync(string userId);

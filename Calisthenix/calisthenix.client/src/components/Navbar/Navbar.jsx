@@ -1,18 +1,34 @@
 ﻿import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { getUsername, isLoggedIn, isAuthenticated } from '../../utils/auth';
-import LogoutPage from '../LogoutPage/LogoutPage'; 
+import LogoutPage from '../LogoutPage/LogoutPage';
+import { jwtDecode } from 'jwt-decode';
 import './Navbar.css';
 
 const Navbar = () => {
     const [username, setUsername] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [showDropdown, setShowDropdown] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
     const dropdownRef = useRef(null);
+
+    window.jwtDecode = jwtDecode;
 
     useEffect(() => {
         if (isLoggedIn()) {
             setUsername(getUsername());
+
+            const token = localStorage.getItem('token');
+            try {
+                const decoded = jwtDecode(token);
+                const role = decoded.role;
+
+                if (role === "Admin") {
+                    setIsAdmin(true);
+                } 
+            } catch (error) {
+                console.error("Error decoding token:", error);
+            }
         }
 
         const handleClickOutside = (event) => {
@@ -22,10 +38,7 @@ const Navbar = () => {
         };
 
         document.addEventListener('mousedown', handleClickOutside);
-
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
+        return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
     const handleLogout = () => {
@@ -44,6 +57,7 @@ const Navbar = () => {
                 <li><Link to="/exercises">All Exercises</Link></li>
                 {isAuthenticated() && <li><Link to="/add-workout">Add Exercise</Link></li>}
                 {isAuthenticated() && <li><Link to="/my-workouts">My Workouts</Link></li>}
+                {isAdmin && <li><Link to="/admin">Admin</Link></li>}
                 {!isLoggedIn() && <li><Link to="/login">Login</Link></li>}
                 {!isLoggedIn() && <li><Link to="/register">Register</Link></li>}
                 {isLoggedIn() && (

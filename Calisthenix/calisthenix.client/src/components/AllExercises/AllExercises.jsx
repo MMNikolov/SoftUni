@@ -84,8 +84,32 @@ function AllExercises() {
         setPage(1);
     }, [search, categoryFilter, difficultyFilter]);
 
-    const handleAddToWorkout = (exerciseId) => {
-        setExercises(prev => prev.filter(e => e.id !== exerciseId));
+    const handleAddToWorkout = async (exerciseId) => {
+        const token = localStorage.getItem("token");
+
+        try {
+            const res = await fetch(`https://localhost:7161/api/workout/add/${exerciseId}`, {
+                method: "POST",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+
+            if (!res.ok) {
+                const errorText = await res.text();
+                console.warn("⚠️ Add failed:", errorText);
+                alert("Exercise already added to workout or something went wrong.");
+                return;
+            }
+
+            setExercises(prev => prev.filter(e => e.id !== exerciseId));
+            setToastMessage("Exercise added to workout!");
+            setTimeout(() => setToastMessage(null), 3000);
+
+        } catch (err) {
+            console.error("❌ Error adding exercise:", err.message);
+            alert("Something went wrong while adding exercise.");
+        }
     };
 
     if (loading) {
@@ -151,7 +175,11 @@ function AllExercises() {
                         <ExerciseCard
                             key={exercise.id}
                             exercise={exercise}
-                            onAdd={handleAddToWorkout}
+                            onAdd={(exerciseId) => {
+                                setExercises(prev => prev.filter(e => e.id !== exerciseId));
+                                setToastMessage("Exercise added to workout!");
+                                setTimeout(() => setToastMessage(null), 3000);
+                            }}
                             onDelete={(id) => handleDelete(id, exercise.name)}
                             workouts={workouts}
                             highlight={highlightId === exercise.id}

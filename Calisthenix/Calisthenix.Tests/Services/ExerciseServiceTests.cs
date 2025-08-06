@@ -1,14 +1,8 @@
-﻿using Xunit;
-using Moq;
+﻿using Moq;
 using Microsoft.Extensions.Caching.Memory;
 using Calisthenix.Server.Data;
 using Calisthenix.Server.Models;
-using Calisthenix.Server.Services;
-using Calisthenix.Server.Models.DTOs;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System;
 
 public class ExerciseServiceTests
 {
@@ -111,7 +105,7 @@ public class ExerciseServiceTests
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
-            .UseInMemoryDatabase("ExerciseService_GetById_Valid")
+            .UseInMemoryDatabase("ExerciseServiceGetByIdValid")
             .Options;
 
         using var context = new CalisthenixDbContext(options);
@@ -169,7 +163,7 @@ public class ExerciseServiceTests
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
-            .UseInMemoryDatabase("ExerciseService_AddExercise")
+            .UseInMemoryDatabase("ExerciseServiceAddExercise")
             .Options;
 
         using var context = new CalisthenixDbContext(options);
@@ -207,7 +201,7 @@ public class ExerciseServiceTests
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
-            .UseInMemoryDatabase("ExerciseService_DeleteExercise_Found")
+            .UseInMemoryDatabase("ExerciseServiceDeleteExerciseFound")
             .Options;
 
         using var context = new CalisthenixDbContext(options);
@@ -224,9 +218,13 @@ public class ExerciseServiceTests
             ImageUrl = "",
             UserId = 1,
             WorkoutExercises = new List<WorkoutExercise>
-        {
-            new WorkoutExercise { WorkoutId = 100, ExerciseId = 1 }
-        }
+            {
+                new WorkoutExercise 
+                { 
+                    WorkoutId = 100, 
+                    ExerciseId = 1 
+                }
+            }
         };
 
         context.Exercises.Add(exercise);
@@ -251,7 +249,7 @@ public class ExerciseServiceTests
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
-            .UseInMemoryDatabase("ExerciseService_DeleteExercise_NotFound")
+            .UseInMemoryDatabase("ExerciseServiceDeleteExerciseNotFound")
             .Options;
 
         using var context = new CalisthenixDbContext(options);
@@ -265,4 +263,80 @@ public class ExerciseServiceTests
         Assert.False(result);
         cacheMock.Verify(c => c.Remove(It.IsAny<string>()), Times.Never);
     }
+
+    [Fact]
+    public async Task UpdateExerciseAsyncUpdatesExistingExercise()
+    {
+        // Arrange
+        var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
+            .UseInMemoryDatabase("UpdateExerciseTest")
+            .Options;
+
+        var cacheMock = new Mock<IMemoryCache>();
+
+        using var context = new CalisthenixDbContext(options);
+
+        var existingExercise = new Exercise
+        {
+            Id = 1,
+            Name = "Old Name",
+            Description = "Old Description",
+            Category = "Old Cat",
+            Equipment = "Old Equip",
+            Difficulty = "Beginner",
+            VideoUrl = "oldurl",
+            ImageUrl = "oldimg",
+            UserId = 1
+        };
+
+        context.Exercises.Add(existingExercise);
+        await context.SaveChangesAsync();
+
+        var service = new ExerciseService(context, cacheMock.Object);
+
+        var updatedExercise = new Exercise
+        {
+            Name = "New Name",
+            Description = "New Description",
+            Category = "New Cat",
+            Equipment = "New Equip",
+            Difficulty = "Advanced",
+            VideoUrl = "newurl",
+            ImageUrl = "newimg"
+        };
+
+        // Act
+        await service.UpdateExerciseAsync(existingExercise.Id.ToString(), updatedExercise);
+
+        // Assert
+        var result = await context.Exercises.FindAsync(existingExercise.Id);
+        Assert.Equal("New Name", result.Name);
+        Assert.Equal("Advanced", result.Difficulty);
+        Assert.Equal("newurl", result.VideoUrl);
+    }
+
+    [Fact]
+    public async Task UpdateExerciseAsyncThrowsExceptionWhenExerciseNotFound()
+    {
+        // Arrange
+        var options = new DbContextOptionsBuilder<CalisthenixDbContext>()
+            .UseInMemoryDatabase("UpdateExerciseNotFound")
+            .Options;
+
+        var cacheMock = new Mock<IMemoryCache>();
+        using var context = new CalisthenixDbContext(options);
+
+        var service = new ExerciseService(context, cacheMock.Object);
+
+        var updatedExercise = new Exercise
+        {
+            Name = "Doesn't Matter",
+            Description = "Whatever"
+        };
+
+        // Act + Assert
+        await Assert.ThrowsAsync<InvalidOperationException>(() =>
+            service.UpdateExerciseAsync(Guid.NewGuid().ToString(), updatedExercise));
+    }
+
 }

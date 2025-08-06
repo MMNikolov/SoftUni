@@ -13,19 +13,19 @@ using System.Security.Claims;
 public class AuthControllerTests
 {
     [Fact]
-    public async Task Register_ReturnsOk_WithToken()
+    public async Task RegisterReturnsOkWithToken()
     {
         // Arrange
         var mockAuthService = new Mock<IAuthService>();
-        mockAuthService.Setup(s => s.RegisterAsync("testuser", "testpass"))
+        mockAuthService.Setup(s => s.RegisterAsync("Pesho", "123"))
                        .ReturnsAsync("fake-jwt-token");
 
         var controller = new AuthController(mockAuthService.Object);
 
         var dto = new LoginDTO
         {
-            Username = "testuser",
-            Password = "testpass"
+            Username = "Pesho",
+            Password = "123"
         };
 
         // Act
@@ -44,19 +44,19 @@ public class AuthControllerTests
     }
 
     [Fact]
-    public async Task Login_ReturnsOk_WithToken()
+    public async Task LoginReturnsOkWithToken()
     {
         // Arrange
         var mockAuthService = new Mock<IAuthService>();
-        mockAuthService.Setup(s => s.LoginAsync("loginuser", "securepass"))
+        mockAuthService.Setup(s => s.LoginAsync("Pesho", "123"))
                        .ReturnsAsync("jwt-login-token");
 
         var controller = new AuthController(mockAuthService.Object);
 
         var dto = new LoginDTO
         {
-            Username = "loginuser",
-            Password = "securepass"
+            Username = "Pesho",
+            Password = "123"
         };
 
         // Act
@@ -75,7 +75,7 @@ public class AuthControllerTests
     }
 
     [Fact]
-    public async Task ChangePassword_ReturnsOk_WhenSuccessful()
+    public async Task ChangePasswordReturnsOkWhenSuccessful()
     {
         // Arrange
         var mockAuthService = new Mock<IAuthService>();
@@ -95,8 +95,8 @@ public class AuthControllerTests
 
         var request = new ChangePasswordRequest
         {
-            CurrentPassword = "oldpass",
-            NewPassword = "newpass"
+            CurrentPassword = "123",
+            NewPassword = "1234"
         };
 
         // Act
@@ -109,7 +109,7 @@ public class AuthControllerTests
     }
 
     [Fact]
-    public async Task ChangePassword_ReturnsNotFound_WhenUserNotFound()
+    public async Task ChangePasswordReturnsNotFoundWhenUserNotFound()
     {
         // Arrange
         var mockAuthService = new Mock<IAuthService>();
@@ -128,8 +128,8 @@ public class AuthControllerTests
 
         var request = new ChangePasswordRequest
         {
-            CurrentPassword = "anything",
-            NewPassword = "newpass"
+            CurrentPassword = "123",
+            NewPassword = "1234"
         };
 
         // Act
@@ -142,7 +142,7 @@ public class AuthControllerTests
     }
 
     [Fact]
-    public async Task ChangePassword_ReturnsBadRequest_WhenOldPasswordWrong()
+    public async Task ChangePasswordReturnsBadRequestWhenOldPasswordWrong()
     {
         // Arrange
         var mockAuthService = new Mock<IAuthService>();
@@ -161,8 +161,8 @@ public class AuthControllerTests
 
         var request = new ChangePasswordRequest
         {
-            CurrentPassword = "wrongOld",
-            NewPassword = "newpass"
+            CurrentPassword = "123",
+            NewPassword = "1234"
         };
 
         // Act

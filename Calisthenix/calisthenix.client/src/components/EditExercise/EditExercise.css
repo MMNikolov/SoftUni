@@ -1,0 +1,99 @@
+.edit-exercise-page {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #f2f2f2;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    color: #222;
+    font-family: 'Segoe UI', sans-serif;
+    transition: all 0.3s ease;
+    border: 1px solid #ddd;
+}
+
+    .edit-exercise-page h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2rem;
+        color: #00bcd4;
+        border-bottom: 2px solid #00bcd4;
+        padding-bottom: 10px;
+    }
+
+/* FORM */
+.edit-exercise-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+    /* LABELS */
+    .edit-exercise-form label {
+        font-weight: bold;
+        margin-bottom: 4px;
+        color: #333;
+    }
+
+    /* INPUTS AND TEXTAREAS */
+    .edit-exercise-form input,
+    .edit-exercise-form textarea {
+        width: 100%;
+        padding: 12px 15px;
+        background-color: #fff;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+        box-sizing: border-box;
+    }
+
+        .edit-exercise-form input:focus,
+        .edit-exercise-form textarea:focus {
+            border-color: #00bcd4;
+            outline: none;
+        }
+
+    /* TEXTAREA */
+    .edit-exercise-form textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+
+/* BUTTONS */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+    .form-actions button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.1s ease;
+    }
+
+        .form-actions button[type="submit"] {
+            background-color: #00bcd4;
+            color: white;
+        }
+
+            .form-actions button[type="submit"]:hover {
+                background-color: #0097a7;
+                transform: scale(1.02);
+            }
+
+        .form-actions button[type="button"] {
+            background-color: #f44336;
+            color: white;
+        }
+
+            .form-actions button[type="button"]:hover {
+                background-color: #d32f2f;
+                transform: scale(1.02);
+            }

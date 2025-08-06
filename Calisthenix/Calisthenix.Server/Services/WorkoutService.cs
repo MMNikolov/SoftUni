@@ -49,6 +49,9 @@
                 }).ToList()
             });
 
+            Console.WriteLine($"[DEBUG] Returning workouts with exercises for user {userId}: " +
+                $"{string.Join(", ", workouts.Select(w => $"{w.Name} ({w.WorkoutExercises.Count} exercises)"))}");
+
             return result;
         }
 
@@ -117,24 +120,6 @@
             return workout;
         }
 
-        public async Task<bool> AddExerciseToWorkoutAsync(int workoutId, int exerciseId)
-        {
-            bool alreadyExists = await _context.WorkoutExercises
-                .AnyAsync(we => we.WorkoutId == workoutId && we.ExerciseId == exerciseId);
-
-            if (alreadyExists)
-                return false;
-
-            _context.WorkoutExercises.Add(new WorkoutExercise
-            {
-                WorkoutId = workoutId,
-                ExerciseId = exerciseId
-            });
-
-            await _context.SaveChangesAsync();
-            return true;
-        }
-
         public async Task AddExerciseToUserWorkoutAsync(int userId, int exerciseId)
         {
             var workout = await _context.Workouts
@@ -197,18 +182,30 @@
 
         public async Task<bool> AddExerciseToWorkoutAsync(int workoutId, int exerciseId, string userId)
         {
+            Console.WriteLine($"[DEBUG] Attempting to add Exercise {exerciseId} to Workout {workoutId} for User {userId}");
+            if (!int.TryParse(userId, out int userIdInt))
+                return false;
+
             var workout = await _context.Workouts
                 .Include(w => w.WorkoutExercises)
-                .FirstOrDefaultAsync(w => w.Id == workoutId && w.UserId.ToString().ToLower() == userId.ToString().ToLower());
+                .FirstOrDefaultAsync(w => w.Id == workoutId && w.UserId == userIdInt);
 
             if (workout == null)
+            {
+                Console.WriteLine("[DEBUG] Workout not found or not owned by user.");
                 return false;
+            }
 
             bool alreadyAdded = workout.WorkoutExercises
                 .Any(we => we.ExerciseId == exerciseId);
 
             if (alreadyAdded)
+            {
+                Console.WriteLine("[DEBUG] Exercise already in workout.");
                 return false;
+            }
+
+            Console.WriteLine("[DEBUG] Exercise added successfully.");
 
             workout.WorkoutExercises.Add(new WorkoutExercise
             {
@@ -219,6 +216,8 @@
             await _context.SaveChangesAsync();
             return true;
         }
+
+
 
         public async Task<bool> RemoveExerciseFromWorkoutAsync(int workoutId, int exerciseId, string userId)
         {

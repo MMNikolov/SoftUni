@@ -1,10 +1,7 @@
-﻿using Xunit;
-using Moq;
-using Calisthenix.Server.Data;
+﻿using Calisthenix.Server.Data;
 using Calisthenix.Server.Services;
 using Calisthenix.Server.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 
 public class CommentServiceTests
 {
@@ -21,7 +18,7 @@ public class CommentServiceTests
         context.Users.Add(new User
         {
             Id = 1,
-            Username = "testuser",
+            Username = "Pesho",
             PasswordHash = "dummyhash"
         });
         await context.SaveChangesAsync();
@@ -34,7 +31,7 @@ public class CommentServiceTests
         // Assert  
         Assert.NotNull(result);
         Assert.Equal("Nice exercise!", result.Content);
-        Assert.Equal("testuser", result.Username);
+        Assert.Equal("Pesho", result.Username);
     }
 
     [Fact]
