@@ -47,24 +47,6 @@ Built with **ASP.NET Core 8 (Web API)** and a **React frontend**, it enables use
 - In-memory database used for testing
 - Exception paths and edge cases covered
 
----
-
-## ⚙️ Project Architecture
-
-Calisthenix/
-├── Calisthenix.Server/ # ASP.NET Core Web API
-│ ├── Controllers/
-│ ├── Services/
-│ ├── Models/
-│ ├── Data/
-│ └── Program.cs
-│
-├── calisthenix.client/ # React Frontend
-│ ├── components/
-│ ├── services/
-│ ├── App.jsx
-│ └── main.jsx
-└── README.md
 
 ---
 
