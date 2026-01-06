@@ -32,13 +32,69 @@ public class AdminController : ControllerBase
     [HttpDelete("users/{id}")]
     public async Task<IActionResult> DeleteUser(int id)
     {
-        var user = await _context.Users.FindAsync(id);
-        if (user == null) return NotFound();
+        using var tx = await _context.Database.BeginTransactionAsync();
 
-        _context.Users.Remove(user);
-        await _context.SaveChangesAsync();
+        try
+        {
+            var userExists = await _context.Users.AnyAsync(u => u.Id == id);
+            if (!userExists) return NotFound();
 
-        return NoContent();
+            await _context.CommentReactions
+                .Where(r => r.UserId == id)
+                .ExecuteDeleteAsync();
+
+            var exerciseIds = await _context.Exercises
+                .Where(e => e.UserId == id)
+                .Select(e => e.Id)
+                .ToListAsync();
+
+            if (exerciseIds.Count > 0)
+            {
+                var commentIds = await _context.Comments
+                    .Where(c => exerciseIds.Contains(c.ExerciseId))
+                    .Select(c => c.Id)
+                    .ToListAsync();
+
+                if (commentIds.Count > 0)
+                {
+                    await _context.CommentReactions
+                        .Where(r => commentIds.Contains(r.CommentId))
+                        .ExecuteDeleteAsync();
+
+                    await _context.Comments
+                        .Where(c => commentIds.Contains(c.Id))
+                        .ExecuteDeleteAsync();
+                }
+
+                await _context.WorkoutExercises
+                    .Where(we => exerciseIds.Contains(we.ExerciseId))
+                    .ExecuteDeleteAsync();
+
+                await _context.Exercises
+                    .Where(e => exerciseIds.Contains(e.Id))
+                    .ExecuteDeleteAsync();
+
+                await _context.Workouts
+                    .Where(w => exerciseIds.Contains(w.Id))
+                    .ExecuteDeleteAsync();
+            }
+
+            await _context.Users
+                .Where(u => u.Id == id)
+                .ExecuteDeleteAsync();
+
+            await tx.CommitAsync();
+            return NoContent();
+        }
+        catch (DbUpdateException ex)
+        {
+            await tx.RollbackAsync();
+            return Conflict(new
+            {
+                message = "Cannot delete user due to related data. Clean up dependents first.",
+                detail = ex.InnerException?.Message ?? ex.Message
+            });
+        }
     }
 
     [HttpPut("users/{id}/promote")]

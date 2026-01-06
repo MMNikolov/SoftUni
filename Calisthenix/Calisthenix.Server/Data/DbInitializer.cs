@@ -1,7 +1,6 @@
 ﻿namespace Calisthenix.Server.Data
 {
     using Calisthenix.Server.Models;
-    using Microsoft.EntityFrameworkCore;
 
     public static class DbInitializer
     {

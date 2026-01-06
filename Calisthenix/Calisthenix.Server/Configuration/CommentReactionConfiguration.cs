@@ -3,6 +3,7 @@
     using Calisthenix.Server.Models;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
     public class CommentReactionConfiguration : IEntityTypeConfiguration<CommentReaction>
     {
         public void Configure(EntityTypeBuilder<CommentReaction> builder)

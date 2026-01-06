@@ -1,9 +1,9 @@
-﻿using Calisthenix.Server.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-namespace Calisthenix.Server.Configuration
+﻿namespace Calisthenix.Server.Configuration
 {
+    using Calisthenix.Server.Models;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
     public class CommentConfiguration : IEntityTypeConfiguration<Comment>
     {
         public void Configure(EntityTypeBuilder<Comment> builder)
@@ -11,7 +11,8 @@ namespace Calisthenix.Server.Configuration
             builder
                 .HasOne(c => c.Exercise)
                 .WithMany(e => e.Comments)
-                .HasForeignKey(c => c.ExerciseId);
+                .HasForeignKey(c => c.ExerciseId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder
                 .HasOne(c => c.User)

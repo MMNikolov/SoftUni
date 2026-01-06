@@ -1,11 +1,11 @@
-﻿using Calisthenix.Server.Data;
-using Calisthenix.Server.Models;
-using Calisthenix.Server.Models.DTOs;
-using Calisthenix.Server.Services.Interfaces;
-using Microsoft.EntityFrameworkCore;
-
-namespace Calisthenix.Server.Services
+﻿namespace Calisthenix.Server.Services
 {
+    using Calisthenix.Server.Data;
+    using Calisthenix.Server.Models;
+    using Calisthenix.Server.Models.DTOs;
+    using Calisthenix.Server.Services.Interfaces;
+    using Microsoft.EntityFrameworkCore;
+
     public class CommentService : ICommentService
     {
         private readonly CalisthenixDbContext _context;
@@ -65,7 +65,16 @@ namespace Calisthenix.Server.Services
             var exists = await _context.CommentReactions
                 .AnyAsync(r => r.CommentId == commentId && r.UserId == userId);
 
-            if (exists) return false;
+            if (exists)
+            {
+                _context.CommentReactions.Add(new CommentReaction
+                {
+                    CommentId = commentId,
+                    UserId = userId,
+                    IsThumbsUp = false
+                });
+                return false;
+            }
 
             _context.CommentReactions.Add(new CommentReaction
             {

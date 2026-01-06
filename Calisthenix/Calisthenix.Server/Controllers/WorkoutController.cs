@@ -1,13 +1,10 @@
 ﻿namespace Calisthenix.Server.Controllers
 {
-    using Calisthenix.Server.Data;
-    using Calisthenix.Server.Models;
     using Calisthenix.Server.Models.DTOs;
     using Calisthenix.Server.Services.Interfaces;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Cors;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.EntityFrameworkCore;
     using System.Security.Claims;
 
     [EnableCors("AllowVite")]
@@ -17,12 +14,10 @@
     public class WorkoutController : ControllerBase
     {
         private readonly IWorkoutService _workoutService;
-        private readonly CalisthenixDbContext _context;
 
-        public WorkoutController(IWorkoutService workoutService, CalisthenixDbContext context)
+        public WorkoutController(IWorkoutService workoutService)
         {
             _workoutService = workoutService;
-            _context = context;
         }
 
         private int GetUserId()

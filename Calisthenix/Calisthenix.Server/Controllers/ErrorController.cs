@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace Calisthenix.Server.Controllers
+﻿namespace Calisthenix.Server.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+
     [Route("error")]
     public class ErrorController : ControllerBase
     {

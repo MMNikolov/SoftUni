@@ -1,7 +1,6 @@
 ﻿namespace Calisthenix.Server.Controllers
 {
     using System.Security.Claims;
-    using Azure;
     using Calisthenix.Server.Models;
     using Calisthenix.Server.Services.Interfaces;
     using Microsoft.AspNetCore.Authorization;
@@ -16,7 +15,6 @@
         {
             _exerciseService = exerciseService;
         }
-
 
         [HttpGet]
         public async Task<IActionResult> GetAllExercises([FromQuery] int page = 1, [FromQuery] int pageSize = 10)

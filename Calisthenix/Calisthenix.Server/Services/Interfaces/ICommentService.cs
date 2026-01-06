@@ -1,6 +1,5 @@
 ﻿namespace Calisthenix.Server.Services.Interfaces
 {
-    using Calisthenix.Server.Models;
     using Calisthenix.Server.Models.DTOs;
 
     public interface ICommentService

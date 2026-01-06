@@ -13,9 +13,9 @@ function AdminDashboard() {
             });
 
             if (res.ok) {
-                const data = await res.json(); // ✅ read once only
-                console.log("[Admin fetch result]:", data);
-                setUsers(data.$values || []);  // ✅ use $values from EF circular serialization
+                const data = await res.json(); 
+                
+                setUsers(data.$values || []); 
             } else {
                 setError("Access denied or not authorized.");
             }
@@ -47,7 +47,7 @@ function AdminDashboard() {
         });
 
         if (res.ok) {
-            fetchUsers(); // refresh list
+            fetchUsers(); 
         } else {
             alert("Failed to promote user.");
         }
